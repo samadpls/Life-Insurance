@@ -1,0 +1,26 @@
+
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title> State Life</title>
+        
+        <link href="{% static 'bs/css/bootstrap.min.css' %}" rel="stylesheet">
+        <link href="{% static 'css/style.css' %}" rel="stylesheet">
+    </head>
+    <body>
+    
+        <section id="main_section" class="clean-block main">
+
+            <div id="menu-bar" class="d-flex justify-content-center align-items-center">
+                <!-- <img src="{% static 'img/logo.png' %}" alt="logo" class="logo">
+                <img src="{% static 'img/title.png' %}" alt="title" class="title"> -->
+    </div>                           
+
+{% block content %}
+
+{% endblock %}
+    </body>
+</html>
