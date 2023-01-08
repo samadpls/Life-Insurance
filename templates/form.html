@@ -117,8 +117,8 @@
                     </div>
                     <div class="input-text">
                         <div class="input-div">
-                            <p>Monthly income</p>
-                            <input type="number" id="monthly-income" name="monthly-income" min="40000" step="5000">
+                            <input type="number" id="monthly-income" name="monthly-income" min="40000" step="5000" required>
+                            <span>Monthly income</span>
                         </div>
                         <div class="input-div"> 
                             <input type="text" required id="sum-assured">
@@ -131,8 +131,7 @@
                             <span>Premium</span>
                         </div> 
                         <div class="input-div">
-                            <label for="Plan">Plan:</label>
-                            <select id="plan" name="Plan">
+                            <select id="plan" name="plan" required>
                                 <option>Select Plan</option>
                                 <option value="Jeevan Sathi Assurance" >Jeevan Sathi Assurance</option>
                                 <option value="Child Protection Assurance">Child Protection Assurance</option>
@@ -154,30 +153,36 @@
                         </div>
                     </div>
                     <div class="input-text">
-                        <h3>Mode:</h3> 
+                        
+                        <p><strong>Mode:</strong></p> 
 
-                            <div class="form-group p-a-2">
-                                <p>YLY</p><input type="checkbox" name="checkBox1">
-                            </div>
-                            <div class="form-group p-a-2">
-                                <p>HLY</p><input type="checkbox" name="checkBox1">
-                            </div>
-                            <div class="form-group p-a-2">
-                                <p>QLY</p><input type="checkbox" name="checkBox1">
-                            </div>
+                        <div class="form-group">
+                            <p>YLY</p>
+                            <input type="radio" name="radioGroup" value="yly" id="yly" title="Year-to-Date">
+                          </div>
+                          <div class="form-group">
+                            <p>HLY</p>
+                            <input type="radio" name="radioGroup" value="hly" id="hly" title="Half-Year">
+                          </div>
+                          <div class="form-group">
+                            <p>QLY</p>
+                            <input type="radio" name="radioGroup" value="qly" id="qly" title="Quarter-Year">
+                          </div>
+                          </div>
+                          <div class="input-text">
                             <div class="input-div">
                                 <input type="text" required id="supplementary-contract" name="supplementary-contract">
                                 <span>Supplementary contract</span>
                             </div>
                     
-                        </div>
-                    <div class="input-text">
+                       
+                    <!-- <div class="input-text"> -->
                         <div class="input-div">
-                            <input type="text" id="previous-policy-number">
-                            <span>Previous policy number</span>
+                            <input type="text"  id="previous-policy-number" name="supplementary-contract">
+                            <span>Previous Policy number</span>
                         </div>
                     </div>                        
-                    <div class="buttons">
+                    <div class="buttons button_space">
                         <button class="back_button">Back</button>
                         <button class="next_button">Next Step</button>
                     </div>
@@ -188,7 +193,7 @@
                     <div class="text">
                         <h2>Your Personal Information</h2>
                         <p>Please enter your personal information to complete the policy form.</p>
-                        <p >Optional</p>
+                        <p style="color: brown;"><strong>Optional*</strong></p>
                     </div>
 
                     <div class="input-text">
@@ -197,7 +202,7 @@
                             <span>For Lady</span>
                         </div>
                             <div class="input-div"> 
-                                <input type="number" id="employe">
+                                <input type="number" id="employee">
                                 <span>Employe #</span>
                             </div>
                     </div>
@@ -214,11 +219,11 @@
 
                     <div class="input-text">
                         <div class="input-div">
-                            <p>Husbend income</p>
+                            <span>Husbend income</span>
                             <input type="number" id="husbend-income" name="husbend-income" min="40000" step="5000">
                         </div>
                         <div class="input-div"> 
-                            <input type="text" id="monthly-deduction">
+                            <input type="text" id="monthly-deduction" name="monthly-deduction">
                             <span>Monthly Deduction</span>
                         </div>
                     </div>
@@ -234,14 +239,14 @@
                             <span>Yearly Deduction</span>
                         </div>
                     </div>
-                    <div class="buttons">
+                    <div class="buttons button_space">
                         <button class="back_button">Back</button>
                         <button class="next_button">Next Step</button>
                     </div>
 
                     </div>
 
-                </div>
+                
 
                 <div class="main">
                     <small><i class="fa fa-smile-o"></i></small>
@@ -250,90 +255,59 @@
                         <h2>Your Physical Information</h2>
                         <p>Please enter your physical information to further proceed the form.</p>
                     </div>
-                    {% comment %} <div class="input-text">
+                    <div class="input-text">
                         <div class="input-div">
-                            <label for="diseaseSelect" >Any Disease:</label>
-                                <select id="diseaseSelect" multiple>
-                                  <option >Select (one or many)</option>
-                                  <option value="cancer">Cancer</option>
-                                  <option value="diabetes">Diabetes</option>
-                                  <option value="heartDisease">Heart disease</option>
-                                  <option value="flu">Influenza</option>
-                                  <option value="measles">Measles</option>
-                                  <option value="alzheimers">Alzheimer's disease</option>
-                                  <option value="asthma">Asthma</option>
-                                  <option value="autism">Autism</option>
-                                  <option value="bronchitis">Bronchitis</option>
-                                  <option value="chickenpox">Chickenpox</option>
-                                  <option value="cholera">Cholera</option>
-                                  <option value="depression">Depression</option>
-                                  <option value="gastroenteritis">Gastroenteritis</option>
-                                  <option value="hypertension">Hypertension</option>
-                                  <option value="malaria">Malaria</option>
-                                  <option value="obesity">Obesity</option>
-                                  <option value="parkinsons">Parkinson's disease</option>
-                                  <option value="tuberculosis">Tuberculosis</option>
-                                  <option value="arthritis">Arthritis</option>
-                                  <option value="celiac">Celiac disease</option>
-                                  <option value="crohns">Crohn's disease</option>
-                                  <option value="diphtheria">Diphtheria</option>
-                                  <option value="hepatitis">Hepatitis</option>
-                                  <option value="influenza">Influenza</option>
-                                  <option value="kidney">Kidney disease</option>
-                                  <option value="leukemia">Leukemia</option>
-                                  <option value="multipleSclerosis">Multiple sclerosis</option>
-                                  <option value="pneumonia">Pneumonia</option>
-                                  <option value="polio">Polio</option>
-                                  <option value="rabies">Rabies</option>
-                                  <option value="stroke">Stroke</option>
-                                  <option value="Other">Other</option>
-                                </select>
-
+                          <label for="diseaseSelect">Any Disease:</label>
+                          <div id="diseaseSelect">
+                            <div class="form-group">
+                              <input type="checkbox" name="disease" value="cancer" id="cancer">
+                              <label for="cancer">Cancer</label>
+                            </div>
+                            <div class="form-group">
+                              <input type="checkbox" name="disease" value="diabetes" id="diabetes">
+                              <label for="diabetes">Diabetes</label>
+                            </div>
+                            <div class="form-group">
+                              <input type="checkbox" name="disease" value="heartDisease" id="heartDisease">
+                              <label for="heartDisease">Heart disease</label>
+                            </div>
+                            <!-- ... other options ... -->
+                            <div class="form-group">
+                              <input type="checkbox" name="disease" value="Other" id="Other">
+                              <label for="Other">Other</label>
+                            </div>
+                          </div>
                         </div>
-                
-                        <div class="input-div">Any Operation:</label>
-                            <select id="operationSelect" multiple>
-                              <option >Select (one or many)</option>
-                              <option value="appendectomy">Appendectomy</option>
-                              <option value="craniotomy">Craniotomy</option>
-                              <option value="hipReplacement">Hip replacement</option>
-                              <option value="hysterectomy">Hysterectomy</option>
-                              <option value="kneeReplacement">Knee replacement</option>
-                              <option value="amputation">Amputation</option>
-                              <option value="cardiacBypass">Cardiac bypass surgery</option>
-                              <option value="cataract">Cataract surgery</option>
-                              <option value="cesarean">Cesarean section</option>
-                              <option value="cochlearImplant">Cochlear implant surgery</option>
-                              <option value="coronaryArteryBypass">Coronary artery bypass surgery</option>
-                              <option value="dental">Dental surgery</option>
-                              <option value="gastricBypass">Gastric bypass surgery</option>
-                              <option value="laparoscopic">Laparoscopic surgery</option>
-                              <option value="laryngectomy">Laryngectomy</option>
-                              <option value="mastectomy">Mastectomy</option>
-                              <option value="nephrectomy">Nephrectomy</option>
-                              <option value="spinalFusion">Spinal fusion</option>
-                              <option value="tonsillectomy">Tonsillectomy</option>
-                              <option value="angioplasty">Angioplasty</option>
-                              <option value="breastAugmentation">Breast augmentation</option>
-                              <option value="colostomy">Colostomy</option>
-                              <option value="dialysis">Dialysis</option>
-                              <option value="endoscopy">Endoscopy</option>
-                              <option value="gastroenterostomy">Gastroenterostomy</option>
-                              <option value="laparotomy">Laparotomy</option>
-                              <option value="oophorectomy">Oophorectomy</option>
-                              <option value="rhinoplasty">Rhinoplasty</option>
-                              <option value="tracheostomy">Tracheostomy</option>
-                              <option value="vasectomy">Vasectomy</option>
-                              <option value="Other">Other</option>
-                            </select>
-                        </div> {% endcomment %}
-                        <div class="buttons">
+                        <div class="input-div">
+                          <label for="operationSelect">Any Operation:</label>
+                          <div id="operationSelect">
+                            <div class="form-group">
+                              <input type="checkbox" name="operation" value="appendectomy" id="appendectomy">
+                              <label for="appendectomy">Appendectomy</label>
+                            </div>
+                            <div class="form-group">
+                              <input type="checkbox" name="operation" value="craniotomy" id="craniotomy">
+                              <label for="craniotomy">Craniotomy</label>
+                            </div>
+                            <div class="form-group">
+                              <input type="checkbox" name="operation" value="hipReplacement" id="hipReplacement">
+                              <label for="hipReplacement">Hip replacement</label>
+                            </div>
+                            <!-- ... other options ... -->
+                            <div class="form-group">
+                              <input type="checkbox" name="operation" value="Other" id="Other">
+                              <label for="Other">Other</label>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                        <div class="buttons button_space">
                             <button class="back_button">Back</button>
                             <button class="next_button">Next Step</button>
                         </div>
                     </div>
      
-                </div>
+                
 
 
 
@@ -423,7 +397,7 @@
                         <p>Thanks Mr./Mrs. <span class="shown_name"></span> your information have been submitted successfully for the future reference we will contact you soon.</p>
                     </div>
                 </div>            
-
+            </div>
             </div>
         </div>
     </div>
