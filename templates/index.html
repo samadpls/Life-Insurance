@@ -3,18 +3,13 @@
 {% load static %}
 
 {% block content %}
-<nav class="navbar navbar-dark fixed-top navbar-expand-lg bg-dark">
+
+
+<nav class="navbar navbar-dark fixed-top navbar-expand-lg bg-dark" style="height:7%">
       <div class="container-fluid">
         <a class="navbar-brand" href="#">State Life</a>
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarSupportedContent"
-          aria-controls="navbarSupportedContent"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+          aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -118,18 +113,22 @@
     
    
     <div class="container my-5">
+      <h2 style="font-family:'Times New Roman', Times, serif; font-weight: 300;">Insurance Plans</h2>
         <div class="row mb-2">
             <div class="col-md-6">
-              <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+              
+              <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative ">
                 <div class="col p-4 d-flex flex-column position-static">
-                  <strong class="d-inline-block mb-2 text-primary">World</strong>
-                  <h3 class="mb-0">Featured post</h3>
+                  <!-- <strong class="d-inline-block mb-2 text-primary">World</strong> -->
+                  <h3 class="mb-0">Jeevan Saathi Assurance</h3>
                   <div class="mb-1 text-muted">Nov 12</div>
-                  <p class="card-text mb-auto">This is a wider card with supporting text below as a natural lead-in to additional content.</p>
-                  <a href="#" class="stretched-link">Continue reading</a>
+                  <p class="card-text mb-auto">The only thing certain in life is that nothing is certain.As such while we should always hoper for the best...</p>
+                  <a class="btn btn-primary btn-secondary-outline btn-lg" style="width: 38%; height:25%;"  target="_blank" href="https://www.statelife.com.pk/index.php/jeevan-sathi-assurance">
+                    Read More</a>
                 </div>
-                <div class="col-auto d-none d-lg-block">
-                  <img class="bd-placeholder-img" width="200" height="250" src="{%static 'img/u.jpg' %}" alt="">
+                <div class="col-auto d-none d-lg-block  ">
+                  <img width="242" height="241" src="https://www.jubileelife.com/wp-content/uploads/2016/04/SLP-242x241.jpg" class="attachment-shop_catalog size-shop_catalog wp-post-image" alt="SLP ad" loading="lazy" srcset="https://www.jubileelife.com/wp-content/uploads/2016/04/SLP-242x241.jpg 242w, https://www.jubileelife.com/wp-content/uploads/2016/04/SLP-242x241-150x150.jpg 150w, https://www.jubileelife.com/wp-content/uploads/2016/04/SLP-242x241-180x180.jpg 180w" sizes="(max-width: 242px) 100vw, 242px">
+                  <!-- <img class="bd-placeholder-img" width="200" height="250" src="{%static 'img/u.jpg' %}" alt=""> -->
         
                 </div>
               </div>
@@ -141,7 +140,9 @@
                   <h3 class="mb-0">Post title</h3>
                   <div class="mb-1 text-muted">Nov 11</div>
                   <p class="mb-auto">This is a wider card with supporting text below as a natural lead-in to additional content.</p>
-                  <a href="#" class="stretched-link">Continue reading</a>
+                  <a class="btn btn-primary btn-secondary-outline btn-lg" style="width: 38%; height:25%;" href="https://www.jubileelife.com/product/jubilee-health-shield/">
+                    Read More</a>
+                  
                 </div>
                 <div class="col-auto d-none d-lg-block">
                   <img class="bd-placeholder-img" width="200" height="250" src="{%static 'img/y.jpg' %}" alt="">
@@ -160,7 +161,8 @@
                   <h3 class="mb-0">Featured post</h3>
                   <div class="mb-1 text-muted">Nov 12</div>
                   <p class="card-text mb-auto">This is a wider card with supporting text below as a natural lead-in to additional content.</p>
-                  <a href="#" class="stretched-link">Continue reading</a>
+                  <a class="btn btn-primary btn-secondary-outline btn-lg" style="width: 38%; height:25%;" href="https://www.jubileelife.com/product/jubilee-health-shield/">
+                    Read More</a>
                 </div>
                 <div class="col-auto d-none d-lg-block">
                   <img class="bd-placeholder-img" width="200" height="250" src="{%static 'img/y.jpg' %}" alt="">
@@ -175,10 +177,12 @@
                   <h3 class="mb-0">Post title</h3>
                   <div class="mb-1 text-muted">Nov 11</div>
                   <p class="mb-auto">This is a wider card with supporting text below as a natural lead-in to additional content.</p>
-                  <a href="#" class="stretched-link">Continue reading</a>
+                  <a class="btn btn-primary btn-secondary-outline btn-lg" style="width: 38%; height:25%;" href="https://www.jubileelife.com/product/jubilee-health-shield/">
+                    Read More</a>
                 </div>
                 <div class="col-auto d-none d-lg-block">
                   <img class="bd-placeholder-img" width="200" height="250" src="{%static 'img/y.jpg' %}" alt="">
+                  
 
         
                 </div>
@@ -186,44 +190,117 @@
             </div>
           </div>
     </div>
+    <div class="container" >
+      <h2 >Contact Us</h2>
+      <div style="border:2px solid blue"></div>
+      
 
-    <div class="container">
-      <div class="row mb-2">
-        <div class="col-md-6">
-          <div class="support-box">
-            <div class="support-icon">
-              <span class="ti-comment-alt"></span>
+
+      
+      <div class="row" align="center" style=" display:flex;justify-content:center; background:rgb(255, 255, 255) ;width:100%;height: 23%;">
+        <div class="col-md-3">
+          <div class="a"  style="color:white;float: left"> 
+            <br>
+            <h4><strong>SMS</strong></h4> 
+          
+
+            <div style="color: black;margin-bottom: 44px;">
+              <svg xmlns="http://www.w3.org/2000/svg" width="65" height="56" fill="rgb(55, 55, 255)" class="bi bi-chat-left-dots" viewBox="0 0 16 16">
+  <path d="M14 1a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1H4.414A2 2 0 0 0 3 11.586l-2 2V2a1 1 0 0 1 1-1h12zM2 0a2 2 0 0 0-2 2v12.793a.5.5 0 0 0 .854.353l2.853-2.853A1 1 0 0 1 4.414 12H14a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z"/>
+  <path d="M5 6a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm4 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm4 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0z"/>
+</svg>   
+          <div>
+            <h6>SMS</h6>
+            <p><strong>Your Query </strong> to <strong>8554</strong> </p>
+          </div> 
+
+
+
+
+       
             </div>
-            <div class="support-content">
-              <h6>SMS</h6>
-              <p><strong>Your Query </strong> to <strong>8554</strong> </p>
-            </div>
+          
+            
+    
+         
+            
           </div>
-                    </div>
-        <div class="col-md-6">
-                      <div class="support-box">
-            <div class="support-icon">
-              <span class="ti-headphone-alt"></span>
-            </div>
-            <div class="support-content">
-              <h6>Call Us</h6>
-              <p>Call our Contact Center <strong><br>(021) 111 111 554<br></strong></p>
-            </div>
+
+        </div>
+        <div class="col-md-3">
+          <div class="b"  style="color:white;margin: auto">
+            <br>
+            <h4>Feedback & Complaints</h4>
+            <br>
+            <br>
+            <p style="font-size:larger">info@jubileelife.com
+              complaints@jubileelife.com
+              
+              </p>
           </div>
-                    </div>
-        <div class="col-md-6">
-                      <div class="support-box">
-            <div class="support-icon">
-              <span class="ti-email"></span>
-            </div>
-            <div class="support-content">
-              <h6>Feedback &amp; Complaints</h6>
-              <p><a href="mailto:info@jubileelife.com">info@jubileelife.com</a><br><a href="mailto:complaints@jubileelife.com">complaints@jubileelife.com</a></p>
-            </div>
-          </div>
-                    </div>
+
+
+        </div>
+        <div class="col-md-3">
+          <div class="x" style="color:white;float: right;" >
+            <br>
+            <h4>Health Emergency</h4>
+           
+            <h4>(021) 111 111 224</h4>
+            <p><strong>For any health related emergencies, call our hotline above where our customer representative will assist you.</strong></p>
+          
+        </div>
+
+        </div>
       </div>
-    </div>
+
+    </div> -->
+
+    <!-- <div class="container">
+      <h2>News and Announcements</h2>
+      <div class="row my-2">
+        <div class="col-lg-4">
+          <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+            <div class="col p-4 d-flex flex-column position-static">
+              <strong class="d-inline-block mb-2 text-primary">World</strong>
+              <h3 class="mb-0">Featured post</h3>
+              <div class="mb-1 text-muted">Nov 12</div>
+              <p class="card-text mb-auto">This is a wider card with supporting text below as a natural lead-in to additional content.</p>
+             
+            </div>
+            
+          </div>
+        </div>
+        
+          <div class="col-lg-4">
+            <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+              <div class="col p-4 d-flex flex-column position-static">
+                <strong class="d-inline-block mb-2 text-primary">World</strong>
+                <h3 class="mb-0">Featured post</h3>
+                <div class="mb-1 text-muted">Nov 12</div>
+                <p class="card-text mb-auto">This is a wider card with supporting text below as a natural lead-in to additional content.</p>
+               
+              </div>
+              
+            </div>
+         
+            <div class="col-lg-4">
+              <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+                <div class="col p-4 d-flex flex-column position-static">
+                  <strong class="d-inline-block mb-2 text-primary">World</strong>
+                  <h3 class="mb-0">Featured post</h3>
+                  <div class="mb-1 text-muted">Nov 12</div>
+                  <p class="card-text mb-auto">This is a wider card with supporting text below as a natural lead-in to additional content.</p>
+                 
+                </div>
+                
+              </div>
+
+      
+    </div> -->
+
+
+  
     <footer class="container">
       <p class="float-end"><a href="#">Back to top</a></p>
       <p>© 201022 Company, Inc. · <a href="#">Privacy</a> · <a href="#">Terms</a></p>
