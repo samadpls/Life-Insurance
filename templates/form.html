@@ -21,6 +21,7 @@
                     <p class="step-number-content d-none">Please enter your personal information to complete the policy form.</p>
                     <p class="step-number-content d-none">Please enter your personal information to complete the policy form.</p>
                     <p class="step-number-content d-none">Please provide your physical information in the form below to proceed.</p>
+                    <p class="step-number-content d-none">Please provide your physical information in the form below to proceed.</p>
                     <p class="step-number-content d-none">Please provide your family history in the form below to complete your medical record.</p>
                     <p class="step-number-content d-none">Add your profile picture and let companies find youy fast.</p>
                 </div>
@@ -28,6 +29,7 @@
                     <li class="active">Personal Information</li>
                     <li>Personal Information</li>
                     <li>Personal Information</li>
+                    <li>Physical Information</li>
                     <li>Physical Information</li>
                     <li>Family History</li>
                     <li>User Photo</li>
@@ -176,7 +178,7 @@
                             </div>
                     
                        
-                    <!-- <div class="input-text"> -->
+                    
                         <div class="input-div">
                             <input type="text"  id="previous-policy-number" name="supplementary-contract">
                             <span>Previous Policy number</span>
@@ -219,8 +221,8 @@
 
                     <div class="input-text">
                         <div class="input-div">
-                            <span>Husbend income</span>
-                            <input type="number" id="husbend-income" name="husbend-income" min="40000" step="5000">
+                            <p>Husbend income</p>
+                            <input type="number" id="husbend-income" min="40000" step="5000">
                         </div>
                         <div class="input-div"> 
                             <input type="text" id="monthly-deduction" name="monthly-deduction">
@@ -257,7 +259,7 @@
                     </div>
                     <div class="input-text">
                         <div class="input-div">
-                          <label for="diseaseSelect">Any Disease:</label>
+                          <label for="diseaseSelect"><strong>Any Disease:</strong></label>
                           <div id="diseaseSelect">
                             <div class="form-group">
                               <input type="checkbox" name="disease" value="cancer" id="cancer">
@@ -271,15 +273,18 @@
                               <input type="checkbox" name="disease" value="heartDisease" id="heartDisease">
                               <label for="heartDisease">Heart disease</label>
                             </div>
-                            <!-- ... other options ... -->
+                            
                             <div class="form-group">
                               <input type="checkbox" name="disease" value="Other" id="Other">
                               <label for="Other">Other</label>
+                              <p ><strong>Disease Description</strong></p>
+                              <textarea required rows="3" cols="20">
+                              </textarea>
                             </div>
                           </div>
                         </div>
                         <div class="input-div">
-                          <label for="operationSelect">Any Operation:</label>
+                          <label for="operationSelect"><strong>Any Operation:</strong></label>
                           <div id="operationSelect">
                             <div class="form-group">
                               <input type="checkbox" name="operation" value="appendectomy" id="appendectomy">
@@ -293,18 +298,82 @@
                               <input type="checkbox" name="operation" value="hipReplacement" id="hipReplacement">
                               <label for="hipReplacement">Hip replacement</label>
                             </div>
-                            <!-- ... other options ... -->
                             <div class="form-group">
                               <input type="checkbox" name="operation" value="Other" id="Other">
                               <label for="Other">Other</label>
+                              <p ><strong> Operation detail</strong></p>
+                              <textarea required rows="3" cols="20">
+                              </textarea>
                             </div>
+                            
                           </div>
                         </div>
-                      </div>
-                        <div class="buttons button_space">
-                            <button class="back_button">Back</button>
-                            <button class="next_button">Next Step</button>
+                    </div>
+
+                    <div class="input-text">
+                        <div class="input-div">
+                            <p><strong>Weak Eye sight or Operated:</strong></p>
+                                <label>
+                                  <input type="radio" name="yesno" value="yes" align="left">
+                                  Yes
+                                </label>
+                                <br>
+                                <label>
+                                  <input type="radio" name="yesno" value="no" align="left" checked>
+                                  No
+                                </label>
                         </div>
+                        <div class="input-div">
+                            <p><strong>Any Habit:</strong></p>
+                         <label>
+                            <input type="checkbox" name="Tabacoo" value="tabacoo">
+                            Tabacoo
+                          </label>
+                          <br>
+                          <label>
+                            <input type="checkbox" name="Alcohal" value="alcohal">
+                            Alcohal
+                          </label>
+                          <br>
+                          <label>
+                            <input type="checkbox" name="Drugs" value="drugs">
+                            Drugs
+                          </label>
+                        </div>  
+                        <div class="input-div">
+                            <p><strong>Diabetic in family</strong></p>
+                                <label>
+                                  <input type="radio" name="yesno" value="yes" align="left">
+                                  Yes
+                                </label>
+                                <br>
+                                <label>
+                                  <input type="radio" name="yesno" value="no" align="left" checked>
+                                  No
+                                </label>
+                        </div>
+                    </div>
+                    <p style="color: brown;"><strong>If Diabetic in family*</strong></p>
+                    <div class="input-text">
+                            
+                            <div class="input-div">
+                                <input type="text" id="diabetic-relation">
+                                <span>Relation</span>
+                            </div>
+                            <div class="input-div">
+                                <input type="text" id="diabetic-age">
+                                <span>Age</span>
+                            </div>
+                            <div class="input-div">
+                                <input type="text" id="diabetic-sinec">
+                                <span>Since</span>
+                            </div>
+                    </div>
+                    
+                    <div class="buttons button_space">
+                        <button class="back_button">Back</button>
+                        <button class="next_button">Next Step</button>
+                    </div>
                     </div>
      
                 
