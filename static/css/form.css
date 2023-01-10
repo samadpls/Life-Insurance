@@ -18,17 +18,21 @@
   }
 *{
     padding:0;
-    margin:0;
+    margin: 0;
+    
 }
-.container{
-    min-height:100vh;
-    display:flex;
-    justify-content:center;
-    align-items:center;
+body{
     background-color:#eee;
-    position: relative;
-    top: -60px;
 }
+.container {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #eee;
+    position: relative;
+    top: -80px;
+  }
 .container .card{
     height:500px;
     width:800px;
@@ -47,7 +51,7 @@
 .container .card .left-side{
     width:35%;
     background-color:#304767;
-    height:120%;
+    height:140%;
  border-top-left-radius:20px;
  border-bottom-left-radius:20px;
   padding:20px 30px;
@@ -160,7 +164,7 @@
 .container .card .right-side{
     width:75%;
     background-color:#fff;
-    height:120%;
+    height:140%;
   border-radius:20px;
 }
 /*right-side-start*/
@@ -212,6 +216,17 @@
 
 
 input[type="text"]{
+    width:100%;
+    height:40px;
+    border:none;
+    outline:0;
+    border-radius:5px;
+    border:1px solid #cbced4;
+    gap:20px;
+    box-sizing:border-box;
+    padding:0px 10px;
+}
+input[type="email"]{
     width:100%;
     height:40px;
     border:none;
