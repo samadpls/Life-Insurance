@@ -1,4 +1,3 @@
-{load static}
 
 <!DOCTYPE html>
 <html lang="en">
@@ -16,7 +15,7 @@
   </head>
   <style>
     
-    .nav-item1{
+    /* .nav-item1{
       align-items: right;
        }
     .nav-item2{
@@ -57,46 +56,120 @@
       
       transform: translateY(-50%);
       z-index: 100;
-    }
+    } */
 
-    
+nav {
+    position: relative;
+}
+.navbar-light .navbar-brand {
+  color: #fff;
+  font-size: 25px;
+  text-transform: uppercase;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+
+.navbar-light .navbar-nav .active > .nav-link, .navbar-light .navbar-nav .nav-link.active, .navbar-light .navbar-nav .nav-link.show, .navbar-light .navbar-nav .show > .nav-link {
+  color: #fff;
+}
+
+.navbar-light .navbar-nav .nav-link {
+  color: #fff;
+}
+
+.navbar-toggler {
+  background: #fff;
+}
+
+.navbar-nav {
+  text-align: center;
+}
+
+.nav-link {
+  padding: .2rem 1rem;
+}
+
+.nav-link.active,.nav-link:focus{
+  color: #fff;
+}
+
+.navbar-toggler {
+  padding: 1px 5px;
+  font-size: 18px;
+  line-height: 0.3;
+}
+
+.navbar-light .navbar-nav .nav-link:focus, .navbar-light .navbar-nav .nav-link:hover {
+  color: #fff;
+}
+
+
+
+
+
+
+/* ignore the code below */
+
+
+.link-area
+{
+  position:fixed;
+  bottom:20px;
+  left:20px;  
+  padding:15px;
+  border-radius:40px;
+  background:tomato;
+}
+.link-area a
+{
+  text-decoration:none;
+  color:#fff;
+  font-size:25px;
+}
   </style>
   <body>
-    <nav class="navbar navbar-dark fixed-top navbar-expand-lg bg-dark" style="height:7%">
-      <div class="container-fluid">
-        <a class="navbar-brand" href="#">State Life</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-          aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="/">Home</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" >About</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link">Contact</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" >Services</a>
-            </li>
-            
-              
-            
-          </ul>
-          <div class="buttons">
-            <button class="btn btn-dark"  class="nav-link"  >Login</button>
-           
-           
-              <button  class="btn btn-dark"  class="nav-link" >Signup</button>
-
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+        <div class="container">
+          <a class="navbar-brand" href="#">State Life</a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+      
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ml-auto">
+              <li class="nav-item active">
+                <a class="nav-link" href="/">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">About</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Contact Us</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Services</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Contact</a>
+              </li>
+            </ul>
           </div>
-        </div>
-      </div>
-    </nav>
+            <div class="d-flex justify-content-end">
+                <div class="buttons">
+                  <button class="btn btn-dark" class="nav-link">Login</button>
+                  <button class="btn btn-dark" class="nav-link">Signup</button>
+                </div>
+              </div>
+              <style>
+                .btn {
+                  background-color: #577aa8;
+                }
+              </style>
+          </div>
+      </nav>
+      
+
+
    
   {% block content %}
 
