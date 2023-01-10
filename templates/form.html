@@ -9,8 +9,11 @@
 </head>
 <body>
 <div class="container">
+
     <div class="card">
+
         <div class="form">
+
             <div class="left-side">
                 <div class="left-heading">
                     <h3>State Life</h3>
@@ -34,7 +37,6 @@
                     <li>Family History</li>
                     <li>User Photo</li>
                 </ul>
-    
             </div>
             <div class="right-side">
                 <div class="main active">
@@ -203,11 +205,12 @@
                             <input type="text" id="for-lady">
                             <span>For Lady</span>
                         </div>
-                            <div class="input-div"> 
-                                <input type="number" id="employee">
-                                <span>Employe #</span>
-                            </div>
+                        <div class="input-div"> 
+                            <input type="number" id="employee">
+                            <span>Employe #</span>
+                        </div>
                     </div>
+                
                     <div class="input-text">
                         <div class="input-div">
                             <input type="text"  id="education">
@@ -218,7 +221,7 @@
                             <span>GPE NO.</span>
                         </div>
                     </div>
-
+                
                     <div class="input-text">
                         <div class="input-div">
                             <p>Husbend income</p>
@@ -246,9 +249,7 @@
                         <button class="next_button">Next Step</button>
                     </div>
 
-                    </div>
-
-                
+                </div>
 
                 <div class="main">
                     <small><i class="fa fa-smile-o"></i></small>
@@ -353,6 +354,7 @@
                                 </label>
                         </div>
                     </div>
+
                     <p style="color: brown;"><strong>If Diabetic in family*</strong></p>
                     <div class="input-text">
                             
@@ -374,50 +376,61 @@
                         <button class="back_button">Back</button>
                         <button class="next_button">Next Step</button>
                     </div>
-                    </div>
-     
-                
-
-
-
-
+                </div>
 
                 <div class="main">
                     <small><i class="fa fa-smile-o"></i></small>
                     <div class="text">
-                        <h2>Work Experiences</h2>
-                        <p>Can you talk about your past work experience?</p>
+                        <h2>Your Physical Information</h2>
+                        <p>Please enter your physical information to further proceed the form.</p>
                     </div>
                     <div class="input-text">
                         <div class="input-div">
-                            <input type="text" required require>
-                            <span>Experience 1</span>
+                           <p><strong>Suicide in family:</strong></p>
+                               <label>
+                                 <input type="radio" name="yesno" value="yes" align="left">
+                                 Yes
+                               </label>
+                               <br>
+                               <label>
+                                 <input type="radio" name="yesno" value="no" align="left" checked>
+                                 No
+                               </label>
                         </div>
-                        <div class="input-div"> 
-                            <input type="text" required require>
-                            <span>Position</span>
+                        <div class="input-div">
+                            <p><strong>Medically examined:</strong></p>
+                                <label>
+                                  <input type="radio" name="yesno" value="yes" align="left">
+                                  Yes
+                                </label>
+                                <br>
+                                <label>
+                                  <input type="radio" name="yesno" value="no" align="left" checked>
+                                  No
+                                </label>
                         </div>
                     </div>
                     <div class="input-text">
                         <div class="input-div">
-                            <input type="text" required>
-                            <span>Experience 2</span>
+                            <input type="number" required  id="height">
+                            <span>Height</span>
                         </div>
                         <div class="input-div">
-                            <input type="text" required>
-                            <span>Position</span>
+                            <input type="number" required  id="weight">
+                            <span>Weight</span>
                         </div>
                     </div>
                     <div class="input-text">
                         <div class="input-div">
-                            <input type="text" required>
-                            <span>Experience 3</span>
+                            <input type="number" required  id="chest">
+                            <span>Chest</span>
                         </div>
                         <div class="input-div">
-                            <input type="text" required>
-                            <span>Position</span>
+                            <input type="number" required  id="abdomen">
+                            <span>Abdomen</span>
                         </div>
                     </div>
+
                     <div class="buttons button_space">
                         <button class="back_button">Back</button>
                         <button class="next_button">Next Step</button>
@@ -467,9 +480,11 @@
                     </div>
                 </div>            
             </div>
-            </div>
+            
         </div>
+
     </div>
+
 </div>
 </body>
 <script>
