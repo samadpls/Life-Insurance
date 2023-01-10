@@ -260,6 +260,80 @@
                     </div>
                     <div class="input-text">
                         <div class="input-div">
+                            <label for="diseaseSelect"><strong>Any Disease:</strong></label>
+                            <div class="form-group">
+                            <input type="checkbox" name="disease" value="cancer" id="cancer">
+                              <label for="cancer">Cancer</label>
+                            </div>
+                            <div class="form-group">
+                                <input type="checkbox" name="disease" value="diabetes" id="diabetes">
+                                <label for="diabetes">Diabetes</label>
+                            </div>
+                            <div class="form-group">
+                                <input type="checkbox" name="disease" value="heartDisease" id="heartDisease">
+                                <label for="heartDisease">Heart disease</label>
+                            </div>
+                            <div class="form-group">
+                                <input type="checkbox" name="disease" value="Other" id="Other">
+                                <label for="Other">Other</label> 
+                            </div>
+                            <div id="diseaseDescription" class="form-group" style="display: none;">
+                                <p ><strong>Disease Description</strong></p>
+                                <textarea rows="3" cols="20"></textarea>
+                                <script>
+                                    var otherDisease = document.getElementById("Other");
+                                    var diseaseDescription = document.getElementById("diseaseDescription");
+                                    otherDisease.onchange = function() {
+                                        if(otherDisease.checked) {
+                                            diseaseDescription.style.display = "block";
+                                        } else {
+                                            diseaseDescription.style.display = "none";
+                                        }
+                                    }
+                                </script>
+                            </div>
+                            
+                        </div>
+                        <div class="input-div">
+                            <label for="diseaseSelect"><strong>Any Disease:</strong></label>
+                            <div id="diseaseSelect">
+                                <div class="form-group">
+                                    <input type="checkbox" name="disease" value="cancer" id="cancer">
+                                    <label for="cancer">Cancer</label>
+                                  </div>
+                                  <div class="form-group">
+                                    <input type="checkbox" name="disease" value="diabetes" id="diabetes">
+                                    <label for="diabetes">Diabetes</label>
+                                  </div>
+                                  <div class="form-group">
+                                    <input type="checkbox" name="disease" value="heartDisease" id="heartDisease">
+                                    <label for="heartDisease">Heart disease</label>
+                                  </div>
+                                  <div class="form-group">
+                                    <input type="checkbox" name="disease" value="Other" id="other_opt">
+                                    <label for="Other">Other</label>
+                                  </div>
+                                  <div id="opt_Description" class="form-group" style="display: none;">
+                                    <p ><strong>Disease Description</strong></p>
+                                    <textarea required rows="3" cols="20">
+                                    </textarea>
+                                    <script>
+                                        var other_opt = document.getElementById("other_opt");
+                                        var opt_Description = document.getElementById("opt_Description");
+                                        other_opt.onchange = function() {
+                                            if(other_opt.checked) {
+                                                opt_Description.style.display = "block";
+                                            } else {
+                                                opt_Description.style.display = "none";
+                                            }
+                                        }
+                                    </script>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- <div class="input-text">
+                        <div class="input-div">
                           <label for="diseaseSelect"><strong>Any Disease:</strong></label>
                           <div id="diseaseSelect">
                             <div class="form-group">
@@ -309,7 +383,7 @@
                             
                           </div>
                         </div>
-                    </div>
+                    </div> -->
 
                     <div class="input-text">
                         <div class="input-div">
