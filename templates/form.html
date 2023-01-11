@@ -25,7 +25,7 @@
                     <p class="step-number-content d-none">Please enter your personal information to complete the policy form.</p>
                     <p class="step-number-content d-none">Please provide your physical information in the form below to proceed.</p>
                     <p class="step-number-content d-none">Please provide your physical information in the form below to proceed.</p>
-                    <p class="step-number-content d-none">Please provide your family history in the form below to complete your medical record.</p>
+                    <p class="step-number-content d-none">Please provide your family history in the form below to complete your form.</p>
                     <p class="step-number-content d-none">Add your profile picture and let companies find youy fast.</p>
                 </div>
                 <ul class="progress-bar">
@@ -514,28 +514,31 @@
                 <div class="main">
                     <small><i class="fa fa-smile-o"></i></small>
                     <div class="text">
-                        <h2>User Photo</h2>
-                        <p>Upload your profile picture and share yourself.</p>
+                        <h2>Family history</h2>
+                        <p>Give your family history go to the step.</p>
                     </div>
-                    <div class="user_card">
-                        <span></span>
-                        <div class="circle">
-                            <span><img src="https://i.imgur.com/hnwphgM.jpg"></span>
-                            
-                        </div>
-                        <div class="social">
-                            <span><i class="fa fa-share-alt"></i></span>
-                            <span><i class="fa fa-heart"></i></span>
-                            
-                        </div>
-                        <div class="user_name">
-                            <h3>Peter Hawkins</h3>
-                            <div class="detail">
-                                <p><a href="#">Izmar,Turkey</a>Hiring</p>
-                                <p>17 last day . 94Apply</p>
-                            </div>
-                        </div>
+                    
+
+                    <div class="form-group">
+                        <input type="checkbox" name="FatherCheck" value="FatherCheck" id="FatherCheck">
+                        <label for="FatherCheck">Father</label> 
                     </div>
+                    <div id="FatherCheck" class="form-group" style="display: none;">
+                        <p ><strong>Father detail</strong></p>
+                        <textarea rows="3" cols="20"></textarea>
+                        <script>
+                            var otherDisease = document.getElementById("FatherCheck");
+                            var diseaseDescription = document.getElementById("FatherCheck");
+                            otherDisease.onchange = function() {
+                                if(otherDisease.checked) {
+                                    diseaseDescription.style.display = "block";
+                                } else {
+                                    diseaseDescription.style.display = "none";
+                                }
+                            }
+                        </script>
+                    </div>
+
                     <div class="buttons button_space">
                         <button class="back_button">Back</button>
                         <button class="submit_button">Submit</button>

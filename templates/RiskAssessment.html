@@ -1,0 +1,57 @@
+
+{% extends 'base.html' %}
+{%load static%}
+
+{% block content %}
+
+<head>
+    <nav class="navbar bg-dark" data-bs-theme="dark">
+      
+        <div class="row">
+          <div>
+            <h1 class="text-center"style="color:#A0A0A0;">&nbsp&nbsp&nbsp&nbspRisk Assessment</h1>
+          </div>
+        </div>
+    </nav>
+</head>
+<body>
+    <br>
+    <h1>Medical Test Results</h1>
+    {% comment %} <table>
+      <tr>
+        <th>Patient Name</th>
+        <th>Test Name</th>
+        <th>Result</th>
+        <th>Test Done</th>
+      </tr>
+      <tr>
+        <td>John Doe</td>
+        <td>Blood Test</td>
+        <td>Positive</td>
+        <td>
+          <div class="radio-group">
+            <input type="radio" id="test-done-1" name="test-done-1" value="yes">
+            <label for="test-done-1">Yes</label>
+            <input type="radio" id="test-not-done-1" name="test-done-1" value="no">
+            <label for="test-not-done-1">No</label>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td>Jane Smith</td>
+        <td>X-Ray</td>
+        <td>Negative</td>
+        <td>
+          <div class="radio-group">
+            <input type="radio" id="test-done-2" name="test-done-2" value="yes">
+            <label for="test-done-2">Yes</label>
+            <input type="radio" id="test-not-done-2" name="test-done-2" value="no">
+            <label for="test-not-done-2">No</label>
+          </div>
+        </td>
+      </tr>
+    </table> {% endcomment %}
+  </body>
+</html>
+
+{% endblock content  %}}
