@@ -518,26 +518,107 @@
                         <p>Give your family history go to the step.</p>
                     </div>
                     
+                    <form>
+                        <p><strong>Is your father alive?</strong></p>
+                        <input type="radio" name="father" value="yes" onclick="showInput()"> Yes
+                        <input type="radio" name="father" value="no" onclick="showInput()"> No
+                        <br>
+                        <div id="input-yes" style="display: none;">
+                          <label>What is your father's name?</label><br>
+                          <input type="text" name="father-name">
+                          <label>What is your father's date of birth?</label><br>
+                          <input type="date" name="father-dob" onchange="calculateAge()">
+                          <span id="father-age"></span>
+                        </div>
+                        <div id="input-no" style="display: none;">
+                          <label>What is your father's date of birth?</label><br>
+                          <input type="date" name="father-dob"><br>
+                          <label>When did your father pass away?</label> <br>
+                          <input type="date" name="father-passed">
+                        </div>
 
-                    <div class="form-group">
-                        <input type="checkbox" name="FatherCheck" value="FatherCheck" id="FatherCheck">
-                        <label for="FatherCheck">Father</label> 
-                    </div>
-                    <div id="FatherCheck" class="form-group" style="display: none;">
-                        <p ><strong>Father detail</strong></p>
-                        <textarea rows="3" cols="20"></textarea>
-                        <script>
-                            var otherDisease = document.getElementById("FatherCheck");
-                            var diseaseDescription = document.getElementById("FatherCheck");
-                            otherDisease.onchange = function() {
-                                if(otherDisease.checked) {
-                                    diseaseDescription.style.display = "block";
-                                } else {
-                                    diseaseDescription.style.display = "none";
-                                }
+                        <p><strong>Is your mother alive?</strong></p>
+                        <input type="radio" name="mother" value="yes" onclick="showMotherInput()"> Yes
+                        <input type="radio" name="mother" value="no" onclick="showMotherInput()"> No
+                        <br>
+                        <div id="input-mother-yes" style="display: none;">
+                          <label>What is your mother's name?</label><br>
+                          <input type="text" name="mother-name">
+                          <label>What is your mother's date of birth?</label><br>
+                          <input type="date" name="mother-dob" onchange="calculateMomAge()">
+                          <span id="mother-age"></span>
+                        </div>
+                        <div id="input-mother-no" style="display: none;">
+                            <label>What is your mother's date of birth?</label><br>
+                            <input type="date" name="mother-dob"><br>
+                            <label>When did your mother pass away?</label> <br>
+                            <input type="date" name="motehr-passed">
+                        </div>
+                      
+                      </form>
+                    <script>
+                        function showInput() {
+                            var yesInput = document.getElementById("input-yes");
+                            var noInput = document.getElementById("input-no");
+                            var radioValue = document.querySelector('input[name="father"]:checked').value;
+                          
+                            if(radioValue === "yes") {
+                              yesInput.style.display = "block";
+                              noInput.style.display = "none";
+                              document.getElementById("input-mother-yes").style.display = "none";
+                              document.getElementById("input-mother-no").style.display = "none";
+                            } else if(radioValue === "no") {
+                              noInput.style.display = "block";
+                              yesInput.style.display = "none";
+                              document.getElementById("input-mother-yes").style.display = "none";
+                              document.getElementById("input-mother-no").style.display = "none";
                             }
-                        </script>
-                    </div>
+                          }
+
+                          function showMotherInput() {
+                            var yesInput = document.getElementById("input-mother-yes");
+                            var noInput = document.getElementById("input-mother-no");
+                            var radioValue = document.querySelector('input[name="mother"]:checked').value;
+                            
+                            if(radioValue === "yes") {
+                              yesInput.style.display = "block";
+                              noInput.style.display = "none";
+                              document.getElementById("input-yes").style.display = "none";
+                              document.getElementById("input-no").style.display = "none";
+                            } else if(radioValue === "no") {
+                              noInput.style.display = "block";
+                              yesInput.style.display = "none";
+                              document.getElementById("input-yes").style.display = "none";
+                              document.getElementById("input-no").style.display = "none";
+                            }
+                          }
+
+                          function calculateAge() {
+                            var dob = new Date(document.querySelector('input[name="father-dob"]').value);
+                            var today = new Date();
+                            var age = today.getFullYear() - dob.getFullYear();
+                            var m = today.getMonth() - dob.getMonth();
+                            if (m < 0 || (m === 0 && today.getDate() < dob.getDate())) {
+                              age--;
+                            }
+                            document.getElementById("father-age").innerHTML = age + " years old";
+                          }
+
+
+                          function calculateMomAge() {
+                            var dob = new Date(document.querySelector('input[name="mother-dob"]').value);
+                            var today = new Date();
+                            var age = today.getFullYear() - dob.getFullYear();
+                            var m = today.getMonth() - dob.getMonth();
+                            if (m < 0 || (m === 0 && today.getDate() < dob.getDate())) {
+                              age--;
+                            }
+                            document.getElementById("mother-age").innerHTML = age + " years old";
+                          }
+                          
+                      
+                    </script>                     
+                      
 
                     <div class="buttons button_space">
                         <button class="back_button">Back</button>
