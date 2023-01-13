@@ -25,7 +25,7 @@
                     <p class="step-number-content d-none">Please enter your personal information to complete the policy form.</p>
                     <p class="step-number-content d-none">Please provide your physical information in the form below to proceed.</p>
                     <p class="step-number-content d-none">Please provide your physical information in the form below to proceed.</p>
-                    <p class="step-number-content d-none">Please provide your family history in the form below to complete your medical record.</p>
+                    <p class="step-number-content d-none">Please provide your family history in the form below to complete your form.</p>
                     <p class="step-number-content d-none">Add your profile picture and let companies find youy fast.</p>
                 </div>
                 <ul class="progress-bar">
@@ -295,26 +295,26 @@
                             
                         </div>
                         <div class="input-div">
-                            <label for="diseaseSelect"><strong>Any Disease:</strong></label>
-                            <div id="diseaseSelect">
+                            <label for="operationSelect"><strong>Any Operstion:</strong></label>
+                            <div id="operationSelect">
                                 <div class="form-group">
-                                    <input type="checkbox" name="disease" value="cancer" id="cancer">
-                                    <label for="cancer">Cancer</label>
+                                    <input type="checkbox" name="operation" value="Appendectomy" id="Appendectomy">
+                                    <label for="Appendectomy">Appendectomy</label>
                                   </div>
                                   <div class="form-group">
-                                    <input type="checkbox" name="disease" value="diabetes" id="diabetes">
-                                    <label for="diabetes">Diabetes</label>
+                                    <input type="checkbox" name="operation" value="openHeartSurgery" id="openHeartSurgery">
+                                    <label for="openHeartSurgery">Open heart surgery</label>
                                   </div>
                                   <div class="form-group">
-                                    <input type="checkbox" name="disease" value="heartDisease" id="heartDisease">
-                                    <label for="heartDisease">Heart disease</label>
+                                    <input type="checkbox" name="operation" value="Hip replacement surgery" id="Hip replacement surgery">
+                                    <label for="Hip replacement surgery">Hip replacement surgery</label>
                                   </div>
                                   <div class="form-group">
-                                    <input type="checkbox" name="disease" value="Other" id="other_opt">
+                                    <input type="checkbox" name="operation" value="Other" id="other_opt">
                                     <label for="Other">Other</label>
                                   </div>
                                   <div id="opt_Description" class="form-group" style="display: none;">
-                                    <p ><strong>Disease Description</strong></p>
+                                    <p ><strong>Operation Description</strong></p>
                                     <textarea required rows="3" cols="20">
                                     </textarea>
                                     <script>
@@ -514,28 +514,112 @@
                 <div class="main">
                     <small><i class="fa fa-smile-o"></i></small>
                     <div class="text">
-                        <h2>User Photo</h2>
-                        <p>Upload your profile picture and share yourself.</p>
+                        <h2>Family history</h2>
+                        <p>Give your family history go to the step.</p>
                     </div>
-                    <div class="user_card">
-                        <span></span>
-                        <div class="circle">
-                            <span><img src="https://i.imgur.com/hnwphgM.jpg"></span>
+                    
+                    <form>
+                        <p><strong>Is your father alive?</strong></p>
+                        <input type="radio" name="father" value="yes" onclick="showInput()"> Yes
+                        <input type="radio" name="father" value="no" onclick="showInput()"> No
+                        <br>
+                        <div id="input-yes" style="display: none;">
+                          <label>What is your father's name?</label><br>
+                          <input type="text" name="father-name">
+                          <label>What is your father's date of birth?</label><br>
+                          <input type="date" name="father-dob" onchange="calculateAge()">
+                          <span id="father-age"></span>
+                        </div>
+                        <div id="input-no" style="display: none;">
+                          <label>What is your father's date of birth?</label><br>
+                          <input type="date" name="father-dob"><br>
+                          <label>When did your father pass away?</label> <br>
+                          <input type="date" name="father-passed">
+                        </div>
+
+                        <p><strong>Is your mother alive?</strong></p>
+                        <input type="radio" name="mother" value="yes" onclick="showMotherInput()"> Yes
+                        <input type="radio" name="mother" value="no" onclick="showMotherInput()"> No
+                        <br>
+                        <div id="input-mother-yes" style="display: none;">
+                          <label>What is your mother's name?</label><br>
+                          <input type="text" name="mother-name">
+                          <label>What is your mother's date of birth?</label><br>
+                          <input type="date" name="mother-dob" onchange="calculateMomAge()">
+                          <span id="mother-age"></span>
+                        </div>
+                        <div id="input-mother-no" style="display: none;">
+                            <label>What is your mother's date of birth?</label><br>
+                            <input type="date" name="mother-dob"><br>
+                            <label>When did your mother pass away?</label> <br>
+                            <input type="date" name="motehr-passed">
+                        </div>
+                      
+                      </form>
+                    <script>
+                        function showInput() {
+                            var yesInput = document.getElementById("input-yes");
+                            var noInput = document.getElementById("input-no");
+                            var radioValue = document.querySelector('input[name="father"]:checked').value;
+                          
+                            if(radioValue === "yes") {
+                              yesInput.style.display = "block";
+                              noInput.style.display = "none";
+                              document.getElementById("input-mother-yes").style.display = "none";
+                              document.getElementById("input-mother-no").style.display = "none";
+                            } else if(radioValue === "no") {
+                              noInput.style.display = "block";
+                              yesInput.style.display = "none";
+                              document.getElementById("input-mother-yes").style.display = "none";
+                              document.getElementById("input-mother-no").style.display = "none";
+                            }
+                          }
+
+                          function showMotherInput() {
+                            var yesInput = document.getElementById("input-mother-yes");
+                            var noInput = document.getElementById("input-mother-no");
+                            var radioValue = document.querySelector('input[name="mother"]:checked').value;
                             
-                        </div>
-                        <div class="social">
-                            <span><i class="fa fa-share-alt"></i></span>
-                            <span><i class="fa fa-heart"></i></span>
-                            
-                        </div>
-                        <div class="user_name">
-                            <h3>Peter Hawkins</h3>
-                            <div class="detail">
-                                <p><a href="#">Izmar,Turkey</a>Hiring</p>
-                                <p>17 last day . 94Apply</p>
-                            </div>
-                        </div>
-                    </div>
+                            if(radioValue === "yes") {
+                              yesInput.style.display = "block";
+                              noInput.style.display = "none";
+                              document.getElementById("input-yes").style.display = "none";
+                              document.getElementById("input-no").style.display = "none";
+                            } else if(radioValue === "no") {
+                              noInput.style.display = "block";
+                              yesInput.style.display = "none";
+                              document.getElementById("input-yes").style.display = "none";
+                              document.getElementById("input-no").style.display = "none";
+                            }
+                          }
+
+                          function calculateAge() {
+                            var dob = new Date(document.querySelector('input[name="father-dob"]').value);
+                            var today = new Date();
+                            var age = today.getFullYear() - dob.getFullYear();
+                            var m = today.getMonth() - dob.getMonth();
+                            if (m < 0 || (m === 0 && today.getDate() < dob.getDate())) {
+                              age--;
+                            }
+                            document.getElementById("father-age").innerHTML = age + " years old";
+                          }
+
+
+                          function calculateMomAge() {
+                            var dob = new Date(document.querySelector('input[name="mother-dob"]').value);
+                            var today = new Date();
+                            var age = today.getFullYear() - dob.getFullYear();
+                            var m = today.getMonth() - dob.getMonth();
+                            if (m < 0 || (m === 0 && today.getDate() < dob.getDate())) {
+                              age--;
+                            }
+                            document.getElementById("mother-age").innerHTML = age + " years old";
+                          }
+                          
+                      
+                    </script>                     
+                      
+
                     <div class="buttons button_space">
                         <button class="back_button">Back</button>
                         <button class="submit_button">Submit</button>

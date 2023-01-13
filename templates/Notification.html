@@ -1,0 +1,68 @@
+
+{% extends 'base.html' %}
+{%load static%}
+
+{% block content %}
+
+<head>
+    <nav class="navbar bg-dark" data-bs-theme="dark">
+      
+        <div class="row">
+          <div>
+            <h1 class="text-center"style="color:#A0A0A0;">&nbsp&nbsp&nbsp&nbspRisk Assessment</h1>
+          </div>
+        </div>
+    </nav>
+</head>
+<body>
+    <br>
+  <div class="container">
+    
+    <h5 style="color:#A0A0A0">New notifications</h5>
+    <a href={%url 'form'%}>
+        <div class="alert alert-primary" >
+            Client01
+        </div>
+    </a>
+    <a href={%url 'form'%}>
+        <div class="alert alert-success" >
+            Client02
+        </div>
+    </a>
+    <a href={%url 'form'%}>
+        <div class="alert alert-info" >
+            Client03
+        </div>
+    </a>
+    <a href={%url 'form'%}>
+        <div class="alert alert-warning" >
+            Client04
+          </div>
+    </a>
+    <a href={%url 'form'%}>
+        <div class="alert alert-danger" >
+            Client05
+        </div>
+    </a>
+    <a href={%url 'form'%}>
+        <div class="alert alert-success" >
+            Client06
+        </div>
+    </a>
+    <a href={%url 'form'%}>
+        <div class="alert alert-secondary" >
+            Client07
+        </div>
+    </a>
+  </div>
+  <script
+  src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+  integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+  crossorigin="anonymous"
+></script>
+</body>
+</html>
+
+
+
+{% endblock content  %}}
