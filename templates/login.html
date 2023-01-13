@@ -1,335 +1,266 @@
 <!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Google Signin</title>
-    <style>
-		 body{
-	margin:0;
-	color:#6a6f8c;
-	background:rgb(38,44,72);
-	font:600 16px/18px 'Open Sans',sans-serif;
+<html lang="en" dir="ltr">
+   <head>
+      <meta charset="utf-8">
+      <title>Login and Registration</title>
+      <link rel="stylesheet" href="style.css">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <style>
+        @import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
 }
-*,:after,:before{box-sizing:border-box}
-.clearfix:after,.clearfix:before{content:'';display:table}
-.clearfix:after{clear:both;display:block}
-a{color:inherit;text-decoration:none}
-
-.login-wrap{
-  top: 100px;
-	width:100%;
-	margin:auto;
-	max-width:525px;
-	min-height:670px;
-	position:relative;
-	background:url(https://raw.githubusercontent.com/khadkamhn/day-01-login-form/master/img/bg.jpg) no-repeat center;
-	box-shadow:0 12px 15px 0 rgba(0,0,0,.24),0 17px 50px 0 rgba(0,0,0,.19);
+html,body{
+  display: grid;
+  height: 100%;
+  width: 100%;
+  place-items: center;
+  background: -webkit-linear-gradient(left, #538bab, #222268);
 }
-.login-html{
-	width:100%;
-	height:100%;
-	position:absolute;
-	padding:90px 70px 50px 70px;
-	background:rgba(40,57,101,.9);
+::selection{
+  background: #fa4299;
+  color: #fff;
 }
-.login-html .sign-in-htm,
-.login-html .sign-up-htm{
-	top:0;
-	left:0;
-	right:0;
-	bottom:0;
-	position:absolute;
-	transform:rotateY(180deg);
-	backface-visibility:hidden;
-	transition:all .4s linear;
+.wrapper{
+  overflow: hidden;
+  max-width: 390px;
+  background: #fff;
+  padding: 30px;
+  border-radius: 5px;
+  box-shadow: 0px 15px 20px rgba(0,0,0,0.1);
 }
-.login-html .sign-in,
-.login-html .sign-up,
-.login-form .group .check{
-	display:none;
+.wrapper .title-text{
+  display: flex;
+  width: 200%;
 }
-.login-html .tab,
-.login-form .group .label,
-.login-form .group .button{
-	text-transform:uppercase;
+.wrapper .title{
+  width: 50%;
+  font-size: 35px;
+  font-weight: 600;
+  text-align: center;
+  transition: all 0.6s cubic-bezier(0.68,-0.55,0.265,1.55);
 }
-.login-html .tab{
-	font-size:22px;
-	margin-right:15px;
-	padding-bottom:5px;
-	margin:0 15px 10px 0;
-	display:inline-block;
-	border-bottom:2px solid transparent;
+.wrapper .slide-controls{
+  position: relative;
+  display: flex;
+  height: 50px;
+  width: 100%;
+  overflow: hidden;
+  margin: 30px 0 10px 0;
+  justify-content: space-between;
+  border: 1px solid lightgrey;
+  border-radius: 5px;
 }
-.login-html .sign-in:checked + .tab,
-.login-html .sign-up:checked + .tab{
-	color:#fff;
-	border-color:#1161ee;
+.slide-controls .slide{
+  height: 100%;
+  width: 100%;
+  color: #fff;
+  font-size: 18px;
+  font-weight: 500;
+  text-align: center;
+  line-height: 48px;
+  cursor: pointer;
+  z-index: 1;
+  transition: all 0.6s ease;
 }
-.login-form{
-	min-height:345px;
-	position:relative;
-	perspective:1000px;
-	transform-style:preserve-3d;
+.slide-controls label.signup{
+  color: #000;
 }
-.login-form .group{
-	margin-bottom:15px;
+.slide-controls .slider-tab{
+  position: absolute;
+  height: 100%;
+  width: 50%;
+  left: 0;
+  z-index: 0;
+  border-radius: 5px;
+  background: -webkit-linear-gradient(left, #538bab, #222268);
+  transition: all 0.6s cubic-bezier(0.68,-0.55,0.265,1.55);
 }
-.login-form .group .label,
-.login-form .group .input,
-.login-form .group .button{
-	width:100%;
-	color:#fff;
-	display:block;
+input[type="radio"]{
+  display: none;
 }
-.login-form .group .input,
-.login-form .group .button{
-	border:none;
-	padding:15px 20px;
-	border-radius:25px;
-	background:rgba(255,255,255,.1);
+#signup:checked ~ .slider-tab{
+  left: 50%;
 }
-.login-form .group input[data-type="password"]{
-	text-security:circle;
-	-webkit-text-security:circle;
+#signup:checked ~ label.signup{
+  color: #fff;
+  cursor: default;
+  user-select: none;
 }
-.login-form .group .label{
-	color:#aaa;
-	font-size:12px;
+#signup:checked ~ label.login{
+  color: #000;
 }
-.login-form .group .button{
-	background:#1161ee;
+#login:checked ~ label.signup{
+  color: #000;
 }
-.login-form .group label .icon{
-	width:15px;
-	height:15px;
-	border-radius:2px;
-	position:relative;
-	display:inline-block;
-	background:rgba(255,255,255,.1);
+#login:checked ~ label.login{
+  cursor: default;
+  user-select: none;
 }
-.login-form .group label .icon:before,
-.login-form .group label .icon:after{
-	content:'';
-	width:10px;
-	height:2px;
-	background:#fff;
-	position:absolute;
-	transition:all .2s ease-in-out 0s;
+.wrapper .form-container{
+  width: 100%;
+  overflow: hidden;
 }
-.login-form .group label .icon:before{
-	left:3px;
-	width:5px;
-	bottom:6px;
-	transform:scale(0) rotate(0);
+.form-container .form-inner{
+  display: flex;
+  width: 200%;
 }
-.login-form .group label .icon:after{
-	top:6px;
-	right:0;
-	transform:scale(0) rotate(0);
+.form-container .form-inner form{
+  width: 50%;
+  transition: all 0.6s cubic-bezier(0.68,-0.55,0.265,1.55);
 }
-.login-form .group .check:checked + label{
-	color:#fff;
+.form-inner form .field{
+  height: 50px;
+  width: 100%;
+  margin-top: 20px;
 }
-.login-form .group .check:checked + label .icon{
-	background:#1161ee;
+.form-inner form .field input{
+  height: 100%;
+  width: 100%;
+  outline: none;
+  padding-left: 15px;
+  border-radius: 5px;
+  border: 1px solid lightgrey;
+  border-bottom-width: 2px;
+  font-size: 17px;
+  transition: all 0.3s ease;
 }
-.login-form .group .check:checked + label .icon:before{
-	transform:scale(1) rotate(45deg);
+.form-inner form .field input:focus{
+  border-color: #0c4a9b;
+  /* box-shadow: inset 0 0 3px #fb6aae; */
 }
-.login-form .group .check:checked + label .icon:after{
-	transform:scale(1) rotate(-45deg);
+.form-inner form .field input::placeholder{
+  color: #999;
+  transition: all 0.3s ease;
 }
-.login-html .sign-in:checked + .tab + .sign-up + .tab + .login-form .sign-in-htm{
-	transform:rotate(0);
+form .field input:focus::placeholder{
+  color: #b3b3b3;
 }
-.login-html .sign-up:checked + .tab + .login-form .sign-up-htm{
-	transform:rotate(0);
+.form-inner form .pass-link{
+  margin-top: 5px;
 }
-
-.hr{
-	height:2px;
-	margin:60px 0 50px 0;
-	background:rgba(255,255,255,.2);
+.form-inner form .signup-link{
+  text-align: center;
+  margin-top: 30px;
 }
-.foot-lnk{
-	text-align:center;
+.form-inner form .pass-link a,
+.form-inner form .signup-link a{
+  color: #6c14f1;
+  text-decoration: none;
 }
-        #google-button {
-            margin: 20px;
-            margin-top: 25px;
-        }
-
-        .container {
-            margin: 20px;
-            background-color: rgba(66, 133, 244, 0.15);
-            padding: 10px;
-            border-radius: 10px;
-            width: 450px;
-            margin-top: 25px;
-            display: none;
-        }
-
-        img {
-            width: 56px;
-            border-radius: 50%;
-        }
-
-        .id,
-        .email,
-        .name {
-            display: inline-block;
-            font-family: 'Verdana';
-        }
-
-        .name {
-            font-size: 30px;
-            position: relative;
-            top: -16px;
-            margin-left: 5px;
-        }
-
-        lable {
-            font-family: 'Arial Black';
-        }
-
-        button {
-            display: block;
-            background-color: #4285F4;
-            border: 0px;
-            padding: 8px 20px;
-            color: white;
-            margin-top: 15px;
-            cursor: pointer;
-            outline: none;
-        }
-    </style>
-</head>
-  <body>
-	<div class="login-wrap">
-		<div class="login-html">
-			<input id="tab-1" type="radio" name="tab" class="sign-in" checked><label for="tab-1" class="tab">Sign In</label>
-			<input id="tab-2" type="radio" name="tab" class="sign-up"><label for="tab-2" class="tab">Sign Up</label>
-			<div class="login-form">
-				<div class="sign-in-htm">
-					<div class="group">
-						<label for="user" class="label">Username</label>
-						<input id="user" type="text" class="input">
-					</div>
-					<div class="group">
-						<label for="pass" class="label">Password</label>
-						<input id="pass" type="password" class="input" data-type="password">
-					</div>
-					<div class="group">
-						<input id="check" type="checkbox" class="check" checked>
-						<label for="check"><span class="icon"></span> Keep me Signed in</label>
-					</div>
-					<div class="group">
-						<input type="submit" class="button" value="Sign In">
-					</div>
-					<div class="hr"></div>
-					<div class="foot-lnk">
-						<a href="#forgot">Forgot Password?</a>
-					</div>
-				</div>
-				<div class="sign-up-htm">
-					<div class="group">
-						<label for="user" class="label">Username</label>
-						<input id="user" type="text" class="input">
-					</div>
-					<div class="group">
-						<label for="pass" class="label">Password</label>
-						<input id="pass" type="password" class="input" data-type="password">
-					</div>
-					<div class="group">
-						<label for="pass" class="label">Repeat Password</label>
-						<input id="pass" type="password" class="input" data-type="password">
-					</div>
-					<div class="group">
-						<label for="pass" class="label">Email Address</label>
-						<input id="pass" type="text" class="input">
-					</div>
-					<div class="group">
-						<input type="submit" class="button" value="Sign Up">
-					</div>
-					<div class="hr"></div>
-					<div class="foot-lnk">
-						<label for="tab-1">Already Member?</a>
-							<div id="google-button" style="padding-left: 20%; padding-bottom: -10%;"></div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-
-    
-    <div class="container">
-        <img src="" alt="profile" class="img">
-        <div class="name"></div>
-        <br>
-        <lable>ID: </lable>
-        <div class="id"></div>
-        <br>
-        <lable>Email: </lable>
-        <div class="email"></div>
-        <button onClick="signOut()">Sign Out</button>
-    </div>
-    <script>
-        var googleButton = document.getElementById('google-button');
-        var container = document.getElementsByClassName('container')[0];
-        var img = document.getElementsByClassName('img')[0];
-        var getName = document.getElementsByClassName('name')[0];
-        var id = document.getElementsByClassName('id')[0];
-        var email = document.getElementsByClassName('email')[0];
-
-        // function to get response
-        function handleCredentialResponse(response) {
-            const responsePayload = decodeJwtResponse(response.credential);
-            img.src = responsePayload.picture;
-            getName.innerHTML = responsePayload.name;
-            id.innerHTML = responsePayload.sub;
-            email.innerHTML = responsePayload.email;
-            container.style.display = 'inline-block';
-            googleButton.style.display = 'none'
-        }
-
-        window.onload = function () {
-            google.accounts.id.initialize({
-                // replace your client id below
-                client_id: "605701801078-bvpk1l3p6nqku2622ec4hj1ebtirdlo0.apps.googleusercontent.com",
-                callback: handleCredentialResponse,
-                auto_select: true,
-                auto: true
-            });
-            google.accounts.id.renderButton(
-                document.getElementById("google-button"),
-                { theme: "filled_blue", size: "medium", width: '200' }  // customization attributes
-            );
-            // also display the One Tap dialog on right side
-            // important for auto login
-            google.accounts.id.prompt(); 
-        }
-
-        // function to decode the response.credential
-        function decodeJwtResponse(token) {
-            var base64Url = token.split('.')[1];
-            var base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
-            var jsonPayload = decodeURIComponent(atob(base64).split('').map(function (c) {
-                return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2);
-            }).join(''));
-            return JSON.parse(jsonPayload);
-        }
-
-        function signOut() {
-            google.accounts.id.disableAutoSelect();
-            // do anything on logout
-            location.reload();
-        }
-    </script>
-    <script src="https://accounts.google.com/gsi/client" async defer></script>
-</body>
-
+.form-inner form .pass-link a:hover,
+.form-inner form .signup-link a:hover{
+  text-decoration: underline;
+}
+form .btn{
+  height: 50px;
+  width: 100%;
+  border-radius: 5px;
+  position: relative;
+  overflow: hidden;
+}
+form .btn .btn-layer{
+  height: 100%;
+  width: 300%;
+  position: absolute;
+  left: -100%;
+  background: -webkit-linear-gradient(right, #538bab, #222268,#538bab, #222268);
+  border-radius: 5px;
+  transition: all 0.4s ease;;
+}
+form .btn:hover .btn-layer{
+  left: 0;
+}
+form .btn input[type="submit"]{
+  height: 100%;
+  width: 100%;
+  z-index: 1;
+  position: relative;
+  background: none;
+  border: none;
+  color: #fff;
+  padding-left: 0;
+  border-radius: 5px;
+  font-size: 20px;
+  font-weight: 500;
+  cursor: pointer;
+}
+      </style>
+   </head>
+   <body>
+      <div class="wrapper">
+         <div class="title-text">
+            <div class="title login">
+               Login Form
+            </div>
+            <div class="title signup">
+               Signup Form
+            </div>
+         </div>
+         <div class="form-container">
+            <div class="slide-controls">
+               <input type="radio" name="slide" id="login" checked>
+               <input type="radio" name="slide" id="signup">
+               <label for="login" class="slide login">Login</label>
+               <label for="signup" class="slide signup">Signup</label>
+               <div class="slider-tab"></div>
+            </div>
+            <div class="form-inner">
+               <form action="#" class="login">
+                  <div class="field">
+                     <input type="text" placeholder="Email Address" required>
+                  </div>
+                  <div class="field">
+                     <input type="password" placeholder="Password" required>
+                  </div>
+                 
+                  <div class="field btn">
+                     <div class="btn-layer"></div>
+                     <input type="submit" value="Login">
+                  </div>
+                  <div class="signup-link">
+                     Not a member? <a href="">Signup now</a>
+                  </div>
+               </form>
+               <form action="#" class="signup">
+                  <div class="field">
+                     <input type="text" placeholder="Email Address" required>
+                  </div>
+                  <div class="field">
+                     <input type="password" placeholder="Password" required>
+                  </div>
+                  <div class="field">
+                     <input type="password" placeholder="Confirm password" required>
+                  </div>
+                  <div class="field btn">
+                     <div class="btn-layer"></div>
+                     <input type="submit" value="Signup">
+                  </div>
+               </form>
+            </div>
+         </div>
+      </div>
+      <script>
+         const loginText = document.querySelector(".title-text .login");
+         const loginForm = document.querySelector("form.login");
+         const loginBtn = document.querySelector("label.login");
+         const signupBtn = document.querySelector("label.signup");
+         const signupLink = document.querySelector("form .signup-link a");
+         signupBtn.onclick = (()=>{
+           loginForm.style.marginLeft = "-50%";
+           loginText.style.marginLeft = "-50%";
+         });
+         loginBtn.onclick = (()=>{
+           loginForm.style.marginLeft = "0%";
+           loginText.style.marginLeft = "0%";
+         });
+         signupLink.onclick = (()=>{
+           signupBtn.click();
+           return false;
+         });
+      </script>
+   </body>
 </html>
