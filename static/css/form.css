@@ -22,7 +22,7 @@
     
 }
 body{
-    background-color:#eee;
+    background-color:linear-gradient(left, #538bab, #222268);
 }
 .container {
     height: 100vh;
