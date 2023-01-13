@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
+      crossorigin="anonymous"
+    />
+</head>
+
+<style>
+    .card-body {
+    flex: 1 1 auto;
+    padding: 1.25rem;
+}
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+div {
+    display: block;
+}
+body{
+    background-color: #efefef;
+}
+
+</style>
+<script>
+    function abc(){
+        var b=document.getElementById('demo').value;
+        var c=document.getElementById('demo1').innerHTML=b;
+
+    }
+</script>
+
+<body>
+    <div class="header">
+
+        <header class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow">
+            <a class="navbar-brand col-md-2 col-lg-2 me-0 px-3 fs-6" href="#">Dashboard</a>
+            <button class="navbar-toggler position-absolute d-md-none collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="col-md-8">
+                <input class="form-control form-control-dark w-100 rounded-0 border-0" id="demo" type="text"
+                 placeholder="Set Target Per Month" aria-label="Search">
+
+
+            </div>
+
+            <div class="col-md-1" >
+                <div class="navbar-nav">
+                    <div class="nav-item text-nowrap">
+                      
+                      <a class="nav-link px-3" style="border:0.2px solid rgb(136, 132, 132) ;" href="#" onclick="abc()">Save Target</a>
+
+        
+                    </div>
+                  </div>
+
+            </div>
+            <div class="col-md-1" >
+                <div class="navbar-nav">
+                    <div class="nav-item text-nowrap">
+                      
+                      <a class="nav-link px-3"  style="border:0.5px solid rgb(136, 132, 132)"href="#">Sign out</a>
+
+        
+                    </div>
+                  </div>
+
+            </div>
+            
+          </header>
+
+
+          
+    </div>  
+
+    <div class="row my-4" style="display: flex;
+    flex-wrap: wrap;
+    margin-right: -15px;
+    margin-left: -15px;
+    ">
+    <div class="col-md-2">
+
+        
+
+    </div>
+    <div class="col-md-3 col-xl-3" style="display:block;"  >
+        <div class="card mb-3 widget-content bg-midnight-bloom" style="background-image: radial-gradient(circle 248px at center,#16d9e3 0%,#30c7ec 47%,#46aef7 100%)!important";  font-size: .88rem;
+        font-weight: 400;
+        line-height:1.8;    text-align: left">
+        <div class="widget-content-wrapper text-black">
+         <div class="widget-content-left mx-2" style="color:white ">
+        <div class="widget-heading">Total Target</div>
+        <div class="widget-subheading">Per Month</div>
+        </div>
+        <div class="widget-content-right">
+        <div class="widget-numbers text-white mx-2" align="right " id="demo1"><span>1896</span></div>
+        </div>
+        </div>
+        </div>
+    </div>
+    <div class="col-md-3 col-xl-3" style="display:block;" >
+        <div class="card mb-3 widget-content bg-midnight-bloom" style="    background-image: linear-gradient(-20deg,#2b5876 0%,#4e4376 100%)!important;
+    ;  font-size: .88rem;
+        font-weight: 400;
+        line-height:1.8;    text-align: left">
+        <div class="widget-content-wrapper text-black">
+         <div class="widget-content-left mx-2" style="color:white ">
+        <div class="widget-heading">Total Team Members</div>
+        <div class="widget-subheading">Last year expenses</div>
+        </div>
+        <div class="widget-content-right">
+        <div class="widget-numbers text-white mx-2" align="right "><span>7</span></div>
+        </div>
+        </div>
+        </div>
+    </div>
+
+    <div class="col-md-3 col-xl-3" style="display:block" >
+        <div class="card mb-3 widget-content bg-midnight-bloom" style="    background-image: linear-gradient(to top,#0ba360 0%,#3cba92 100%)!important;
+    ";
+    ;  font-size: .88rem;
+        font-weight: 400;
+        line-height:1.8;    text-align: left">
+        <div class="widget-content-wrapper text-black">
+         <div class="widget-content-left mx-2" style="color:white ">
+        <div class="widget-heading">Target Acheived</div>
+        <div class="widget-subheading">Per Month</div>
+        </div>
+        <div class="widget-content-right">
+        <div class="widget-numbers text-white mx-2" align="right "><span>1896</span></div>
+        </div>
+        </div>
+        </div>
+    </div>
+     
+
+    
+    
+    
+        </div>
+
+        <div class="row">
+            <div class="col-md-2">
+                
+            </div>
+            <div class="col-md-9">
+                <div class="page-content page-container" id="page-content">
+    <div class="padding">
+        <div class="row container d-flex justify-content-center">
+<div class="col-lg-12 grid-margin stretch-card">
+              <div class="card">
+                <div class="card-body">
+                  <h4 class="card-title">Team Members</h4>
+                  <p class="card-description">
+                
+                  </p>
+                  <div class="table-responsive">
+                    <table class="table table-striped">
+                      <thead>
+                        <tr>
+                          <th>ID</th>
+                          <th>Name</th>
+                          <th>Email</th>
+                          <th>Progress</th>
+                          <th>Amount</th> 
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>12311</td>
+                          <td>Herman Beck</td>
+                          <td>herman@gmail.com</td>
+                          <td>
+                            <div class="progress">
+                              <div class="progress-bar bg-success" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                          </td>
+                          <td> $ 77.99</td>
+                          
+                        </tr>
+                        <tr>
+                          <td > 2322</td>
+                          <td>Ahsan Sajid</td>
+                          <td>ahsan@gmail.com</td>
+                          <td>
+
+                            <div class="progress" >
+                              <div class="progress-bar bg-danger" role="progressbar" style="width: 75%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                          </td>
+                          <td>$245.30</td>
+                          
+                        </tr>
+                        <tr>
+                          <td>22321</td>
+                          <td>John Richards</td>
+                          <td>john232@gmail.com</td>
+                          <td>
+                            <div class="progress">
+                              <div class="progress-bar bg-warning" role="progressbar" style="width: 90%" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                          </td>
+                          <td>
+                            $138.00
+                          </td>
+                          
+                        </tr>
+                        <tr>
+                          <td>22211</td>
+                          <td>
+                            Peter Meggik
+                          </td>
+                          <td>petr213@gmail.com</td>
+                          <td>
+                            <div class="progress">
+                              <div class="progress-bar bg-primary" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                          </td>
+                          <td>
+                            $ 77.99
+                          </td>
+                          
+                        </tr>
+                        <tr>
+                          <td>23232</td>
+                          <td>
+                            Edward
+                          </td>
+                          <td>eddw32@gmail.com</td>
+                          <td>
+                            <div class="progress">
+                              <div class="progress-bar bg-danger" role="progressbar" style="width: 35%" aria-valuenow="35" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                          </td>
+                          <td>
+                            $ 160.25
+                          </td>
+                        
+                        </tr>
+                        <tr>
+                          <td>32223</td>
+                          <td>
+                            John Doe
+                          </td>
+                          <td>johnny332@gmail.com</td>
+                          <td>
+                            <div class="progress">
+                              <div class="progress-bar bg-info" role="progressbar" style="width: 65%" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                          </td>
+                          <td>
+                            $ 123.21
+                          </td>
+                          
+                        </tr>
+                        <tr>
+                          <td>33222</td>
+                          <td>
+                            Henry Tom
+                          </td>
+                          <td>henn44@gmail.com</td>
+                          <td>
+                            <div class="progress">
+                              <div class="progress-bar bg-warning" role="progressbar" style="width: 20%" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                          </td>
+                          <td>
+                            $ 150.00
+                          </td>
+                          
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+            </div>
+              </div>
+            </div>
+                
+                    
+            </div>
+            
+        </div>
+
+        
+
+
+    
+       
+    
+
+    </div>
+
+    
+    
+
+
+    <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+    crossorigin="anonymous"
+  ></script>
+    
+</body>
+</html>
