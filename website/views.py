@@ -15,4 +15,7 @@ def notification(request):
     return render(request, 'Notification.html',{"clients":clients,"color":color})   
 
 def RiskAssessment(request):
-    return render(request, 'RiskAssessment.html',{})    
+    return render(request, 'RiskAssessment.html',{})
+
+def payPremium(request):
+    return render(request, 'payPremium.html',{})    
