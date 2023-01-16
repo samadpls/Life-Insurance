@@ -33,12 +33,50 @@ body{
 <script>
     function abc(){
         var b=document.getElementById('demo').value;
-        var c=document.getElementById('demo1').innerHTML=b;
+        var b1=document.getElementById('demo').value.length;
+       
 
-    }
+        
+        console.log(c)
+        var c=document.getElementById('demo1').innerHTML=b;
+        var alert=document.getElementById('myAlert')
+        var alert1=document.getElementById('myAlert1')
+
+        var d=document.getElementById('a')
+        if(b1==0){
+          alert1.style.display = "block";
+          
+          
+          setTimeout(function(){
+          alert1.style.display = "none";
+          }, 3000);
+
+        }
+
+        else{
+          alert.style.display = "block";
+    setTimeout(function(){
+      alert.style.display = "none";
+    }, 3000);
+
+        }
+
+        
+
+        
+        
+
+      
+
+
+        
+  }
+  
 </script>
 
 <body>
+  
+  
     <div class="header">
 
         <header class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow">
@@ -47,7 +85,7 @@ body{
               <span class="navbar-toggler-icon"></span>
             </button>
             <div class="col-md-8">
-                <input class="form-control form-control-dark w-100 rounded-0 border-0" id="demo" type="text"
+                <input class="form-control form-control-dark w-100 rounded-0 border-0" id="demo" type="number"
                  placeholder="Set Target Per Month" aria-label="Search">
 
 
@@ -57,7 +95,7 @@ body{
                 <div class="navbar-nav">
                     <div class="nav-item text-nowrap">
                       
-                      <a class="nav-link px-3" style="border:0.2px solid rgb(136, 132, 132) ;" href="#" onclick="abc()">Save Target</a>
+                      <a class="nav-link px-3"id='a' style="border:0.2px solid rgb(136, 132, 132) ;" href="#" onclick="abc()">Save Target</a>
 
         
                     </div>
@@ -81,6 +119,12 @@ body{
 
           
     </div>  
+    <div class="alert alert-success" id="myAlert" style="display:none">
+      <strong>Success!</strong> Target has been set successfully
+    </div>
+    <div class="alert alert-danger" id="myAlert1" style="display:none">
+      <strong>Error!</strong> Please enter a value
+    </div>
 
     <div class="row my-4" style="display: flex;
     flex-wrap: wrap;
@@ -301,8 +345,7 @@ body{
     
 
     </div>
-
-    
+   
     
 
 
