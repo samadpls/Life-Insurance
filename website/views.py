@@ -10,7 +10,24 @@ from django.contrib.auth import get_user_model
 # Create your views here.
 
 def home(request):
+<<<<<<< HEAD
     return render(request, 'index.html', {})
+=======
+    return render(request, 'index.html',{})
+def form(request):
+    return render(request, 'form.html',{})  
+
+def notification(request):
+    
+    clients=['Jhon',"ali","umer","qasim"]
+    color=["alert-primary","alert-success","alert-info","alert-warning","alert-danger","alert-success","alert-secondary"]
+
+    
+    return render(request, 'Notification.html',{"clients":clients,"color":color})   
+
+def RiskAssessment(request):
+    return render(request, 'RiskAssessment.html',{})    
+>>>>>>> a94a416520141181fe177c68a1be06015e8dd17e
 
 
 @csrf_exempt
@@ -72,4 +89,8 @@ def Sadabahar(request):
 
 
 def ChildProtection(request):
+<<<<<<< HEAD
     return render(request, 'ChildProtection.html', {})
+=======
+    return render(request, 'ChildProtection.html',{})
+>>>>>>> a94a416520141181fe177c68a1be06015e8dd17e
