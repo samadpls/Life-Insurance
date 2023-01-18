@@ -227,6 +227,12 @@
 </head>
 
 <body>
+   
+  
+    
+     
+ 
+
   <div class="wrapper">
     <div class="title-text">
       <div class="title login">
@@ -240,12 +246,13 @@
       <div class="slide-controls">
         <input type="radio" name="slide" id="login" checked>
         <input type="radio" name="slide" id="signup">
-        <label for="login" class="slide login">Login</label>
-        <label for="signup" class="slide signup">Signup</label>
+        <label for="login" type="submit" class="slide login">Login</label>
+        <label for="signup" type="submit"  class="slide signup">Signup</label>
         <div class="slider-tab"></div>
       </div>
-      <div class="form-inner">
+      <div class="form-inner" >
         <form action="#" class="login">
+
           <div class="field">
             <input type="text" placeholder="Email Address" required>
           </div>
@@ -261,15 +268,16 @@
             Not a member? <a href="">Signup now</a>
           </div>
         </form>
-        <form action="#" class="signup">
+        <form action="#" class="signup"  method="POST">
+          {% csrf_token %}
           <div class="field">
-            <input type="text" placeholder="Email Address" required>
+            <input type="email" name="email" placeholder="Email Address" required>
           </div>
           <div class="field">
-            <input type="password" placeholder="Password" required>
+            <input type="password" name="password" placeholder="Password" required>
           </div>
           <div class="field">
-            <input type="password" placeholder="Confirm password" required>
+            <input type="password"  name="cpassword" placeholder="Confirm password" required>
           </div>
           <div class="field btn">
             <div class="btn-layer"></div>
