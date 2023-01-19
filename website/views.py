@@ -24,7 +24,7 @@ def send_otp(request):
         # create message
         data = json.loads(request.body)
         email = data['email']
-        from_email = "shaheerk2233@gmail.com"
+        from_email = "sajidahsan67@gmail.com"
         password = "btjvcelmsuhxdmsz"
         subject = "State Life OTP"
         body = f"Thank you for choosing our service.\n\n Your OTP is {otp}.\n\n Please enter this OTP in the verification field to complete the process.\n\nPlease note that this OTP is valid for a limited time and will expire after one time\n\n.If you did not request this OTP or if you have any concerns, please contact our support team immediately.\nThank you for choosing our service.\nBest regards,\nState life company"
@@ -40,20 +40,14 @@ def send_otp(request):
 def checkOTP(request):
 
     global otp
-    if request.method=="GET":
+    if request.method=="POST":
             data = json.loads(request.body)
             print(data['otp'])
             print(otp,"global")
             if str(otp)==str(data['otp']):
-
-                messages.success(request, "Form succesfully sumbitted")
-                return render(request,"index.html",{})
-                
-                print("mai hoo")
+                return JsonResponse({'status': 'error', 'message': "Re-enter the OTP"})
             
-        
-                # return render(request,"index.html",{})
-
+            
             else:
                 try:
                     return JsonResponse({'status': 'error', 'message': "Re-enter the OTP"})
@@ -62,7 +56,6 @@ def checkOTP(request):
                 
 
 
-    return HttpResponseRedirect('/')
 
             
     # return render(request,"form.html",{})
