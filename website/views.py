@@ -43,25 +43,23 @@ def target(request):
         
     
     if request.method == 'POST':
-        
-        
-    
-       
-        team_name = request.POST.get('teamname')
         team_email = request.POST.get('emailteam')
-        team_pas = request.POST.get('teampass')
-        team=team_register()
-        
-        
-
+        if "@teams.com" in team_email:
+            team_name = request.POST.get('teamname')
+            team_pas = request.POST.get('teampass')
+            if len(team_pas)>=5:
+                team, created = team_register.objects.get_or_create(
+                    emailteam=team_email,team_password=team_pas,team_name=team_name)
+                if created:
+                    messages.error(request,"Team registered successfully!")
+                    return redirect('target')
+                
+            # team=team_register()
             
-    
-        
-        
-        team.team_name=team_name
-        team.team_email=team_email
-        team.team_password=team_pas
-        team.save()
+            # team.team_name=team_name
+            # team.team_email=team_email
+            # team.team_password=team_pas
+            # team.save()
         
         # return render(request,"target.html")
         
