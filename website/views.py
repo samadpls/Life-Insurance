@@ -38,30 +38,30 @@ def delete_item(request,team_id):
 
 @csrf_exempt
 def target(request):
-   
-
-        
-    
     if request.method == 'POST':
         team_email = request.POST.get('emailteam')
         if "@teams.com" in team_email:
             team_name = request.POST.get('teamname')
             team_pas = request.POST.get('teampass')
             if len(team_pas)>=5:
-                team, created = team_register.objects.get_or_create(
-                    emailteam=team_email,team_password=team_pas,team_name=team_name)
+                created=team_register.objects.filter(team_email=team_email).exists()
                 if created:
-                    messages.error(request,"Team registered successfully!")
+                    messages.error(request,"Email already exists!")
                     return redirect('target')
-                
-            # team=team_register()
-            
-            # team.team_name=team_name
-            # team.team_email=team_email
-            # team.team_password=team_pas
-            # team.save()
-        
-        # return render(request,"target.html")
+                else:
+                    teams=team_register()
+                    teams.team_name=team_name
+                    teams.team_email=team_email
+                    teams.team_password=team_pas
+                    teams.save()
+                    messages.error(request,"Team email already exist registered")
+                    return redirect('target')
+            else:
+                messages.error(request,"length of password is not matched")
+                return redirect('target')
+        else:
+            messages.error(request,"team email is not valid")
+            return redirect('target')    
         
     task=team_register.objects.all()
     

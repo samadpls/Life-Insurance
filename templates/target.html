@@ -115,6 +115,19 @@ setTimeout(function(){
 
           
     </div>  
+    {% if messages %}
+
+    {% for message in messages%}
+    <div class="alert alert-danger" id="alert-message">{{message}}</div>
+    {% endfor %}
+  
+    <script>
+      setTimeout(function(){
+        document.getElementById("alert-message").style.display="none";
+  
+      },3000)
+    </script>
+    {%endif%}
 
   
     <div class="alert alert-success" id="myAlert" style="display:none">
