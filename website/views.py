@@ -1,8 +1,8 @@
 from django.shortcuts import redirect, render
 from django.views.decorators.csrf import csrf_exempt
-from registration.models import register
+from registration.models import *
 # from Signup.models import Signup
-
+from django.contrib import messages
 from django.contrib.auth import get_user_model
 
 
@@ -10,9 +10,9 @@ from django.contrib.auth import get_user_model
 # Create your views here.
 
 def home(request):
-<<<<<<< HEAD
+
     return render(request, 'index.html', {})
-=======
+
     return render(request, 'index.html',{})
 def form(request):
     return render(request, 'form.html',{})  
@@ -26,33 +26,108 @@ def notification(request):
     return render(request, 'Notification.html',{"clients":clients,"color":color})   
 
 def RiskAssessment(request):
-    return render(request, 'RiskAssessment.html',{})    
->>>>>>> a94a416520141181fe177c68a1be06015e8dd17e
+    return render(request, 'RiskAssessment.html',{})  
+
+csrf_exempt
+def delete_item(request,team_id):
+    
+    data=team_register.objects.get(team_id=team_id)
+    data.delete()
+
+    return redirect('/target')
+
+@csrf_exempt
+def target(request):
+   
+
+        
+    
+    if request.method == 'POST':
+        
+        
+    
+       
+        team_name = request.POST.get('teamname')
+        team_email = request.POST.get('emailteam')
+        team_pas = request.POST.get('teampass')
+        team=team_register()
+        
+        
+
+            
+    
+        
+        
+        team.team_name=team_name
+        team.team_email=team_email
+        team.team_password=team_pas
+        team.save()
+        
+        # return render(request,"target.html")
+        
+    task=team_register.objects.all()
+    
+    print(task)
+        # task2={'task':task}
+        
+    return render(request,"target.html",{'task':task})
 
 
+
+            
+             
 @csrf_exempt
 def login(request):
     
-    
-    
-    
-    
-        
-        
+    if request.method=='GET':
+        try:
+            login_email=request.GET.get("login_name")
+            login_pwd=request.GET.get("login_pwd")
+            if "@teams.com" in login_email:
+                try:
+                    team = team_register.objects.get(team_email=login_email,team_password=login_pwd)
+                    return redirect("target")
+                except team_register.DoesNotExist:
+                    messages.error(request,"Email or password is not correct")
+                    return redirect('login')  
+            elif "@salesmanager.com" in login_email:
+                pass
+             
+            else:
+                try:
+                    team = register.objects.get(user_name=login_email,user_password=login_pwd)
+                    return redirect("/")
+                except register.DoesNotExist:
+                    messages.error(request,"Email or password is not correct")
+                    return redirect('login')  
+                 
+        except:
+            return render(request,"login.html")
 
     if request.method == 'POST':
-        print('hello1')
+        email = request.POST.get('email')
+        pwd = request.POST.get('password')
+        if not( ("@teams.com" or "@salesmanager.com") in email):
+            cpwd = request.POST.get('cpassword')
+            reg_id=register.objects.all()
+            for id in reg_id:
+                if id.user_name==email:
+                    messages.error(request,"Email already exists")
+                    return redirect('login') 
 
-        type1 = request.POST.get('email')
-        type2 = request.POST.get('password')
-
-        type3 = request.POST.get('cpassword')
-
-        if type2 == type3:
-            data = register()
-            data.user_name = type1
-            data.user_password = type2
-            data.save()
+            if pwd == cpwd:
+                data = register()
+                data.user_name = email
+                data.user_password = pwd
+                data.save()
+                        
+            else:
+                messages.error(request,"Password doesn't match")
+                return redirect('login')
+               
+        else:
+            messages.error(request,"Invalid Email")
+            return redirect('login') 
             
             
             # print('hello2')
@@ -89,8 +164,5 @@ def Sadabahar(request):
 
 
 def ChildProtection(request):
-<<<<<<< HEAD
     return render(request, 'ChildProtection.html', {})
-=======
-    return render(request, 'ChildProtection.html',{})
->>>>>>> a94a416520141181fe177c68a1be06015e8dd17e
+
