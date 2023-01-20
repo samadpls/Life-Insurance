@@ -64,22 +64,13 @@
                     </div>
                     <div class="steps-content">
                         <h3>Step <span class="step-number">1</span></h3>
-                        <p class="step-number-content active">Please enter your personal information to complete the
+                        <p class="step-number-content active">Please enter your information to complete the
                             policy form.</p>
-                        <p class="step-number-content d-none">Please enter your personal information to complete the
-                            policy form.</p>
-                        <p class="step-number-content d-none">Please enter your personal information to complete the
-                            policy form.</p>
-                        <p class="step-number-content d-none">Please provide your physical information in the form.
-                            to proceed.</p>
-                        <p class="step-number-content d-none">Please provide your physical information in the form.
-                            to proceed.</p>
-                        <p class="step-number-content d-none">Please provide your family history to complete your form.</p>
-                        <p class="step-number-content d-none">OTP has been send in your gmail.
-                        </p>
+                        
                     </div>
                     <ul class="progress-bar">
                         <li class="active">Personal Information</li>
+                        <li>Personal Information</li>
                         <li>Personal Information</li>
                         <li>Personal Information</li>
                         <li>Physical Information</li>
@@ -166,6 +157,62 @@
                             <button class="next_button">Next Step</button>
                         </div>
                     </div>
+
+                    <div class="main">
+                        <small><i class="fa fa-smile-o"></i></small>
+                        <div class="text">
+                            <h2>Your Personal Information</h2>
+                            <p>Please enter your personal information to complete the policy form.</p>
+                        </div>
+                        <div class="input-text">
+                            <div class="input-div">
+                                <p><strong>Nominee</strong></p>
+                                <input type="text" id="nominee" name="nominee" >
+                                
+                            </div>
+                            <div class="input-div">
+                                <p>Date of Birth</p>
+                                <input type="date" required id="dobNominee" name="dobNominee" placeholder="">
+
+                            </div>
+                            <div class="input-div">
+                                <p>Age</p>
+                                <input type="number" id="ageNominee" name="ageNominee" disabled>
+
+                            </div>
+                        </div>
+                        <div class="input-text">
+                            <p><strong>Relation</strong></p>
+                            <div class="input-div">
+                                <select id="nomineeRelation" name="nomineeRelation" >
+                                    <option value="" selected>Nominee relation with you</option>
+                                    <option value="father">Father</option>
+                                    <option value="mother">Mother</option>
+                                    <option value="spouse">Spouse</option>
+                                    <option value="child">Child</option>
+                                    <option value="sibling">Sibling</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+                        </div>
+
+
+                        <div class="input-text">
+                            <p><strong>Agent</strong></p>
+                            <div class="input-div">
+                                <select id="agent" name="agent" required>
+                                    <option>Select your Agent</option>
+
+                                </select>
+                            </div>
+                            
+                        </div>
+                        <div class="buttons button_space">
+                            <button class="back_button">Back</button>
+                            <button class="next_button">Next Step</button>
+                        </div>
+                    </div>
+
 
                     <div class="main">
                         <small><i class="fa fa-smile-o"></i></small>
@@ -995,28 +1042,14 @@
                             </div>
                             <div class="buttons button_space " style="margin-top:12px">
                                 <button class="back_button">Back</button>
-                                <button class="next_button">Submit</button>
-                                {% comment %} <button id="otp-button1" onclick="verifyOTP()">Submit</button> {% endcomment %}
+                                <button id="otp-button1" onclick="verifyOTP()">Submit</button>
                                 
                             </div>
                           
                         </div>
                     </div>
                     
-                    <div class="main">
-                        <svg class="checkmark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52">
-                            <circle class="checkmark__circle" cx="26" cy="26" r="25" fill="none" />
-                            <path class="checkmark__check" fill="none" d="M14.1 27.2l7.1 7.2 16.7-16.8" />
-                        </svg>
-
-                        <div class="text congrats">
-                            <h2>Congratulations!</h2>
-                            <p>Thanks Mr./Mrs. <span class="shown_name"></span> your information have been submitted
-                                successfully for the future reference we will contact you soon.</p>
-                        </div>
-                        <div>
-                        </div>
-                    </div>
+                    
                 </div>
 
             </div>
@@ -1072,7 +1105,8 @@
         .then(data => {
             if (data.status === 'success') {
                 alert('OTP sent to your email');
-            } else {
+            } 
+            else {
                 alert('An error occurred while sending the OTP');
             }
         });
@@ -1131,6 +1165,25 @@
         var age = currentYear - dobParts[0];
         // Display the age
         document.getElementById('age').value = age;
+    });
+    var currentDate = new Date();
+    // Set the minimum date to 70 years in the past
+    var minDate = new Date();
+    minDate.setFullYear(minDate.getFullYear() - 70);
+    document.getElementById('dobNominee').min = minDate.toISOString().split('T')[0];
+    // Set the maximum date to the current date
+    document.getElementById('dobNominee').max = currentDate.toISOString().split('T')[0];
+
+    var dobNomineeInput = document.getElementById('dobNominee');
+    // Add an event listener for the "change" event
+    dobNomineeInput.addEventListener('change', function () {
+        // Calculate the age
+        var dobNominee = dobNomineeInput.value;
+        var dobParts = dobNominee.split('-');
+        var currentYear = new Date().getFullYear();
+        var ageNominee = currentYear - dobParts[0];
+        // Display the age
+        document.getElementById('ageNominee').value = ageNominee;
     });
 
     var next_click = document.querySelectorAll(".next_button");
