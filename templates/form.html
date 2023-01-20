@@ -49,15 +49,15 @@
     <script>
         setTimeout(function(){
             document.getElementById("error").style.display="none";
-        }.3000);
+        },3000);
     </script>
     {% endif %}
     <div class="container" style="padding-top: 110px;">
 
         <div class="card" >
 
-            <form class="form" method="POST">
-
+            <form class="form"  action="" method="post">
+                {% csrf_token %}
                 <div class="left-side">
                     <div class="left-heading">
                         <h3>State Life</h3>
@@ -92,39 +92,39 @@
                         </div>
                         <div class="input-text">
                             <div class="input-div">
-                                <input type="text" required id="name">
+                                <input type="text"  name="cname"/ >
                                 <span>Name</span>
                             </div>
                             <div class="input-div">
-                                <input type="text" required id="father-name">
+                                <input type="text"   name="cfname" />
                                 <span>Father/Husband's Name</span>
                             </div>
                         </div>
                         <div class="input-text">
                             <div class="input-div">
-                                <input type="text" required id="phone" name="phone">
+                                <input type="text"  name="phone"  required/>
                                 <span>Phone number</span>
                             </div>
                             <div class="input-div">
-                                <input type="email" required id="email" name="email">
+                                <input type="email" required  id="email" name="email" />
                                 <span>E-mail Address</span>
                             </div>
                         </div>
                         <div class="input-text">
                             <div class="input-div">
-                                <input type="text" required id="address" name="address">
+                                <input type="text" required id="address" name="address"/>
                                 <span>Address</span>
                             </div>
                         </div>
                         <div class="input-text">
                             <div class="input-div">
                                 <p>Date of Birth</p>
-                                <input type="date" required id="dob" name="dob" placeholder="">
+                                <input type="date" required id="dob" name="dob" placeholder=""/>
 
                             </div>
                             <div class="input-div">
                                 <p>Age</p>
-                                <input type="number" id="age" name="age" disabled>
+                                <input type="number" id="age" name="age" disabled/>
 
                             </div>
                         </div>
@@ -167,17 +167,17 @@
                         <div class="input-text">
                             <div class="input-div">
                                 <p><strong>Nominee</strong></p>
-                                <input type="text" id="nominee" name="nominee" >
+                                <input type="text" id="nominee" name="nominee" />
                                 
                             </div>
                             <div class="input-div">
                                 <p>Date of Birth</p>
-                                <input type="date" required id="dobNominee" name="dobNominee" placeholder="">
+                                <input type="date" required id="dobNominee" name="dobNominee" placeholder=""/>
 
                             </div>
                             <div class="input-div">
                                 <p>Age</p>
-                                <input type="number" id="ageNominee" name="ageNominee" disabled>
+                                <input type="number" id="ageNominee" name="ageNominee" disabled/>
 
                             </div>
                         </div>
@@ -213,7 +213,7 @@
                         <div>
                             <h5>Upload your CNIC Bank Statement and Medical Report </h5>
                             <br>
-                            <input multiple="multiple" class="fileupload-input" id="input_6" type="file" name="file" aria-labelledby="label_6" aria-hidden="true" tabindex="-1">
+                            <input multiple="multiple" class="fileupload-input" id="input_6" type="file" name="file" aria-labelledby="label_6" aria-hidden="true" tabindex="-1"/>
 
                         </div>
                         <br><br>
@@ -235,19 +235,19 @@
                         <div class="input-text">
                             <div class="input-div">
                                 <input type="number" id="monthly-income" name="monthly-income" min="40000" step="5000"
-                                    required>
+                                    required/>
                                 <span>Monthly income</span>
                             </div>
                             <div class="input-div">
                                 <input type="number" id="Sum-insured" name="Sum-insured" min="500000" step="500000"
-                                    required>
+                                    required/>
                                 <span>Sum insured</span>
                             </div>
                         </div>
                         <div class="input-text">
                             <div class="input-div">
                                 <input type="number" id="term" name="Term" min="10" max="20" step="5"
-                                    required>
+                                    required/>
                                 <span>Term (Year)</span>
                             </div>
                             <div class="input-div">
@@ -266,42 +266,44 @@
 
                             <div class="form-group">
                                 <p>YLY</p>
-                                <input type="radio" name="radioGroup" value="yly" id="yly" title="Year-to-Date">
+                                <input type="radio" name="radioGroup" value="yly" id="yly" title="Year-to-Date"/>
                             </div>
                             <div class="form-group">
                                 <p>HLY</p>
-                                <input type="radio" name="radioGroup" value="hly" id="hly" title="Half-Year">
+                                <input type="radio" name="radioGroup" value="hly" id="hly" title="Half-Year"/>
                             </div>
                             <div class="form-group">
                                 <p>QLY</p>
-                                <input type="radio" name="radioGroup" value="qly" id="qly" title="Quarter-Year">
+                                <input type="radio" name="radioGroup" value="qly" id="qly" title="Quarter-Year"/>
                             </div>
                         </div>
                         
                         <div class="input-text">
                             <div class="input-div">
-                                <input type="text" required id="table" name="table">
+                                <input type="text" required id="table" name="table"/>
                                 <span>Table</span>
                             </div>
 
                             <div class="input-div">
                                 <div class="premium-section">
                                     <label for="premium-input">Premium:</label>
-                                    <input type="text" id="premium-input" disabled>
+                                    <input type="text"  name="premiumn" id="premium-input" disabled/>
                                 </div>
                             </div>
                         </div>
+
+
                         
                         <div class="input-text">
                             <div class="input-div">
-                                <input type="text" required id="supplementary-contract" name="supplementary-contract">
+                                <input type="text" required id="supplementary-contract" name="supplementary-contract"/>
                                 <span>Supplementary contract</span>
                             </div>
 
 
 
                             <div class="input-div">
-                                <input type="text" id="previous-policy-number" name="supplementary-contract">
+                                <input type="text" id="previous-policy-number" name="supplementary-contract"/>
                                 <span>Previous Policy number</span>
                             </div>
                         </div>
@@ -321,22 +323,22 @@
 
                         <div class="input-text">
                             <div class="input-div">
-                                <input type="text" id="for-lady">
+                                <input type="text" id="for-lady"/>
                                 <span>For Lady</span>
                             </div>
                             <div class="input-div">
-                                <input type="number" id="employee">
+                                <input type="number" id="employee"/>
                                 <span>Employe #</span>
                             </div>
                         </div>
 
                         <div class="input-text">
                             <div class="input-div">
-                                <input type="text" id="education">
+                                <input type="text" id="education"/>
                                 <span>Education</span>
                             </div>
                             <div class="input-div">
-                                <input type="number" id="gpe-no.">
+                                <input type="number" id="gpe-no."/>
                                 <span>GPE NO.</span>
                             </div>
                         </div>
@@ -344,10 +346,10 @@
                         <div class="input-text">
                             <div class="input-div">
                                 <p>Husbend income</p>
-                                <input type="number" id="husbend-income" min="40000" step="5000">
+                                <input type="number" id="husbend-income" min="40000" step="5000"/>
                             </div>
                             <div class="input-div">
-                                <input type="text" id="monthly-deduction" name="monthly-deduction">
+                                <input type="text" id="monthly-deduction" name="monthly-deduction"/>
                                 <span>Monthly Deduction</span>
                             </div>
                         </div>
@@ -355,11 +357,11 @@
                         <div class="input-text">
                             <div class="input-div">
                                 <p>Date of Lamp</p>
-                                <input type="date" id="dob" name="dol">
+                                <input type="date" id="dob" name="dol"/>
                             </div>
 
                             <div class="input-div">
-                                <input type="text" id="yearly-deduction">
+                                <input type="text" id="yearly-deduction"/>
                                 <span>Yearly Deduction</span>
                             </div>
                         </div>
@@ -381,19 +383,19 @@
                             <div class="input-div">
                                 <label for="diseaseSelect"><strong>Any Disease:</strong></label>
                                 <div class="form-group">
-                                    <input type="checkbox" name="disease" value="cancer" id="cancer">
+                                    <input type="checkbox" name="disease" value="cancer" id="cancer"/>
                                     <label for="cancer">Cancer</label>
                                 </div>
                                 <div class="form-group">
-                                    <input type="checkbox" name="disease" value="diabetes" id="diabetes">
+                                    <input type="checkbox" name="disease" value="diabetes" id="diabetes"/>
                                     <label for="diabetes">Diabetes</label>
                                 </div>
                                 <div class="form-group">
-                                    <input type="checkbox" name="disease" value="heartDisease" id="heartDisease">
+                                    <input type="checkbox" name="disease" value="heartDisease" id="heartDisease"/>
                                     <label for="heartDisease">Heart disease</label>
                                 </div>
                                 <div class="form-group">
-                                    <input type="checkbox" name="disease" value="Other" id="Other">
+                                    <input type="checkbox" name="disease" value="Other" id="Other"/>
                                     <label for="Other">Other</label>
                                 </div>
                                 <div id="diseaseDescription" class="form-group" style="display: none;">
@@ -417,21 +419,21 @@
                                 <label for="operationSelect"><strong>Any Operstion:</strong></label>
                                 <div id="operationSelect">
                                     <div class="form-group">
-                                        <input type="checkbox" name="operation" value="Appendectomy" id="Appendectomy">
+                                        <input type="checkbox" name="operation" value="Appendectomy" id="Appendectomy"/>
                                         <label for="Appendectomy">Appendectomy</label>
                                     </div>
                                     <div class="form-group">
                                         <input type="checkbox" name="operation" value="openHeartSurgery"
-                                            id="openHeartSurgery">
+                                            id="openHeartSurgery"/>
                                         <label for="openHeartSurgery">Open heart surgery</label>
                                     </div>
                                     <div class="form-group">
                                         <input type="checkbox" name="operation" value="Hip replacement surgery"
-                                            id="Hip replacement surgery">
+                                            id="Hip replacement surgery"/>
                                         <label for="Hip replacement surgery">Hip replacement surgery</label>
                                     </div>
                                     <div class="form-group">
-                                        <input type="checkbox" name="operation" value="Other" id="other_opt">
+                                        <input type="checkbox" name="operation" value="Other" id="other_opt"/>
                                         <label for="Other">Other</label>
                                     </div>
                                     <div id="opt_Description" class="form-group" style="display: none;">
@@ -574,7 +576,7 @@
                             <p>Give your family history go to the step.</p>
                         </div>
 
-                        <form>
+                        <div>
                             <div class="input-div">
                                 <p><strong>Suicide in family:</strong></p>
                                 <label>
@@ -663,7 +665,7 @@
                                 <br><br>
 
                             </div>
-                        </form>
+                        </div>
                         
                         <script>
                             // get references to the radio buttons
@@ -1075,11 +1077,46 @@
         console.log('here')
         // get the OTP value from the input field
         let otp = document.getElementById("OTP").value;
-    
+        let name=document.getElementsByName("cname")[0].value;
+        let fname=document.getElementsByName("cfname")[0].value;
+        let phone=document.getElementsByName("phone")[0].value;
+        let email=document.getElementsByName("email")[0].value;
+        let address=document.getElementsByName("address")[0].value;
+        let dob=document.getElementsByName("dob")[0].value;
+        let age=document.getElementsByName("age")[0].value;
+        let cities=document.getElementsByName("cities")[0].value;
+        let nominee=document.getElementsByName("nominee")[0].value;
+
+        let dobnominee=document.getElementsByName("dobNominee")[0].value;
+
+        let agenominee=document.getElementsByName("ageNominee")[0].value;
+        let nomineeRelation=document.getElementsByName("nomineeRelation")[0].value;
+        let mincome=document.getElementsByName("monthly-income")[0].value;
+
+
+        
+        let suminsured=document.getElementsByName("Sum-insured")[0].value;
+
+        let term=document.getElementsByName("Term")[0].value;
+
+        // let mode=document.getElementsByName("radiogroup")[0].value;
+        // let premium=document.getElementsByName("premium")[0].value;
+
+
+
+
+        
+
+
+
+        console.log(name,fname)
+
         // send a request to the server to verify the OTP
-        fetch('checkOTP', {
+        fetch('form', {
             method: 'POST',
-            body: JSON.stringify({'otp': otp}),
+            body: JSON.stringify({'otp': otp, "name":name,"fname":fname,"phone":phone,"email":email,"address":address,"dob":dob,
+        'age':age,'cities':cities,'nominee':nominee,'dobnominee':dobnominee,'agenominee':agenominee,'nomineeRelation':nomineeRelation,
+        'mincome':mincome,'suminsured':suminsured,'term':term}),
             headers: {
                 'Content-Type': 'application/json',
             },

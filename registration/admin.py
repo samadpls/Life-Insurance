@@ -13,5 +13,6 @@ class registeradmin(admin.ModelAdmin):
     
 admin.site.register(register,registeradmin)
 admin.site.register(team_register)
+admin.site.register(Form)
 
 # Register your models here.
