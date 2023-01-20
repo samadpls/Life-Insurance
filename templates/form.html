@@ -6,15 +6,57 @@
 <head>
     <link rel="stylesheet" href="{%static 'css/form.css' %}">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
-
+    <style>
+        #otp-button {
+            background-image: linear-gradient(to left, #538bab, #222268);
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+          }
+          
+          #otp-button:hover {
+            background-color: #3e8e41;
+          }#otp-button1 {
+            background-image: linear-gradient(to left, #538bab, #222268);
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+          }
+          
+          #otp-button1:hover {
+            background-color: #3e8e41;
+          }
+    </style>
 </head>
 
 <body>
+    {% if message %}
+    {% for msg in messages%}
+    <div class="alert alert-danger" id="error">{{msg}}</div>
+    {% endfor %}
+    <script>
+        setTimeout(function(){
+            document.getElementById("error").style.display="none";
+        }.3000);
+    </script>
+    {% endif %}
     <div class="container" style="padding-top: 110px;">
 
         <div class="card" >
 
-            <div class="form">
+            <form class="form">
 
                 <div class="left-side">
                     <div class="left-heading">
@@ -22,32 +64,23 @@
                     </div>
                     <div class="steps-content">
                         <h3>Step <span class="step-number">1</span></h3>
-                        <p class="step-number-content active">Please enter your personal information to complete the
+                        <p class="step-number-content active">Please enter your information to complete the
                             policy form.</p>
-                        <p class="step-number-content d-none">Please enter your personal information to complete the
-                            policy form.</p>
-                        <p class="step-number-content d-none">Please enter your personal information to complete the
-                            policy form.</p>
-                        <p class="step-number-content d-none">Please provide your physical information in the form below
-                            to proceed.</p>
-                        <p class="step-number-content d-none">Please provide your physical information in the form below
-                            to proceed.</p>
-                        <p class="step-number-content d-none">Please provide your family history in the form below to
-                            complete your form.</p>
-                        <p class="step-number-content d-none">Add your profile picture and let companies find youy fast.
-                        </p>
+                        
                     </div>
                     <ul class="progress-bar">
                         <li class="active">Personal Information</li>
                         <li>Personal Information</li>
                         <li>Personal Information</li>
+                        <li>Personal Information</li>
                         <li>Physical Information</li>
                         <li>Physical Information</li>
                         <li>Family History</li>
                         <li>Family History</li>
                         <li>Family History</li>
                         <li>Family History</li>
-                        <li>User Photo</li>
+                        <li>Family History</li>
+                        <li>Confirm OTP</li>
                     </ul>
                 </div>
                 <div class="right-side">
@@ -133,19 +166,77 @@
                         </div>
                         <div class="input-text">
                             <div class="input-div">
+                                <p><strong>Nominee</strong></p>
+                                <input type="text" id="nominee" name="nominee" >
+                                
+                            </div>
+                            <div class="input-div">
+                                <p>Date of Birth</p>
+                                <input type="date" required id="dobNominee" name="dobNominee" placeholder="">
+
+                            </div>
+                            <div class="input-div">
+                                <p>Age</p>
+                                <input type="number" id="ageNominee" name="ageNominee" disabled>
+
+                            </div>
+                        </div>
+                        <div class="input-text">
+                            <p><strong>Relation</strong></p>
+                            <div class="input-div">
+                                <select id="nomineeRelation" name="nomineeRelation" >
+                                    <option value="" selected>Nominee relation with you</option>
+                                    <option value="father">Father</option>
+                                    <option value="mother">Mother</option>
+                                    <option value="spouse">Spouse</option>
+                                    <option value="child">Child</option>
+                                    <option value="sibling">Sibling</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+                        </div>
+
+
+                        <div class="input-text">
+                            <p><strong>Agent</strong></p>
+                            <div class="input-div">
+                                <select id="agent" name="agent" required>
+                                    <option>Select your Agent</option>
+
+                                </select>
+                            </div>
+                            
+                        </div>
+                        <div class="buttons button_space">
+                            <button class="back_button">Back</button>
+                            <button class="next_button">Next Step</button>
+                        </div>
+                    </div>
+
+
+                    <div class="main">
+                        <small><i class="fa fa-smile-o"></i></small>
+                        <div class="text">
+                            <h2>Your Personal Information</h2>
+                            <p>Please enter your personal information to complete the policy form.</p>
+                        </div>
+                        <div class="input-text">
+                            <div class="input-div">
                                 <input type="number" id="monthly-income" name="monthly-income" min="40000" step="5000"
                                     required>
                                 <span>Monthly income</span>
                             </div>
                             <div class="input-div">
-                                <input type="text" required id="sum-assured">
-                                <span>Sum Assured</span>
+                                <input type="number" id="Sum-insured" name="Sum-insured" min="500000" step="500000"
+                                    required>
+                                <span>Sum insured</span>
                             </div>
                         </div>
                         <div class="input-text">
                             <div class="input-div">
-                                <input type="text" required id="premium">
-                                <span>Premium</span>
+                                <input type="number" id="term" name="Term" min="10" max="20" step="5"
+                                    required>
+                                <span>Term (Year)</span>
                             </div>
                             <div class="input-div">
                                 <select id="plan" name="plan" required>
@@ -159,18 +250,6 @@
                             </div>
                         </div>
                         <div class="input-text">
-                            <div class="input-div">
-                                <input type="text" required id="table" name="table">
-                                <span>Table</span>
-                            </div>
-
-                            <div class="input-div">
-                                <input type="text" required id="term" name="term">
-                                <span>Term</span>
-                            </div>
-                        </div>
-                        <div class="input-text">
-
                             <p><strong>Mode:</strong></p>
 
                             <div class="form-group">
@@ -186,6 +265,21 @@
                                 <input type="radio" name="radioGroup" value="qly" id="qly" title="Quarter-Year">
                             </div>
                         </div>
+                        
+                        <div class="input-text">
+                            <div class="input-div">
+                                <input type="text" required id="table" name="table">
+                                <span>Table</span>
+                            </div>
+
+                            <div class="input-div">
+                                <div class="premium-section">
+                                    <label for="premium-input">Premium:</label>
+                                    <input type="text" id="premium-input" disabled>
+                                </div>
+                            </div>
+                        </div>
+                        
                         <div class="input-text">
                             <div class="input-div">
                                 <input type="text" required id="supplementary-contract" name="supplementary-contract">
@@ -554,10 +648,66 @@
 
                                     </select>
                                 </div>
+                                <br><br>
 
                             </div>
                         </form>
+                        
                         <script>
+                            // get references to the radio buttons
+                            const ylyRadio = document.getElementById("yly");
+                            const hlyRadio = document.getElementById("hly");
+                            const qlyRadio = document.getElementById("qly");
+
+                            // get references to the input fields
+                            const sumInsuredInput = document.getElementById("Sum-insured");
+                            const termInput = document.getElementById("term");
+
+                            // get reference to the premium input field
+                            const premiumInput = document.getElementById("premium-input");
+
+                            // function to calculate premium
+                            function calculatePremium() {
+                              // get the selected radio button value
+                              let mode = "";
+                              if (ylyRadio.checked) {
+                                mode = "yly";
+                              } else if (hlyRadio.checked) {
+                                mode = "hly";
+                              } else if (qlyRadio.checked) {
+                                mode = "qly";
+                              }
+                          
+                              // get the values entered in the input fields
+                              const sumInsured = sumInsuredInput.value;
+                              const term = termInput.value;
+                          
+                              // perform calculation based on selected mode
+                              let premium = 0;
+                              if (mode === "yly") {
+                                premium = sumInsured / term;
+                              } else if (mode === "hly") {
+                                premium = sumInsured / (term/2);
+                              } else if (mode === "qly") {
+                                premium = sumInsured / (term/4);
+                              }
+                          
+                              // display the calculated premium in the input field
+                              premiumInput.value =  Math.round(premium);
+                            }
+
+                            // listen for changes to the radio buttons
+                            ylyRadio.addEventListener("change", calculatePremium);
+                            hlyRadio.addEventListener("change", calculatePremium);
+                            qlyRadio.addEventListener("change", calculatePremium);
+
+                            // listen for changes to the input fields
+                            sumInsuredInput.addEventListener("change", calculatePremium);
+                            termInput.addEventListener("change", calculatePremium);
+
+
+
+
                             function showInput() {
                                 var yesInput = document.getElementById("input-yes");
                                 var noInput = document.getElementById("input-no");
@@ -830,6 +980,7 @@
                                 daughterInfo.innerHTML = "";
                                 if (numdaughter > 0) {
                                     for (var i = 1; i <= numdaughter; i++) {
+
                                         var daughtr = document.createElement("div")
                                         daughtr.setAttribute("class", "input-div");
                                         var ageLabel = document.createElement("label");
@@ -874,26 +1025,125 @@
                         </div>
                     </div>
                     <div class="main">
-                        <svg class="checkmark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52">
-                            <circle class="checkmark__circle" cx="26" cy="26" r="25" fill="none" />
-                            <path class="checkmark__check" fill="none" d="M14.1 27.2l7.1 7.2 16.7-16.8" />
-                        </svg>
-
-                        <div class="text congrats">
-                            <h2>Congratulations!</h2>
-                            <p>Thanks Mr./Mrs. <span class="shown_name"></span> your information have been submitted
-                                successfully for the future reference we will contact you soon.</p>
+                        <small><i class="fa fa-smile-o"></i></small>
+                        <div class="text">
+                            <h2>Confirm OTP</h2>
+                            <p>Enter your OTP sended vis Email.</p>
+                        </div>
+                        <br><br><br>
+                        <button id="otp-button" onclick= "generateAndSendOTP()" align="center">Generate OTP</button>
+                        <div id="otp-section" style="display: none;">
+                          
+                            <div class="input-div">
+                                <br><br><br>
+                                <p><strong>Enter OTP</strong></p>
+                                <input type="text" align="center" id="OTP" name="OTP">
+                                <br><br><br>
+                            </div>
+                            <div class="buttons button_space " style="margin-top:12px">
+                                <button class="back_button">Back</button>
+                                <button id="otp-button1" onclick="verifyOTP()">Submit</button>
+                                
+                            </div>
+                          
                         </div>
                     </div>
+                    
+                    
                 </div>
 
-            </div>
+            </form>
 
         </div>
 
     </div>
 </body>
 <script>
+    function verifyOTP() {
+        console.log('here')
+        // get the OTP value from the input field
+        let otp = document.getElementById("OTP").value;
+    
+        // send a request to the server to verify the OTP
+        fetch('checkOTP', {
+            method: 'POST',
+            body: JSON.stringify({'otp': otp}),
+            headers: {
+                'Content-Type': 'application/json',
+            },
+
+            credentials: 'same-origin',
+        })
+        .then(response => response.json())
+        .then(data => {
+            console.log('here1')
+            if (data.status === 'success') {
+                window.location.assign('/')
+                console.log('here3')
+                alert('OTP verified successfully');
+            } 
+            else {
+                alert('An error occurred while verifying the OTP');
+            }
+        });
+    }
+    
+    function generateAndSendOTP() {
+        // get the email address from the input field
+        let email = document.getElementById("email").value;
+    
+        // send a request to the server to send the OTP
+        fetch('send-otp', {
+            method: 'POST',
+            body: JSON.stringify({'email': email}),
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            credentials: 'same-origin',
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.status === 'success') {
+                alert('OTP sent to your email');
+            } 
+            else {
+                alert('An error occurred while sending the OTP');
+            }
+        });
+    }
+    
+    {% comment %} function generateAndSendOTP() {
+        // get the email address from the input field
+        let email = document.getElementById("email").value;
+        console.log(email)
+        // generate a random 5-letter OTP
+        let otp = Math.random().toString(36).slice(-5);
+        console.log(otp)
+        // send the OTP to the email address
+        Email.send({
+            Host: "smtp.gmail.com",
+            Username : "sajidahsan67@gmail.com",
+            Password : "btjvcelmsuhxdmsz",
+            To : email,
+            From : "shaheerk2233@gmail.com",
+            Subject : "State Life OTP",
+            Body : "Thank you for choosing our service. Your OTP is " + otp + ". Please enter this OTP in the verification field to complete the process.\n\nPlease note that this OTP is valid for a limited time and will expire after one time\n\n.If you did not request this OTP or if you have any concerns, please contact our support team immediately.\nThank you for choosing our service.\nBest regards,\nState life company"
+        }).then(
+        message => alert("OTP sent to your email")
+        );
+    
+        //save the OTP to the user's session or localstorage
+        localStorage.setItem("otp", otp);
+    } {% endcomment %}
+    
+
+    const otpButton = document.getElementById("otp-button");
+    const otpSection = document.getElementById("otp-section");
+
+    otpButton.addEventListener("click", function() {
+      otpSection.style.display = "block";
+      otpButton.style.display = "none";
+    });
 
 
     var currentDate = new Date();
@@ -915,6 +1165,25 @@
         var age = currentYear - dobParts[0];
         // Display the age
         document.getElementById('age').value = age;
+    });
+    var currentDate = new Date();
+    // Set the minimum date to 70 years in the past
+    var minDate = new Date();
+    minDate.setFullYear(minDate.getFullYear() - 70);
+    document.getElementById('dobNominee').min = minDate.toISOString().split('T')[0];
+    // Set the maximum date to the current date
+    document.getElementById('dobNominee').max = currentDate.toISOString().split('T')[0];
+
+    var dobNomineeInput = document.getElementById('dobNominee');
+    // Add an event listener for the "change" event
+    dobNomineeInput.addEventListener('change', function () {
+        // Calculate the age
+        var dobNominee = dobNomineeInput.value;
+        var dobParts = dobNominee.split('-');
+        var currentYear = new Date().getFullYear();
+        var ageNominee = currentYear - dobParts[0];
+        // Display the age
+        document.getElementById('ageNominee').value = ageNominee;
     });
 
     var next_click = document.querySelectorAll(".next_button");
@@ -959,15 +1228,11 @@
     });
 
     var heart = document.querySelector(".fa-heart");
-    heart.addEventListener('click', function () {
-        heart.classList.toggle('heart');
-    });
+    
 
 
     var share = document.querySelector(".fa-share-alt");
-    share.addEventListener('click', function () {
-        share.classList.toggle('share');
-    });
+    
 
 
 
@@ -1000,10 +1265,11 @@
 
     function contentchange() {
         step_num_content.forEach(function (content) {
-            content.classList.remove('active');
-            content.classList.add('d-none');
+            content.classList.remove('d-none');
+            content.classList.add('active');
         });
-        step_num_content[formnumber].classList.add('active');
+//        step_num_content[formnumber].classList.add('active');
+        
     }
 
 
