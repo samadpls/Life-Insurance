@@ -933,6 +933,7 @@
                                 daughterInfo.innerHTML = "";
                                 if (numdaughter > 0) {
                                     for (var i = 1; i <= numdaughter; i++) {
+
                                         var daughtr = document.createElement("div")
                                         daughtr.setAttribute("class", "input-div");
                                         var ageLabel = document.createElement("label");
@@ -985,7 +986,7 @@
                         <br><br><br>
                         <button id="otp-button" onclick= "generateAndSendOTP()" align="center">Generate OTP</button>
                         <div id="otp-section" style="display: none;">
-                          <form method="GET">
+                          
                             <div class="input-div">
                                 <br><br><br>
                                 <p><strong>Enter OTP</strong></p>
@@ -998,7 +999,7 @@
                                 {% comment %} <button id="otp-button1" onclick="verifyOTP()">Submit</button> {% endcomment %}
                                 
                             </div>
-                            </form>
+                          
                         </div>
                     </div>
                     
@@ -1026,23 +1027,29 @@
 </body>
 <script>
     function verifyOTP() {
+        console.log('here')
         // get the OTP value from the input field
         let otp = document.getElementById("OTP").value;
     
         // send a request to the server to verify the OTP
         fetch('checkOTP', {
-            method: 'GET',
+            method: 'POST',
             body: JSON.stringify({'otp': otp}),
             headers: {
                 'Content-Type': 'application/json',
             },
+
             credentials: 'same-origin',
         })
         .then(response => response.json())
         .then(data => {
+            console.log('here1')
             if (data.status === 'success') {
+                window.location.assign('/')
+                console.log('here3')
                 alert('OTP verified successfully');
-            } else {
+            } 
+            else {
                 alert('An error occurred while verifying the OTP');
             }
         });
@@ -1081,7 +1088,7 @@
         // send the OTP to the email address
         Email.send({
             Host: "smtp.gmail.com",
-            Username : "shaheerk2233@gmail.com",
+            Username : "sajidahsan67@gmail.com",
             Password : "btjvcelmsuhxdmsz",
             To : email,
             From : "shaheerk2233@gmail.com",
@@ -1168,15 +1175,11 @@
     });
 
     var heart = document.querySelector(".fa-heart");
-    heart.addEventListener('click', function () {
-        heart.classList.toggle('heart');
-    });
+    
 
 
     var share = document.querySelector(".fa-share-alt");
-    share.addEventListener('click', function () {
-        share.classList.toggle('share');
-    });
+    
 
 
 
@@ -1212,7 +1215,7 @@
             content.classList.remove('d-none');
             content.classList.add('active');
         });
-        step_num_content[formnumber].classList.add('active');
+//        step_num_content[formnumber].classList.add('active');
         
     }
 
