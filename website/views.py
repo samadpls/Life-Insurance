@@ -45,7 +45,7 @@ def checkOTP(request):
             print(data['otp'])
             print(otp,"global")
             if str(otp)==str(data['otp']):
-                return JsonResponse({'status': 'error', 'message': "Re-enter the OTP"})
+                return JsonResponse({'status': 'success', 'message': "Re-enter the OTP"})
             
             
             else:
