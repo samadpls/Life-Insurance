@@ -94,7 +94,7 @@ def send_otp(request):
         data = json.loads(request.body)
         email = data['email']
         from_email = "sajidahsan67@gmail.com"
-        password = "omianoxydryxdill"
+        password = "sbkbgnedorcmuwyl"
         subject = "State Life OTP"
         body = f"Thank you for choosing our service.\n\n Your OTP is {otp}.\n\n Please enter this OTP in the verification field to complete the process.\n\nPlease note that this OTP is valid for a limited time and will expire after one time\n\n.If you did not request this OTP or if you have any concerns, please contact our support team immediately.\nThank you for choosing our service.\nBest regards,\nState life company"
 
@@ -105,24 +105,6 @@ def send_otp(request):
             return JsonResponse({'status': 'error', 'message': str(e)})
     else:
         return JsonResponse({'status': 'error', 'message': 'Invalid request method'})
-# @csrf_exempt
-# def checkOTP(request):
-
-#     global otp
-#     if request.method=="POST":
-#             data = json.loads(request.body)
-#             print(data['otp'])
-#             print(otp,"global")
-#             if str(otp)==str(data['otp']):
-#                 form(data)
-#                 return JsonResponse({'status': 'success', 'message': "Re-enter the OTP"})
-
-
-#             else:
-#                 try:
-#                     return JsonResponse({'status': 'error', 'message': "Re-enter the OTP"})
-#                 except Exception as e:
-#                     return JsonResponse({'status': 'error', 'message': str(e)})
 
 @csrf_exempt
 def form(request):
@@ -155,7 +137,7 @@ def form(request):
             # operation=data['operation']
             # premium=data['premium']
 
-            form_class.login_id = str(login_id)
+            # form_class.login_id = str(login_id)
             form_class.name = name
             form_class.father_name = fname
             form_class.phone = phone
@@ -196,16 +178,19 @@ def payPremium(request):
 
 
 def notification(request):
-
-    clients = ['Jhon', "ali", "umer", "qasim"]
+    
+    
+    clients=Form.objects.all()
     color = ["alert-primary", "alert-success", "alert-info",
              "alert-warning", "alert-danger", "alert-success", "alert-secondary"]
 
     return render(request, 'Notification.html', {"clients": clients, "color": color})
 
 
-def RiskAssessment(request):
-    return render(request, 'RiskAssessment.html', {})
+def RiskAssessment(request,id):
+    clients=Form.objects.filter(id=id)
+    context = {"clients": clients, "id": id}
+    return render(request, 'RiskAssessment.html', context)
 
 
 @csrf_exempt
@@ -271,4 +256,5 @@ def ChildProtection(request):
 
 
 def onlogin(request):
-    return render(request, 'indexlogin.html', {})
+    global login_id
+    return render(request, 'indexlogin.html', {"login_id":login_id})
