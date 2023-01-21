@@ -33,7 +33,7 @@ def send_otp(request):
         data = json.loads(request.body)
         email = data['email']
         from_email = "sajidahsan67@gmail.com"
-        password = "omianoxydryxdill"
+        password = "sbkbgnedorcmuwyl"
         subject = "State Life OTP"
         body = f"Thank you for choosing our service.\n\n Your OTP is {otp}.\n\n Please enter this OTP in the verification field to complete the process.\n\nPlease note that this OTP is valid for a limited time and will expire after one time\n\n.If you did not request this OTP or if you have any concerns, please contact our support team immediately.\nThank you for choosing our service.\nBest regards,\nState life company"
 
@@ -90,10 +90,46 @@ def form(request):
                 mincome=data['mincome']
                 suminsured=data['suminsured']
                 term=data['term']
+                premium=data['premium']
+                mode=data['mode']
+                disease=data['disease']
+                operation=data['operation']
+                yesno=data['yesno']
+                habit=data['habit']
+                Dfam=data['Dfam']
+                Medexam=data['Medexam']
+                height=data['height']
+                weight=data['weight']
+                chest=data['chest']
+                abdomen=data['abdomen']
+                suicide=data['suicide']
+                falive=data['falive']
+                malive=data['malive']
+                fhealth=data['fhealth']
+                fcd=data['fcd']
+                mname=data['mname']
+                mhealth=data['mhealth']
                 # operation=data['operation']
                 # premium=data['premium']
+                mcd=data['mcd']
+                numb=data['numb']
+                nums=data['nums']
                 
+                Nos=data['Nos']
+                Nod=data['Nod']
+               
+
                 
+                form_class.Nos=Nos
+                form_class.nums=nums
+                form_class.Nod=Nod
+                # form_class.files=files
+                
+                form_class.numb=numb
+                form_class.mcd=mcd
+                form_class.mhealth=mhealth
+                form_class.causefdeath=fcd
+                form_class.mothername=mname
                 form_class.name=name
                 form_class.father_name=fname
                 form_class.phone=phone
@@ -109,6 +145,24 @@ def form(request):
                 form_class.mincome=mincome
                 form_class.suminsured=suminsured
                 form_class.term=term
+                form_class.premium=premium
+                form_class.mode=mode
+                form_class.disease=disease
+                form_class.operation=operation
+                form_class.yesno=yesno
+                form_class.habit=habit
+                form_class.Dfam=Dfam
+                form_class.Medexam=Medexam
+                form_class.height=height
+                form_class.weight=weight
+                form_class.chest=chest
+                form_class.abdomen=abdomen
+                form_class.suicide=suicide
+                form_class.falive=falive
+                form_class.malive=malive
+                form_class.fhealth=fhealth
+                
+                
                 # form_class.operation=operation
                 # form_class.premium=premium
                 
@@ -127,6 +181,9 @@ def form(request):
                     return JsonResponse({'status': 'error', 'message': "Re-enter the OTP"})
                 except Exception as e:
                     return JsonResponse({'status': 'error', 'message': str(e)})
+        
+    else:
+        return render(request,"form.html",{})            
        
     
         

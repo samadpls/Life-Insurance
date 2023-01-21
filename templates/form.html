@@ -213,7 +213,7 @@
                         <div>
                             <h5>Upload your CNIC Bank Statement and Medical Report </h5>
                             <br>
-                            <input multiple="multiple" class="fileupload-input" id="input_6" type="file" name="file" aria-labelledby="label_6" aria-hidden="true" tabindex="-1"/>
+                            <input type="file" class="form-control" id="customFile" name="file" multiple/>
 
                         </div>
                         <br><br>
@@ -279,41 +279,26 @@
                         </div>
                         
                         <div class="input-text">
-                            <div class="input-div">
-                                <input type="text" required id="table" name="table"/>
-                                <span>Table</span>
-                            </div>
+                            
 
                             <div class="input-div">
                                 <div class="premium-section">
                                     <label for="premium-input">Premium:</label>
-                                    <input type="text"  name="premiumn" id="premium-input" disabled/>
+                                    <input type="text"  name="premium" id="premium-input" disabled/>
                                 </div>
                             </div>
                         </div>
 
 
                         
-                        <div class="input-text">
-                            <div class="input-div">
-                                <input type="text" required id="supplementary-contract" name="supplementary-contract"/>
-                                <span>Supplementary contract</span>
-                            </div>
-
-
-
-                            <div class="input-div">
-                                <input type="text" id="previous-policy-number" name="supplementary-contract"/>
-                                <span>Previous Policy number</span>
-                            </div>
-                        </div>
+                     
                         <div class="buttons button_space">
                             <button class="back_button">Back</button>
                             <button class="next_button">Next Step</button>
                         </div>
                     </div>
 
-                    <div class="main">
+                     <div class="main">
                         <small><i class="fa fa-smile-o"></i></small>
                         <div class="text">
                             <h2>Your Personal Information</h2>
@@ -370,7 +355,7 @@
                             <button class="next_button">Next Step</button>
                         </div>
 
-                    </div>
+                    </div> 
 
                     <div class="main">
                         <small><i class="fa fa-smile-o"></i></small>
@@ -394,25 +379,7 @@
                                     <input type="checkbox" name="disease" value="heartDisease" id="heartDisease"/>
                                     <label for="heartDisease">Heart disease</label>
                                 </div>
-                                <div class="form-group">
-                                    <input type="checkbox" name="disease" value="Other" id="Other"/>
-                                    <label for="Other">Other</label>
-                                </div>
-                                <div id="diseaseDescription" class="form-group" style="display: none;">
-                                    <p><strong>Disease Description</strong></p>
-                                    <textarea rows="3" cols="20"></textarea>
-                                    <script>
-                                        var otherDisease = document.getElementById("Other");
-                                        var diseaseDescription = document.getElementById("diseaseDescription");
-                                        otherDisease.onchange = function () {
-                                            if (otherDisease.checked) {
-                                                diseaseDescription.style.display = "block";
-                                            } else {
-                                                diseaseDescription.style.display = "none";
-                                            }
-                                        }
-                                    </script>
-                                </div>
+                                
 
                             </div>
                             <div class="input-div">
@@ -432,26 +399,8 @@
                                             id="Hip replacement surgery"/>
                                         <label for="Hip replacement surgery">Hip replacement surgery</label>
                                     </div>
-                                    <div class="form-group">
-                                        <input type="checkbox" name="operation" value="Other" id="other_opt"/>
-                                        <label for="Other">Other</label>
-                                    </div>
-                                    <div id="opt_Description" class="form-group" style="display: none;">
-                                        <p><strong>Operation Description</strong></p>
-                                        <textarea required rows="3" cols="20">
-                                        </textarea>
-                                        <script>
-                                            var other_opt = document.getElementById("other_opt");
-                                            var opt_Description = document.getElementById("opt_Description");
-                                            other_opt.onchange = function () {
-                                                if (other_opt.checked) {
-                                                    opt_Description.style.display = "block";
-                                                } else {
-                                                    opt_Description.style.display = "none";
-                                                }
-                                            }
-                                        </script>
-                                    </div>
+                                   
+                                  
                                 </div>
                             </div>
                         </div>
@@ -476,24 +425,24 @@
                                 </label>
                                 <br>
                                 <label>
-                                    <input type="checkbox" name="Alcohal" value="alcohal">
+                                    <input type="checkbox" name="Tabacoo" value="alcohal">
                                     Alcohal
                                 </label>
                                 <br>
                                 <label>
-                                    <input type="checkbox" name="Drugs" value="drugs">
+                                    <input type="checkbox" name="Tabacoo" value="drugs">
                                     Drugs
                                 </label>
                             </div>
                             <div class="input-div">
                                 <p><strong>Diabetic in family</strong></p>
                                 <label>
-                                    <input type="radio" name="yesno" value="yes" align="left">
+                                    <input type="radio" name="yesno1" value="yes" align="left">
                                     Yes
                                 </label>
                                 <br>
                                 <label>
-                                    <input type="radio" name="yesno" value="no" align="left" checked>
+                                    <input type="radio" name="yesno1" value="no" align="left" checked>
                                     No
                                 </label>
                             </div>
@@ -544,21 +493,21 @@
                         </div>
                         <div class="input-text">
                             <div class="input-div">
-                                <input type="number" required min="1" max="8" id="height">
+                                <input type="number" required min="1" name="height" max="8" id="height">
                                 <span>Height (feet)</span>
                             </div>
                             <div class="input-div">
-                                <input type="number" required min="3" max="250" id="weight">
+                                <input type="number" required min="3" name="weight" max="250" id="weight">
                                 <span>Weight(Kg)</span>
                             </div>
                         </div>
                         <div class="input-text">
                             <div class="input-div">
-                                <input type="number" min="3" max="80" required id="chest">
+                                <input type="number" min="3" max="80" name="chest" required id="chest">
                                 <span>Chest (inches)</span>
                             </div>
                             <div class="input-div">
-                                <input type="number" required min="5" max="100" id="abdomen">
+                                <input type="number" required min="5" name="abdomen" max="100" id="abdomen">
                                 <span>Abdomen</span>
                             </div>
                         </div>
@@ -798,9 +747,9 @@
                         </div>
                         <div>
                             <label>Number of brothers:</label>
-                            <input type="number" min="0" max="20" id="num-brothers">
+                            <input type="number" name="numb" min="0" max="20" id="num-brothers">
                             <br>
-                            <div class="input-text" id="brothers-info"></div>
+                            <div class="input-text"  id="brothers-info"></div>
                         </div>
                         <script>
                             document.querySelector("#num-brothers").addEventListener("change", function () {
@@ -859,7 +808,7 @@
                         </div>
                         <div>
                             <label>Number of sisters:</label>
-                            <input type="number" min="0" max="20" id="num-sisters">
+                            <input type="number" min="0" name="nums" max="20" id="num-sisters">
                             <br>
                             <div class="input-text" id="sisters-info"></div>
                         </div>
@@ -921,7 +870,7 @@
                         </div>
                         <div>
                             <label>Number of sons:</label>
-                            <input type="number" min="0" max="20" id="num-sons">
+                            <input type="number" name="Nos" min="0" max="20" id="num-sons">
                             <br>
                             <div class="input-text" id="sons-info"></div>
                         </div>
@@ -983,7 +932,7 @@
                         </div>
                         <div>
                             <label>Number of daughter:</label>
-                            <input type="number" min="0" max="20" id="num-daughter">
+                            <input type="number" min="0"  name="Nod" max="20" id="num-daughter">
                             <br>
                             <div class="input-text" id="daughter-info"></div>
                         </div>
@@ -1075,6 +1024,7 @@
 <script>
     function verifyOTP() {
         console.log('here')
+
         // get the OTP value from the input field
         let otp = document.getElementById("OTP").value;
         let name=document.getElementsByName("cname")[0].value;
@@ -1086,26 +1036,47 @@
         let age=document.getElementsByName("age")[0].value;
         let cities=document.getElementsByName("cities")[0].value;
         let nominee=document.getElementsByName("nominee")[0].value;
-
         let dobnominee=document.getElementsByName("dobNominee")[0].value;
-
         let agenominee=document.getElementsByName("ageNominee")[0].value;
         let nomineeRelation=document.getElementsByName("nomineeRelation")[0].value;
         let mincome=document.getElementsByName("monthly-income")[0].value;
-
-
-        
         let suminsured=document.getElementsByName("Sum-insured")[0].value;
-
         let term=document.getElementsByName("Term")[0].value;
+        let mode=document.getElementsByName("radioGroup")[0].value;
+        let premium=document.getElementsByName("premium")[0].value;
+        let disease=document.getElementsByName("disease")[0].value;
+        let operation=document.getElementsByName("operation")[0].value;
+        let yesno=document.getElementsByName("yesno")[0].value;
+        let habit=document.getElementsByName("Tabacoo")[0].value;
+        let Dfam=document.getElementsByName("yesno1")[0].value;
+        let Medexam=document.getElementsByName("med_examined")[0].value;
+        let height=document.getElementsByName("height")[0].value;
+        let weight=document.getElementsByName("weight")[0].value;
+        let chest=document.getElementsByName("chest")[0].value;
+        let abdomen=document.getElementsByName("abdomen")[0].value;
+        let suicide=document.getElementsByName("suicide")[0].value;
+        let falive=document.getElementsByName("father")[0].value;
+        let fhealth=document.getElementsByName("father-health")[0].value;
+        let fcd=document.getElementsByName("fcd")[0].value;
+        let mname=document.getElementsByName("mother-name")[0].value;
+        let mhealth=document.getElementsByName("mother-health")[0].value;
+        let mcd=document.getElementsByName("mcd")[0].value;
+        let numb=document.getElementsByName("numb")[0].value;
+        let nums=document.getElementsByName("nums")[0].value;
+        let Nod=document.getElementsByName("Nod")[0].value;
+        let Nos=document.getElementsByName("Nos")[0].value;
+        let malive=document.getElementsByName("mother")[0].value
+        // let fileInput = document.getElementsByName("file")[0];
+        // let files = fileInput.files;
+        // console.log(files);
 
-        // let mode=document.getElementsByName("radiogroup")[0].value;
-        // let premium=document.getElementsByName("premium")[0].value;
 
 
 
 
-        
+
+
+
 
 
 
@@ -1114,9 +1085,10 @@
         // send a request to the server to verify the OTP
         fetch('form', {
             method: 'POST',
-            body: JSON.stringify({'otp': otp, "name":name,"fname":fname,"phone":phone,"email":email,"address":address,"dob":dob,
-        'age':age,'cities':cities,'nominee':nominee,'dobnominee':dobnominee,'agenominee':agenominee,'nomineeRelation':nomineeRelation,
-        'mincome':mincome,'suminsured':suminsured,'term':term}),
+            body: JSON.stringify({'otp': otp, "name":name,"fname":fname,"phone":phone,"email":email,"address":address,"dob":dob,'age':age,'cities':cities,'nominee':nominee,'dobnominee':dobnominee,'agenominee':agenominee,'nomineeRelation':nomineeRelation,
+        'mincome':mincome,'Medexam':Medexam,'height':height,'weight':weight,'chest':chest,'abdomen':abdomen,'suicide':suicide,
+        'habit':habit,"falive":falive,'mname':mname,'mhealth':mhealth,'nums':nums,'Nos':Nos,'Nod':Nod,'malive':malive,'fhealth':fhealth,'fcd':fcd,'mcd':mcd,'numb':numb,
+        'Dfam':Dfam,'yesno':yesno,'operation':operation,'suminsured':suminsured,'term':term,'premium':premium,'mode':mode,'disease':disease}),
             headers: {
                 'Content-Type': 'application/json',
             },

@@ -118,6 +118,8 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
 
 STATIC_URL = 'static/'
+# MEDIA_ROOT=os.path.join(BASE_DIR,"document")
+# MEDIA_URL="/document/"
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
@@ -129,9 +131,14 @@ STATIC_URL = 'static/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
 
+
+MEDIA_ROOT=BASE_DIR/"media"
+MEDIA_URL="/media/"
+
+
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 EMAIL_HOST_USER = 'sajidahsan67@gmail.com'
-EMAIL_HOST_PASSWORD = 'omianoxydryxdill'
+EMAIL_HOST_PASSWORD = 'sbkbgnedorcmuwyl'
