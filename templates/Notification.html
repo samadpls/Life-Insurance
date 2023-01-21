@@ -23,9 +23,10 @@
 
         <h5 style="color:#A0A0A0">New notifications</h5>
         {% for i in clients %}
-        <a href="{% url 'RiskAssessment' %}">
+        <a href="{% url 'RiskAssessment' i.id %}">
             <div class="alert {{ color|random }}">
-                {{ i }}
+                {{ i.name }}
+               
             </div>
         </a>
         {% endfor %}

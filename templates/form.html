@@ -202,10 +202,11 @@
                             <div class="input-div">
                                 <select id="agent" name="agent" required>
                                     <option>Select your Agent</option>
-
-
+                                    {% for agent in agents %}
+                                    <option value="{{agent.team_id}}">{{ agent.team_name }}</option>
+                                    {% endfor %}
                                 </select>
-                  
+                               
                             </div>
 
                             
@@ -1099,7 +1100,7 @@
         .then(data => {
             console.log('here1')
             if (data.status === 'success') {
-                window.location.assign('/')
+                window.location.assign('/loggedin')
                 console.log('here3')
                 alert('OTP verified successfully');
             } 

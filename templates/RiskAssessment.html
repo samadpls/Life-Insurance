@@ -5,284 +5,934 @@
 
 
 <head>
-    <title>Risk Assessment</title>
-    <style>
-        
-        
-        .text-box {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 40vh;
-        }
-        .text-box textarea {
-            width: 60%;
-            height: 70%;
-            font-size: 20px;
-        }
-        
-        label {
-            display: inline-block;
-            font-size: 20px;
-            
-        }
-      
-        input[type="radio"] {
-            display: inline-block;
-            margin-left: 10px;
-        }
-        label, input[type="radio"] {
-            padding: 10px;
-            margin: 10px;
-          }
-        input[type="radio"]:hover {
-          background-color: back_click;
-          cursor: pointer;
-        }
-        label, input[type="radio"] {
-            font-size: 20px;
-            font-weight: bold;
-          }
-        .text-box textarea {
-            border-radius: 20px;
-        }
-
-
-        
-
-        .button-container {
-        width: 100%;
-        display: flex;
-        justify-content: center;
+  <title>Risk Assessment</title>
+  <style>
+    .text-box {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 40vh;
     }
+
+    .text-box textarea {
+      width: 60%;
+      height: 70%;
+      font-size: 20px;
+    }
+
+    label {
+      display: inline-block;
+      font-size: 20px;
+
+    }
+
+    input[type="radio"] {
+      display: inline-block;
+      margin-left: 10px;
+    }
+
+    label,
+    input[type="radio"] {
+      padding: 10px;
+      margin: 10px;
+    }
+
+    input[type="radio"]:hover {
+      background-color: back_click;
+      cursor: pointer;
+    }
+
+    label,
+    input[type="radio"] {
+      font-size: 20px;
+      font-weight: bold;
+    }
+
+    .text-box textarea {
+      border-radius: 20px;
+    }
+
+
+
+
+    .button-container {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+    }
+
     .expanding-button {
-        background-color: white;
-        color: black;
-        border: none;
-        padding: 15px 32px;
-        text-align: center;
-        text-decoration: none;
-        display: inline-block;
-        font-size: 25px;
-        margin: 4px 2px;
-        cursor: pointer;
-        width: 100%;
-        transition: background-color 0.3s ease;
+      background-color: white;
+      color: black;
+      border: none;
+      padding: 15px 32px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 25px;
+      margin: 4px 2px;
+      cursor: pointer;
+      width: 100%;
+      transition: background-color 0.3s ease;
     }
-    
+
     .expanding-button:hover {
-        background-color:	#909090;
-        color: white;
-        width: 110%;
+      background-color: #909090;
+      color: white;
+      width: 110%;
     }
-    </style>
+  </style>
 
 </head>
 
 <body>
   <nav class="navbar bg-dark my-5" data-bs-theme="dark">
-      
+
     <div class="row">
       <div class="col">
-        <h1 class="text-center"style="color:#A0A0A0;">&nbsp&nbsp&nbsp&nbspRisk Assessment</h1>
+        <h1 class="text-center" style="color:#A0A0A0;">&nbsp&nbsp&nbsp&nbspRisk Assessment</h1>
       </div>
     </div>
-</nav>
-    <br>
-    <h1 align="center">Client Foam </h1><br>
-    <table class="table table-striped">
-            <thead>
-              <tr>
-                <th scope="col">#</th>
-                <th scope="col">First</th>
-                <th scope="col">Last</th>
-                <th scope="col">Email</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <th scope="row">1</th>
-                <td>Mark</td>
-                <td>Otto</td>
-                <td>@mdo</td>
-              </tr>
-              <tr>
-                <th scope="row">2</th>
-                <td>Mark</td>
-                <td>Otto</td>
-                <td>@mdo</td>
-              </tr>
-              <tr>
-                <th scope="row">3</th>
-                <td>Mark</td>
-                <td>Otto</td>
-                <td>@mdo</td>
-              </tr>
-              <tr>
-                <th scope="row">4</th>
-                <td>Mark</td>
-                <td>Otto</td>
-                <td>@mdo</td>
-              </tr>
-              <tr>
-                <th scope="row">5</th>
-                <td>Mark</td>
-                <td>Otto</td>
-                <td>@mdo</td>
-              </tr>
-              <tr>
-                <th scope="row">6</th>
-                <td>Mark</td>
-                <td>Otto</td>
-                <td>@mdo</td>
-              </tr>
-              <tr>
-                <th scope="row">7</th>
-                <td>Mark</td>
-                <td>Otto</td>
-                <td>@mdo</td>
-              </tr>
-              <tr>
-                <th scope="row">8</th>
-                <td>Mark</td>
-                <td>Otto</td>
-                <td>@mdo</td>
-              </tr>
-              <tr>
-                <th scope="row">9</th>
-                <td>Mark</td>
-                <td>Otto</td>
-                <td>@mdo</td>
-              </tr>
-              <tr>
-                <th scope="row">10</th>
-                <td>Mark</td>
-                <td>Otto</td>
-                <td>@mdo</td>
-              </tr>
-              <tr>
-                <th scope="row">11</th>
-                <td>Mark</td>
-                <td>Otto</td>
-                <td>@mdo</td>
-              </tr>
-              <tr>
-                <th scope="row">12</th>
-                <td>Mark</td>
-                <td>Otto</td>
-                <td>@mdo</td>
-              </tr>
-              <tr>
-                <th scope="row">13</th>
-                <td>Mark</td>
-                <td>Otto</td>
-                <td>@mdo</td>
-              </tr>
-              <tr>
-                <th scope="row">14</th>
-                <td>Mark</td>
-                <td>Otto</td>
-                <td>@mdo</td>
-              </tr>
-              <tr>
-                <th scope="row">15</th>
-                <td>Mark</td>
-                <td>Otto</td>
-                <td>@mdo</td>
-              </tr>
-              
-              <tr>
-                <th scope="row">16</th>
-                <td>Jacob</td>
-                <td>Thornton</td>
-                <td>@fat</td>
-              </tr>
-              <tr>
-                <th scope="row">17</th>
-                <td colspan="2">Larry the Bird</td>
-                <td>@twitter</td>
-              </tr>
-            </tbody>
-          </table>
-        <foam>  
-          <br>
-          <h1 align="center">Assessment </h1>
-         
-          <label><em>Medical Test Approval:</em></label>
-          <input type="radio" name="approval-mt" value="approved" onchange="showReasonMT(this)"> Approved
-          <input type="radio" name="approval-mt" value="not approved" onchange="showReasonMT(this)"> Not Approved
-          
-          <div class="text-box" style="display:none" id="reason-box-MT">
-              <textarea placeholder="   Please provide reason"></textarea>
-          </div>
-          <br>
-          <label><em>Bank statement:</em></label>
-          <input type="radio" name="approval-bs" value="approved" onchange="showReasonBS(this)"> Approved
-          <input type="radio" name="approval-bs" value="not approved" onchange="showReasonBS(this)"> Not Approved
-          
-          <div class="text-box" style="display:none" id="reason-box-BS">
-              <textarea placeholder="   Please provide reason"></textarea>
-          </div>
-          <br>
+  </nav>
+  <br>
+  <h1 align="center">Client Foam </h1><br>
+  <div>
 
-          <label><em>CNIC Approval:</em></label>
-          <input type="radio" name="approval-cnic" value="approved" onchange="showReasonCNIC(this)"> Approved
-          <input type="radio" name="approval-cnic" value="not approved" onchange="showReasonCNIC(this)"> Not Approved
-          
-          <div class="text-box" style="display:none" id="reason-box-CNIC">
-              <textarea placeholder="   Please provide reason"></textarea>
-          </div><br><br>
-          <div class="button-container">
-            <button class="expanding-button" font="bold" >--- Submit ---</button>
-          </div>
-          
-          <br><br><br><br><br><br><br><br><br><br><br><br>
-        </foam>  
-  </body>
+
+
+
+
+
+
+    <fieldset class="module aligned ">
+
+
+
+      <div class="form-row field-name">
+
+
+        <div>
+          {% for i in clients %}
+
+          <label for="id_name">Name:</label>
+
+          <input type="text" name="name" value="{{i.name}}" class="vTextField" maxlength="200" id="id_name" disabled>
+
+
+
+        </div>
+
+      </div>
+
+      <div class="form-row field-father_name">
+
+
+        <div>
+
+
+          <label for="id_father_name">Father name:</label>
+
+          <input type="text" name="father_name" value="{{i.father_name}}" class="vTextField" maxlength="200"
+            id="id_father_name" disabled>
+
+
+
+        </div>
+
+      </div>
+
+      <div class="form-row field-phone">
+
+
+        <div>
+
+
+          <label for="id_phone">Phone:</label>
+
+          <input type="text" name="phone" value="{{i.phone}}" class="vTextField" maxlength="20" id="id_phone" disabled>
+
+
+
+        </div>
+
+      </div>
+
+      <div class="form-row field-email">
+
+
+        <div>
+
+
+          <label for="id_email">Email:</label>
+
+          <input type="email" name="email" value="{{i.email}}" class="vTextField" maxlength="254"
+            id="id_email" disabled>
+
+
+
+        </div>
+
+      </div>
+
+      <div class="form-row field-address">
+
+
+        <div>
+
+
+          <label for="id_address">Address:</label>
+
+          <input type="text" name="address" value="{{i.address}}"
+            class="vTextField" maxlength="255" id="id_address" disabled>
+
+
+
+        </div>
+
+      </div>
+
+      <div class="form-row field-dob">
+
+
+        <div>
+
+
+          <label for="id_dob">Dob:</label>
+
+          <input type="text" name="dob" value="{{i.dob}}" class="vDateField" size="10" id="id_dob" disabled><span
+            class="datetimeshortcuts">&nbsp;<a href="#">Today</a>&nbsp;|&nbsp;<a href="#" id="calendarlink0"><span
+                class="date-icon" title="Choose a Date"></span></a></span>
+
+
+
+        </div>
+
+      </div>
+
+      <div class="form-row field-age">
+
+
+        <div>
+
+
+          <label for="id_age">Age:</label>
+
+          <input type="text" name="age" value="{{i.age}}" class="vTextField" maxlength="255" id="id_age" disabled>
+
+
+
+        </div>
+
+      </div>
+
+      <div class="form-row field-cities">
+
+
+        <div>
+
+
+          <label for="id_cities">Cities:</label>
+
+          <input type="text" name="cities" value="{{i.cities}}" class="vTextField" maxlength="255" id="id_cities" disabled>
+
+
+
+        </div>
+
+      </div>
+
+      <div class="form-row field-nominee">
+
+
+        <div>
+
+
+          <label for="id_nominee">Nominee:</label>
+
+          <input type="text" name="nominee" value="{{i.nominee}}}" class="vTextField" maxlength="255" id="id_nominee" disabled>
+
+
+
+        </div>
+
+      </div>
+
+      <div class="form-row field-dob_nominee">
+
+
+        <div>
+
+
+          <label for="id_dob_nominee">Dob nominee:</label>
+
+          <input type="text" name="dob_nominee" value="{{i.dob_nominee}}" class="vDateField" size="10"
+            id="id_dob_nominee"><span class="datetimeshortcuts">&nbsp;<a href="#">Today</a>&nbsp;|&nbsp;<a href="#"
+              id="calendarlink1"><span class="date-icon" title="Choose a Date"></span></a></span>
+
+
+
+        </div>
+
+      </div>
+
+      <div class="form-row field-age_nominee">
+
+
+        <div>
+
+
+          <label for="id_age_nominee">Age nominee:</label>
+
+          <input type="number" name="age_nominee" value="{{i.age_nominee}" class="vIntegerField" min="0" id="id_age_nominee" disabled>
+
+
+
+        </div>
+
+      </div>
+
+      <div class="form-row field-nominee_relation">
+
+
+        <div>
+
+
+          <label for="id_nominee_relation">Nominee relation:</label>
+
+          <input type="text" name="nominee_relation" class="vTextField" maxlength="255" id="id_nominee_relation">
+
+
+
+        </div>
+
+      </div>
+
+      <div class="form-row field-mincome">
+
+
+        <div>
+
+
+          <label for="id_mincome">Mincome:</label>
+
+          <input type="text" name="mincome" value="45000" class="vTextField" maxlength="20" id="id_mincome">
+
+
+
+        </div>
+
+      </div>
+
+      <div class="form-row field-suminsured">
+
+
+        <div>
+
+
+          <label for="id_suminsured">Suminsured:</label>
+
+          <input type="text" name="suminsured" value="500000" class="vTextField" maxlength="20" id="id_suminsured">
+
+
+
+        </div>
+
+      </div>
+
+      <div class="form-row field-term">
+
+
+        <div>
+
+
+          <label for="id_term">Term:</label>
+
+          <input type="text" name="term" value="10" class="vTextField" maxlength="20" id="id_term">
+
+
+
+        </div>
+
+      </div>
+
+      <div class="form-row field-premium">
+
+
+        <div>
+
+
+          <label for="id_premium">Premium:</label>
+
+          <input type="text" name="premium" class="vTextField" maxlength="20" id="id_premium">
+
+
+
+        </div>
+
+      </div>
+
+      <div class="form-row field-mode">
+
+
+        <div>
+
+
+          <label class="required" for="id_mode">Mode:</label>
+
+          <select name="mode" id="id_mode">
+            <option value="yly">YLY</option>
+
+            <option value="hly">HLY</option>
+
+            <option value="qly">QLY</option>
+
+          </select>
+
+
+
+        </div>
+
+      </div>
+
+      <div class="form-row field-disease">
+
+
+        <div>
+
+
+          <label class="required" for="id_disease">Disease:</label>
+
+          <select name="disease" id="id_disease">
+            <option value="cancer">Cancer</option>
+
+            <option value="diabetes">Diabetes</option>
+
+            <option value="heartDisease">Heart disease</option>
+
+          </select>
+
+
+
+        </div>
+
+      </div>
+
+      <div class="form-row field-operation">
+
+
+        <div>
+
+
+          <label class="required" for="id_operation">Operation:</label>
+
+          <select name="operation" id="id_operation">
+            <option value="Appendectomy">Appendectomy</option>
+
+            <option value="openHeartSurgery">openHeartSurgery</option>
+
+            <option value="Hip replacement surgery">Hip replacement surgery</option>
+
+          </select>
+
+
+
+        </div>
+
+      </div>
+
+      <div class="form-row field-yesno">
+
+
+        <div>
+
+
+          <label class="required" for="id_yesno">Yesno:</label>
+
+          <select name="yesno" id="id_yesno">
+            <option value="yes">Yes</option>
+
+            <option value="no">No</option>
+
+          </select>
+
+
+
+        </div>
+
+      </div>
+
+      <div class="form-row field-habit">
+
+
+        <div>
+
+
+          <label class="required" for="id_habit">Habit:</label>
+
+          <select name="habit" id="id_habit">
+            <option value="tabacoo">Tabacoo</option>
+
+            <option value="alcohal">Alcohal</option>
+
+            <option value="drugs">Drugs</option>
+
+          </select>
+
+
+
+        </div>
+
+      </div>
+
+      <div class="form-row field-Dfam">
+
+
+        <div>
+
+
+          <label class="required" for="id_Dfam">Dfam:</label>
+
+          <select name="Dfam" id="id_Dfam">
+            <option value="yes">Yes</option>
+
+            <option value="no">No</option>
+
+          </select>
+
+
+
+        </div>
+
+      </div>
+
+      <div class="form-row field-Medexam">
+
+
+        <div>
+
+
+          <label class="required" for="id_Medexam">Medexam:</label>
+
+          <select name="Medexam" id="id_Medexam">
+            <option value="yes">Yes</option>
+
+            <option value="no">No</option>
+
+          </select>
+
+
+
+        </div>
+
+      </div>
+
+      <div class="form-row field-height">
+
+
+        <div>
+
+
+          <label for="id_height">Height:</label>
+
+          <input type="text" name="height" class="vTextField" maxlength="20" id="id_height">
+
+
+
+        </div>
+
+      </div>
+
+      <div class="form-row field-weight">
+
+
+        <div>
+
+
+          <label for="id_weight">Weight:</label>
+
+          <input type="text" name="weight" class="vTextField" maxlength="20" id="id_weight">
+
+
+
+        </div>
+
+      </div>
+
+      <div class="form-row field-chest">
+
+
+        <div>
+
+
+          <label for="id_chest">Chest:</label>
+
+          <input type="text" name="chest" class="vTextField" maxlength="20" id="id_chest">
+
+
+
+        </div>
+
+      </div>
+
+      <div class="form-row field-abdomen">
+
+
+        <div>
+
+
+          <label for="id_abdomen">Abdomen:</label>
+
+          <input type="text" name="abdomen" class="vTextField" maxlength="20" id="id_abdomen">
+
+
+
+        </div>
+
+      </div>
+
+      <div class="form-row field-suicide">
+
+
+        <div>
+
+
+          <label class="required" for="id_suicide">Suicide:</label>
+
+          <select name="suicide" id="id_suicide">
+            <option value="yes">Yes</option>
+
+            <option value="no">No</option>
+
+          </select>
+
+
+
+        </div>
+
+      </div>
+
+      <div class="form-row field-falive">
+
+
+        <div>
+
+
+          <label class="required" for="id_falive">Falive:</label>
+
+          <select name="falive" id="id_falive">
+            <option value="yes">Yes</option>
+
+            <option value="no">No</option>
+
+          </select>
+
+
+
+        </div>
+
+      </div>
+
+      <div class="form-row field-fhealth">
+
+
+        <div>
+
+
+          <label class="required" for="id_fhealth">Fhealth:</label>
+
+          <select name="fhealth" id="id_fhealth">
+            <option value="good">Good</option>
+
+            <option value="fair">Fair</option>
+
+            <option value="poor">Poor</option>
+
+          </select>
+
+
+
+        </div>
+
+      </div>
+
+      <div class="form-row field-malive">
+
+
+        <div>
+
+
+          <label class="required" for="id_malive">Malive:</label>
+
+          <select name="malive" id="id_malive">
+            <option value="yes">Yes</option>
+
+            <option value="no">No</option>
+
+          </select>
+
+
+
+        </div>
+
+      </div>
+
+      <div class="form-row field-causefdeath">
+
+
+        <div>
+
+
+          <label for="id_causefdeath">Causefdeath:</label>
+
+          <input type="text" name="causefdeath" class="vTextField" maxlength="255" id="id_causefdeath">
+
+
+
+        </div>
+
+      </div>
+
+      <div class="form-row field-mothername">
+
+
+        <div>
+
+
+          <label for="id_mothername">Mothername:</label>
+
+          <input type="text" name="mothername" class="vTextField" maxlength="255" id="id_mothername">
+
+
+
+        </div>
+
+      </div>
+
+      <div class="form-row field-mhealth">
+
+
+        <div>
+
+
+          <label class="required" for="id_mhealth">Mhealth:</label>
+
+          <select name="mhealth" id="id_mhealth">
+            <option value="good">Good</option>
+
+            <option value="fair">Fair</option>
+
+            <option value="poor">Poor</option>
+
+          </select>
+
+
+
+        </div>
+
+      </div>
+
+      <div class="form-row field-mcd">
+
+
+        <div>
+
+
+          <label for="id_mcd">Mcd:</label>
+
+          <input type="text" name="mcd" class="vTextField" maxlength="255" id="id_mcd">
+
+
+
+        </div>
+
+      </div>
+
+      <div class="form-row field-numb">
+
+
+        <div>
+
+
+          <label for="id_numb">Numb:</label>
+
+          <input type="text" name="numb" class="vTextField" maxlength="20" id="id_numb">
+
+
+
+        </div>
+
+      </div>
+
+      <div class="form-row field-nums">
+
+
+        <div>
+
+
+          <label for="id_nums">Nums:</label>
+
+          <input type="text" name="nums" class="vTextField" maxlength="20" id="id_nums">
+
+
+
+        </div>
+
+      </div>
+
+      <div class="form-row field-Nos">
+
+
+        <div>
+
+
+          <label for="id_Nos">Nos:</label>
+
+          <input type="text" name="Nos" class="vTextField" maxlength="20" id="id_Nos">
+
+
+
+        </div>
+
+      </div>
+
+      <div class="form-row field-Nod">
+
+
+        <div>
+
+
+          <label for="id_Nod">Nod:</label>
+
+          <input type="text" name="Nod" class="vTextField" maxlength="20" id="id_Nod">
+
+
+
+        </div>
+
+      </div>
+
+    </fieldset>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div class="submit-row">
+
+      <input type="submit" value="Save" class="default" name="_save">
+
+
+      <p class="deletelink-box"><a href="/admin/registration/form/15/delete/" class="deletelink">Delete</a></p>
+
+
+      <input type="submit" value="Save and add another" name="_addanother">
+      <input type="submit" value="Save and continue editing" name="_continue">
+
+
+    </div>
+
+
+
+    <script id="django-admin-form-add-constants" src="/static/admin/js/change_form.js" async="">
+    </script>
+
+
+
+
+    <script id="django-admin-prepopulated-fields-constants" src="/static/admin/js/prepopulate_init.js"
+      data-prepopulated-fields="[]">
+      </script>
+
+
+  </div>
+  </div>
+  <foam>
+    <br>
+    <h1 align="center">Assessment </h1>
+
+    <label><em>Medical Test Approval:</em></label>
+    <input type="radio" name="approval-mt" value="approved" onchange="showReasonMT(this)"> Approved
+    <input type="radio" name="approval-mt" value="not approved" onchange="showReasonMT(this)"> Not Approved
+
+    <div class="text-box" style="display:none" id="reason-box-MT">
+      <textarea placeholder="   Please provide reason"></textarea>
+    </div>
+    <br>
+    <label><em>Bank statement:</em></label>
+    <input type="radio" name="approval-bs" value="approved" onchange="showReasonBS(this)"> Approved
+    <input type="radio" name="approval-bs" value="not approved" onchange="showReasonBS(this)"> Not Approved
+
+    <div class="text-box" style="display:none" id="reason-box-BS">
+      <textarea placeholder="   Please provide reason"></textarea>
+    </div>
+    <br>
+
+    <label><em>CNIC Approval:</em></label>
+    <input type="radio" name="approval-cnic" value="approved" onchange="showReasonCNIC(this)"> Approved
+    <input type="radio" name="approval-cnic" value="not approved" onchange="showReasonCNIC(this)"> Not Approved
+
+    <div class="text-box" style="display:none" id="reason-box-CNIC">
+      <textarea placeholder="   Please provide reason"></textarea>
+    </div><br><br>
+    <div class="button-container">
+      <button class="expanding-button" font="bold">--- Submit ---</button>
+    </div>
+
+    <br><br><br><br><br><br><br><br><br><br><br><br>
+  </foam>
+</body>
+
 </html>
 
 <script>
-    function showReasonMT(element) {
-        var reasonBoxMT = document.getElementById("reason-box-MT");
-        if (element.value === "not approved") {
-            reasonBoxMT.style.display = "flex";
-        } else {
-            reasonBoxMT.style.display = "none";
-        }
+  function showReasonMT(element) {
+    var reasonBoxMT = document.getElementById("reason-box-MT");
+    if (element.value === "not approved") {
+      reasonBoxMT.style.display = "flex";
+    } else {
+      reasonBoxMT.style.display = "none";
     }
+  }
 
-    function showReasonBS(element) {
-        var reasonBoxBS = document.getElementById("reason-box-BS");
-        if (element.value === "not approved") {
-            reasonBoxBS.style.display = "flex";
-        } else {
-            reasonBoxBS.style.display = "none";
-        }
+  function showReasonBS(element) {
+    var reasonBoxBS = document.getElementById("reason-box-BS");
+    if (element.value === "not approved") {
+      reasonBoxBS.style.display = "flex";
+    } else {
+      reasonBoxBS.style.display = "none";
     }
+  }
 
-    function showReasonCNIC(element) {
-        var reasonBoxCNIC = document.getElementById("reason-box-CNIC");
-        if (element.value === "not approved") {
-            reasonBoxCNIC.style.display = "flex";
-        } else {
-            reasonBoxCNIC.style.display = "none";
-        }
-    }     
+  function showReasonCNIC(element) {
+    var reasonBoxCNIC = document.getElementById("reason-box-CNIC");
+    if (element.value === "not approved") {
+      reasonBoxCNIC.style.display = "flex";
+    } else {
+      reasonBoxCNIC.style.display = "none";
+    }
+  }
 
-    document.querySelector('.expanding-button').addEventListener('mouseover', function() {
-        this.style.backgroundColor = '#909090';
-        this.style.color = 'white';
-        this.style.width = '110%';
-      });
-      
-      document.querySelector('.expanding-button').addEventListener('mouseout', function() {
-        this.style.backgroundColor = 'white';
-        this.style.color = 'black';
-        this.style.width = '100%';
-      });
-      
-      
+  document.querySelector('.expanding-button').addEventListener('mouseover', function () {
+    this.style.backgroundColor = '#909090';
+    this.style.color = 'white';
+    this.style.width = '110%';
+  });
+
+  document.querySelector('.expanding-button').addEventListener('mouseout', function () {
+    this.style.backgroundColor = 'white';
+    this.style.color = 'black';
+    this.style.width = '100%';
+  });
+
+
 </script>
 
-{% endblock content  %}
-
+{% endblock content %}
