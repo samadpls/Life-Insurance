@@ -15,6 +15,7 @@ urlpatterns = [
     path('login',login,name='login'),
     path("jevansaathi",jevansaathi,name='jevansaathi'),
     path("WholeLifeAssurance",WholeLifeAssurance,name='WholeLifeAssurance'),
+    path("loggedin",onlogin,name="loggedin")
     path("Sadabahar",Sadabahar,name='Sadabahar'),
     path("ChildProtection",ChildProtection,name='ChildProtection')
 

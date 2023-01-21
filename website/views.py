@@ -147,8 +147,8 @@ def login(request):
              
             else:
                 try:
-                    team = register.objects.get(user_name=login_email,user_password=login_pwd)
-                    return redirect("/")
+                    client = register.objects.get(user_name=login_email,user_password=login_pwd)
+                    return redirect("loggedin")
                 except register.DoesNotExist:
                     messages.error(request,"Email or password is not correct")
                     return redirect('login')  
@@ -180,25 +180,6 @@ def login(request):
         else:
             messages.error(request,"Invalid Email")
             return redirect('login') 
-            
-            
-            # print('hello2')
-           
-            
-            # if get_user_model().objects.filter(type1=type1).exists():
-            #     print('masla ha')
-            
-        
-            
-            
-        
-        
-            
-        
-
-       
-
-    
     
     return render(request, 'login.html', {})
 
@@ -218,3 +199,5 @@ def Sadabahar(request):
 def ChildProtection(request):
     return render(request, 'ChildProtection.html', {})
 
+def onlogin(request):
+    return render(request, 'indexlogin.html', {})
