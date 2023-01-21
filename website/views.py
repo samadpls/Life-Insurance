@@ -195,7 +195,7 @@ def form(request):
             form_class.suicide=suicide
             form_class.falive=falive
             form_class.malive=malive
-            form_class.fhealth=fhealt
+            form_class.fhealth=fhealth
             # form_class.operation=operation
             # form_class.premium=premium
 
