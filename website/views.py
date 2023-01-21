@@ -134,6 +134,33 @@ def form(request):
             mincome = data['mincome']
             suminsured = data['suminsured']
             term = data['term']
+            premium=data['premium']
+            mode=data['mode']
+            disease=data['disease']
+            operation=data['operation']
+            yesno=data['yesno']
+            habit=data['habit']
+            Dfam=data['Dfam']
+            Medexam=data['Medexam']
+            height=data['height']
+            weight=data['weight']
+            chest=data['chest']
+            abdomen=data['abdomen']
+            suicide=data['suicide']
+            falive=data['falive']
+            malive=data['malive']
+            fhealth=data['fhealth']
+            fcd=data['fcd']
+            mname=data['mname']
+            mhealth=data['mhealth']
+            # operation=data['operation']
+            # premium=data['premium']
+            mcd=data['mcd']
+            numb=data['numb']
+            nums=data['nums']
+
+            Nos=data['Nos']
+            Nod=data['Nod']
             # operation=data['operation']
             # premium=data['premium']
 
@@ -153,6 +180,22 @@ def form(request):
             form_class.mincome = mincome
             form_class.suminsured = suminsured
             form_class.term = term
+            form_class.premium=premium
+            form_class.mode=mode
+            form_class.disease=disease
+            form_class.operation=operation
+            form_class.yesno=yesno
+            form_class.habit=habit
+            form_class.Dfam=Dfam
+            form_class.Medexam=Medexam
+            form_class.height=height
+            form_class.weight=weight
+            form_class.chest=chest
+            form_class.abdomen=abdomen
+            form_class.suicide=suicide
+            form_class.falive=falive
+            form_class.malive=malive
+            form_class.fhealth=fhealt
             # form_class.operation=operation
             # form_class.premium=premium
 
