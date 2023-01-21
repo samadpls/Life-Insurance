@@ -59,6 +59,14 @@ setTimeout(function(){
     }
 
   }
+
+  let clear=()=>{
+    let name=document.getElementById("name").value=""
+    let email=document.getElementById("email").value=""
+
+    let pass=document.getElementById("pass").value=""
+
+  }
   
 </script>
 
@@ -107,6 +115,19 @@ setTimeout(function(){
 
           
     </div>  
+    {% if messages %}
+
+    {% for message in messages%}
+    <div class="alert alert-danger" id="alert-message">{{message}}</div>
+    {% endfor %}
+  
+    <script>
+      setTimeout(function(){
+        document.getElementById("alert-message").style.display="none";
+  
+      },3000)
+    </script>
+    {%endif%}
 
   
     <div class="alert alert-success" id="myAlert" style="display:none">
@@ -260,19 +281,20 @@ setTimeout(function(){
                                 </div>
                                 <div class="form-group my-1">
                                   <label for="exampleInputEmail1">Email address</label>
-                                  <input type="email" class="form-control" id="exampleInputEmail1" name="emailteam" aria-describedby="emailHelp" placeholder=" @teams.com">
+                                  <input type="email" class="form-control" id="email" name="emailteam" aria-describedby="emailHelp" placeholder=" @teams.com" onblur="validateEmail()">
                                 </div>
                                 <div class="form-group">
                                   <label for="exampleInputPassword1">Password</label>
-                                  <input type="password" class="form-control" id="exampleInputPassword1" name="teampass" placeholder="Password">
+                                  <input type="password" class="form-control" id="pass" name="teampass" placeholder="Password">
                                 </div>
                                 <div class="my-2">
                                   <div class="btn-layer"></div>
-                                  <button  class="btn btn-primary" type="submit" value="Submit">Submit</button>
+                                  <button  class="btn btn-primary" type="submit"  onclick="clear()"  value="Submit">Submit</button>
                                 </div>
                                 
                                 <!-- <button type="submit" class="btn btn-primary my-2">Submit</button> -->
                               </form>
+                            
                             </div>
                             </button>
                           </div>

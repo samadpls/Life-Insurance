@@ -33,7 +33,7 @@ def send_otp(request):
         data = json.loads(request.body)
         email = data['email']
         from_email = "sajidahsan67@gmail.com"
-        password = "btjvcelmsuhxdmsz"
+        password = "omianoxydryxdill"
         subject = "State Life OTP"
         body = f"Thank you for choosing our service.\n\n Your OTP is {otp}.\n\n Please enter this OTP in the verification field to complete the process.\n\nPlease note that this OTP is valid for a limited time and will expire after one time\n\n.If you did not request this OTP or if you have any concerns, please contact our support team immediately.\nThank you for choosing our service.\nBest regards,\nState life company"
 
@@ -53,6 +53,7 @@ def checkOTP(request):
             print(data['otp'])
             print(otp,"global")
             if str(otp)==str(data['otp']):
+                form(data)
                 return JsonResponse({'status': 'success', 'message': "Re-enter the OTP"})
             
             
@@ -62,8 +63,74 @@ def checkOTP(request):
                 except Exception as e:
                     return JsonResponse({'status': 'error', 'message': str(e)})
                 
-
+@csrf_exempt
 def form(request):
+    
+    global otp
+    if request.method=="POST":
+            data = json.loads(request.body)
+            
+            print(data['otp'])
+            print(otp,"global")
+            form_class=Form()
+            print(data)
+            if str(otp)==str(data['otp']):
+                name=data['name']
+                fname=data['fname']
+                phone=data['phone']
+                email=data['email']
+                address=data['address']
+                dob=data['dob']
+                age=data['age']
+                cities=data['cities']
+                nominee=data['nominee']
+                dobnominee=data['dobnominee']
+                agenominee=data['agenominee']
+                nomineeRelation=data['nomineeRelation']
+                mincome=data['mincome']
+                suminsured=data['suminsured']
+                term=data['term']
+                # operation=data['operation']
+                # premium=data['premium']
+                
+                
+                form_class.name=name
+                form_class.father_name=fname
+                form_class.phone=phone
+                form_class.email=email
+                form_class.address=address
+                form_class.dob=dob
+                form_class.age=age
+                form_class.cities=cities
+                form_class.nominee=nominee
+                form_class.dob_nominee=dobnominee
+                form_class.age_nominee=agenominee
+                form_class.nominee_relation=nomineeRelation
+                form_class.mincome=mincome
+                form_class.suminsured=suminsured
+                form_class.term=term
+                # form_class.operation=operation
+                # form_class.premium=premium
+                
+                
+                
+                
+                # form_class.dob='2020-03-02'
+                
+                print(name,fname)
+                form_class.save()
+                return JsonResponse({'status': 'success', 'message': "Re-enter the OTP"})
+            
+            
+            else:
+                try:
+                    return JsonResponse({'status': 'error', 'message': "Re-enter the OTP"})
+                except Exception as e:
+                    return JsonResponse({'status': 'error', 'message': str(e)})
+       
+    
+        
+        
     return render(request, 'form.html',{})  
 
 def payPremium(request):
@@ -90,32 +157,30 @@ def delete_item(request,team_id):
 
 @csrf_exempt
 def target(request):
-   
-
-        
-    
     if request.method == 'POST':
-        
-        
-    
-       
-        team_name = request.POST.get('teamname')
         team_email = request.POST.get('emailteam')
-        team_pas = request.POST.get('teampass')
-        team=team_register()
-        
-        
-
-            
-    
-        
-        
-        team.team_name=team_name
-        team.team_email=team_email
-        team.team_password=team_pas
-        team.save()
-        
-        # return render(request,"target.html")
+        if "@teams.com" in team_email:
+            team_name = request.POST.get('teamname')
+            team_pas = request.POST.get('teampass')
+            if len(team_pas)>=5:
+                created=team_register.objects.filter(team_email=team_email).exists()
+                if created:
+                    messages.error(request,"Email already exists!")
+                    return redirect('target')
+                else:
+                    teams=team_register()
+                    teams.team_name=team_name
+                    teams.team_email=team_email
+                    teams.team_password=team_pas
+                    teams.save()
+                    messages.error(request,"Team email already exist registered")
+                    return redirect('target')
+            else:
+                messages.error(request,"length of password is not matched")
+                return redirect('target')
+        else:
+            messages.error(request,"team email is not valid")
+            return redirect('target')    
         
     task=team_register.objects.all()
     
