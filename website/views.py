@@ -165,6 +165,14 @@ def form(request):
             # premium=data['premium']
 
             # form_class.login_id = str(login_id)
+            form_class.Nos=Nos
+            form_class.nums=nums
+            form_class.Nod=Nod
+            form_class.numb=numb
+            form_class.mcd=mcd
+            form_class.mhealth=mhealth
+            form_class.causefdeath=fcd
+            form_class.mothername=mname
             form_class.name = name
             form_class.father_name = fname
             form_class.phone = phone
@@ -195,7 +203,7 @@ def form(request):
             form_class.suicide=suicide
             form_class.falive=falive
             form_class.malive=malive
-            form_class.fhealth=fhealt
+            form_class.fhealth=fhealth
             # form_class.operation=operation
             # form_class.premium=premium
 
