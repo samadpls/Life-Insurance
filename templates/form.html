@@ -202,10 +202,11 @@
                             <div class="input-div">
                                 <select id="agent" name="agent" required>
                                     <option>Select your Agent</option>
-
-
+                                    {% for agent in agents %}
+                                    <option value="{{agent.team_id}}">{{ agent.team_name }}</option>
+                                    {% endfor %}
                                 </select>
-                  
+                               
                             </div>
 
                             

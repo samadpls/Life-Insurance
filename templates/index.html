@@ -64,96 +64,93 @@
 
 
 </div>
-<div class="img-logo" align="right">
-  <img src="./static/img/iz.png" align="right" width="50" height="50" alt="">
-  <a href="http://127.0.0.1:8000/form" target="_blank">Registration Form </a>
-</div>
+
 
 <div class="container my-5">
-    <h2 style="font-family:'Times New Roman', Times, serif; font-weight: 700;" id="about">Insurance Plans</h2>
-  <div class="row mb-2">
-    <div class="col-md-6">
+  <h2 style="font-family:'Times New Roman', Times, serif; font-weight: 700;" id="about">Insurance Plans</h2>
+<div class="row mb-2">
+  <div class="col-md-6">
 
-      <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative ">
-        <div class="col p-4 d-flex flex-column position-static">
-          <!-- <strong class="d-inline-block mb-2 text-primary">World</strong> -->
-          <h3 class="mb-0">Jeevan Saathi:</h3>
-          <p></p>
-          <p class="card-text mb-auto">This is a joint life plan and covers lives of two partners say husband and wife
-            simultaneously...</p>
-          <a class="btn btn-primary btn-secondary-outline btn-lg" style="width: 38%; height:25%;"
-            href="http://127.0.0.1:8000/jevansaathi">
-            Read More</a>
-        </div>
-        <div class="col-auto d-none d-lg-block  ">
-          <img width="242" height="241" src="./static/img/id.jpg"
-            class="attachment-shop_catalog size-shop_catalog wp-post-image" alt="SLP ad" loading="lazy">
-          <!-- <img class="bd-placeholder-img" width="200" height="250" src="{%static 'img/u.jpg' %}" alt=""> -->
-
-        </div>
+    <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative ">
+      <div class="col p-4 d-flex flex-column position-static">
+        <!-- <strong class="d-inline-block mb-2 text-primary">World</strong> -->
+        <h3 class="mb-0">Jeevan Saathi:</h3>
+        <p></p>
+        <p class="card-text mb-auto">This is a joint life plan and covers lives of two partners say husband and wife
+          simultaneously...</p>
+        <a class="btn btn-primary btn-secondary-outline btn-lg" style="width: 38%; height:25%;"
+          href="{% url 'jevansaathi' %}">
+          Read More</a>
       </div>
-    </div>
-    <div class="col-md-6">
-      <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
-        <div class="col p-4 d-flex flex-column position-static">
+      <div class="col-auto d-none d-lg-block  ">
+        <img width="242" height="241" src="./static/img/id.jpg"
+          class="attachment-shop_catalog size-shop_catalog wp-post-image" alt="SLP ad" loading="lazy">
+        <!-- <img class="bd-placeholder-img" width="200" height="250" src="{%static 'img/u.jpg' %}" alt=""> -->
 
-          <h3 class="mb-0">Child Protection:</h3>
-          <p></p>
-          <p class="mb-auto">This is a joint life insurance policy that pays out a lump sum with bonuses if both the
-            parent and child survive the term...</p>
-          <a class="btn btn-primary btn-secondary-outline btn-lg" style="width: 38%; height:25%;"
-            href="http://127.0.0.1:8000/ChildProtection">
-            Read More</a>
-
-        </div>
-        <div class="col-auto d-none d-lg-block">
-          <img class="bd-placeholder-img" width="242" height="241" src="./static/img/ib.jpg" alt="">
-
-
-        </div>
       </div>
     </div>
   </div>
+  <div class="col-md-6">
+    <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+      <div class="col p-4 d-flex flex-column position-static">
 
-  <div class="row mb-2">
-    <div class="col-md-6">
-      <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
-        <div class="col p-4 d-flex flex-column position-static">
+        <h3 class="mb-0">Child Protection:</h3>
+        <p></p>
+        <p class="mb-auto">This is a joint life insurance policy that pays out a lump sum with bonuses if both the
+          parent and child survive the term...</p>
+        <a class="btn btn-primary btn-secondary-outline btn-lg" style="width: 38%; height:25%;"
+          href="{% url 'ChildProtection' %}">
+          Read More</a>
 
-          <h3 class="mb-0">Sadabahar:</h3>
-          <p></p>
-          <p class="card-text mb-auto">Sadabahar is an endowment plan that provides lump sum benefit at certain stages
-            or on earlier death...</p>
-          <a class="btn btn-primary btn-secondary-outline btn-lg" style="width: 38%; height:25%;"
-            href="http://127.0.0.1:8000/Sadabahar">
-            Read More</a>
-        </div>
-        <div class="col-auto d-none d-lg-block">
-          <img class="bd-placeholder-img" width="242" height="241" src="./static/img/if.jpg" alt="">
-        </div>
       </div>
-    </div>
-    <div class="col-md-6">
-      <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
-        <div class="col p-4 d-flex flex-column position-static">
-
-          <h3 class="mb-0">Whole Life:</h3>
-          <p></p>
-          <p class="mb-auto">Premiums for whole life insurance policies are typically higher than those for term life
-            insurance policies...</p>
-          <a class="btn btn-primary btn-secondary-outline btn-lg" style="width: 38%; height:25%;"
-            href="http://127.0.0.1:8000/WholeLifeAssurance">
-            Read More</a>
-        </div>
-        <div class="col-auto d-none d-lg-block">
-          <img class="bd-placeholder-img" width="242" height="241" src="./static/img/ig.jpg" alt="">
+      <div class="col-auto d-none d-lg-block">
+        <img class="bd-placeholder-img" width="242" height="241" src="./static/img/ib.jpg" alt="">
 
 
-
-        </div>
       </div>
     </div>
   </div>
+</div>
+
+<div class="row mb-2">
+  <div class="col-md-6">
+    <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+      <div class="col p-4 d-flex flex-column position-static">
+
+        <h3 class="mb-0">Sadabahar:</h3>
+        <p></p>
+        <p class="card-text mb-auto">Sadabahar is an endowment plan that provides lump sum benefit at certain stages
+          or on earlier death...</p>
+        <a class="btn btn-primary btn-secondary-outline btn-lg" style="width: 38%; height:25%;"
+          href="{% url 'Sadabahar' %}">
+          Read More</a>
+      </div>
+      <div class="col-auto d-none d-lg-block">
+        <img class="bd-placeholder-img" width="242" height="241" src="./static/img/if.jpg" alt="">
+      </div>
+    </div>
+  </div>
+  <div class="col-md-6">
+    <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+      <div class="col p-4 d-flex flex-column position-static">
+
+        <h3 class="mb-0">Whole Life:</h3>
+        <p></p>
+        <p class="mb-auto">Premiums for whole life insurance policies are typically higher than those for term life
+          insurance policies...</p>
+        <a class="btn btn-primary btn-secondary-outline btn-lg" style="width: 38%; height:25%;"
+          href="{% url 'WholeLifeAssurance' %}">
+          Read More</a>
+      </div>
+      <div class="col-auto d-none d-lg-block">
+        <img class="bd-placeholder-img" width="242" height="241" src="./static/img/ig.jpg" alt="">
+
+
+
+      </div>
+    </div>
+  </div>
+</div>
 </div>
 <div class="container" align="center" id="contact">
   <h2>Contact Us</h2>
@@ -215,7 +212,6 @@
 
 </div> 
 
-<!--<div class="container">
       <h2>News and Announcements</h2>
       <div class="row my-2">
         <div class="col-lg-4">
@@ -257,9 +253,6 @@
 
       
     </div>-->
-
-
-
 <footer class="container">
   <p>©2023 State Life.<a href="#"></a><a href="#"></a></p>
 </footer>
