@@ -20,6 +20,10 @@ class TeamProgress(models.Model):
     target_sales = models.CharField(max_length=20,default=0)
     target_sales_history = models.TextField(default='[]')
 
+class payPrem(models.Model):
+    file=models.FileField(upload_to='media/',default="",null=True)
+    date=  models.CharField(default=datetime.date.today(),max_length=200)
+    login_id=models.CharField(max_length=200)
     
 class Form(models.Model):
     date=  models.CharField(default=datetime.date.today(),max_length=200)

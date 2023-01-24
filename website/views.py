@@ -125,104 +125,11 @@ def form(request):
     if request.method == "POST":
 
         form_class = Form()
-        print(data)
-        if str(otp) == str(data['otp']):
-            print(login_id, "POST mai ha")
-            name = data['name']
-            fname = data['fname']
-            phone = data['phone']
-            email = data['email']
-            address = data['address']
-            dob = data['dob']
-            age = data['age']
-            cities = data['cities']
-            nominee = data['nominee']
-            dobnominee = data['dobnominee']
-            agenominee = data['agenominee']
-            nomineeRelation = data['nomineeRelation']
-            mincome = data['mincome']
-            suminsured = data['suminsured']
-            term = data['term']
-            premium = data['premium']
-            mode = data['mode']
-            disease = data['disease']
-            operation = data['operation']
-            Weak_eye_sight = data['yesno']
-            habit = data['habit']
-            Dfam = data['Dfam']
-            Medexam = data['Medexam']
-            height = data['height']
-            weight = data['weight']
-            chest = data['chest']
-            abdomen = data['abdomen']
-            suicide = data['suicide']
-            falive = data['falive']
-            malive = data['malive']
-            fhealth = data['fhealth']
-            fcd = data['fcd']
-            mname = data['mname']
-            mhealth = data['mhealth']
-            agentID = data["agentID"]
-            plan = data['plan']
-            # operation=data['operation']
-            premium = data['premium']
-            mcd = data['mcd']
-            numb = data['numb']
-            nums = data['nums']
-
-            Nos = data['Nos']
-            Nod = data['Nod']
-            # operation=data['operation']
-            # premium=data['premium']
-
-            # form_class.login_id = str(login_id)
-            form_class.plan = plan
-            form_class.agentID = agentID
-
-            form_class.Nos = Nos
-            form_class.nums = nums
-            form_class.Nod = Nod
-            form_class.numb = numb
-            form_class.mcd = mcd
-            form_class.mhealth = mhealth
-            form_class.causefdeath = fcd
-            form_class.mothername = mname
-            form_class.name = name
-            form_class.father_name = fname
-            form_class.phone = phone
-            form_class.email = email
-            form_class.address = address
-            form_class.dob = dob
-            form_class.age = age
-            form_class.cities = cities
-            form_class.nominee = nominee
-            form_class.dob_nominee = dobnominee
-            form_class.age_nominee = agenominee
-            form_class.nominee_relation = nomineeRelation
-            form_class.mincome = mincome
-            form_class.suminsured = suminsured
-            form_class.term = term
-            form_class.premium = premium
-            form_class.mode = mode
-            form_class.disease = disease
-            form_class.operation = operation
-            form_class.Weak_eye_sight = Weak_eye_sight
-            form_class.habit = habit
-            form_class.Dfam = Dfam
-            form_class.Medexam = Medexam
-            form_class.height = height
-            form_class.weight = weight
-            form_class.chest = chest
-            form_class.abdomen = abdomen
-            form_class.suicide = suicide
-            form_class.falive = falive
-            form_class.malive = malive
-            form_class.fhealth = fhealth
-            form_class.premium = premium
-            # form_class.operation=operation
 
         # print("FAIZAN", request.FILES)
 
+        if str(request.POST.get('OTP')) == str(request.POST.get("OTP")):
+            file=request.FILES.get('file')
             # handle_uploaded_file(file)
             fss = FileSystemStorage()
             file = fss.save("abc.jpg", file)
@@ -271,6 +178,8 @@ def form(request):
             form_class.Nod = request.POST.get('Nod')
             form_class.Nos = request.POST.get('Nos')
             form_class.mothername = request.POST.get('mother')
+            form_class.agentID=request.POST.get('agent')
+            form_class.plan=request.POST.get('plan')
 
             form_class.save()
 
@@ -307,13 +216,15 @@ def payPremium(request):
         print("file_url", file_url)
             
         form_class.file=file
+        form_class.login_id = login_id
         form_class.save()
         
         
 
     # form=Form.objects.get(id=34)
     # print(form.file)
-    return render(request, 'payPremium.html')
+    
+    return render(request, 'payPremium.html',{'login_id':login_id})
 
 
 def notification(request):
@@ -487,8 +398,7 @@ def target(request):
     teams = team_register.objects.all()
     member = len(teams)
     progress = TeamProgress.objects.all()
-    update = sum([int(amount[0])
-                 for amount in TeamProgress.objects.values_list("team_progress")])
+    update = sum([int(amount[0]) for amount in TeamProgress.objects.values_list("team_progress")])
     status = zip(teams, progress)
     target = TeamProgress.objects.filter(target_sales__isnull=False).first().target_sales
 
