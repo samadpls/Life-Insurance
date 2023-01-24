@@ -8,7 +8,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
   integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous" />
-  <title>Document</title>
+  <title>Pay Premimum</title>
 </head>
 
 <style>
@@ -45,12 +45,23 @@
 }
 </style>
 <body>
+  {% if message %}
+
+  <div class="alert alert-danger" id="alert-message">{{message}}</div>
+
+  <script>
+    setTimeout(function(){
+      document.getElementById("alert-message").style.display="none";
+
+    },3000)
+  </script>
+  {%endif%}
   <div class="row" >
     <div class="col"></div>
   </div>
 
   <form class="form" action="" method="post" enctype="multipart/form-data">
-    <div class="container my-3"   >
+    <div class="container"   >
 
       <div class="row">
         <div class="col-md-4">
@@ -58,7 +69,7 @@
         </div>
      
       
-        <div class="col-md-6" style="padding-top:  400px">
+        <div class="col-md-6">
 
           <div class="wrapper">
             <div class="form-container">
@@ -79,36 +90,29 @@
       </div>
     </div>
 
-  <!-- Button trigger modal -->
-      {% comment %} <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#exampleModal" style="background-color:black">
-        Launch demo modal
-      </button>
 
-      <!-- Modal -->
-      <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-              </button>
-            </div>
-            <div class="modal-body">
-              <input type="submit" value="Submit">
-              <input type="file">
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-              <button type="button" class="btn btn-primary">Save changes</button>
-            </div>
-          </div>
-        </div>
-      </div>
- {% endcomment %}
 
     </form>
-
+    <table class="table table-striped table-hover container my-3" style="background-color: #eee;">
+      <thead class="thead-light ">
+        <tr>
+          <th style="font-weight: bold;">ID</th>
+          <th style="font-weight: bold;">File</th>
+          <th style="font-weight: bold;">Date</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for record in payrecord %}
+          <tr>
+            <th scope="row">{{ forloop.counter }}</th>
+            <td>
+              <a href="{{ record.file.url }}" target="_blank">{{ record.file.url }}</a>
+            </td>
+            <td>{{ record.date }}</td>
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
 
 
 

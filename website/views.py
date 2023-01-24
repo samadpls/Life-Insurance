@@ -32,8 +32,8 @@ def login(request):
                     return redirect('login')
             elif "@salesmanager.com" in login_email:
                 return redirect('target')
-            elif   "@headoffice" in login_email:
-                pass  
+            elif   "@underwriter.com" in login_email:
+                return redirect('/notification')
             else:
                 try:
                     client = register.objects.get(
@@ -204,28 +204,36 @@ def signout(request):
 @csrf_exempt
 def payPremium(request):
     if request.method == "POST":
-        form_class = payPrem()
+        try:
+            form_class = payPrem()
 
-        # print("FAIZAN", request.FILES)
+            # print("FAIZAN", request.FILES)
 
-        file=request.FILES.get('file')
-            # handle_uploaded_file(file)
-        fss = FileSystemStorage()
-        file = fss.save("abc.jpg", file)
-        file_url = fss.url(file)
-        print("file_url", file_url)
-            
-        form_class.file=file
-        form_class.login_id = login_id
-        form_class.save()
+            file=request.FILES.get('file')
+                # handle_uploaded_file(file)
+            fss = FileSystemStorage()
+            file = fss.save("abc.jpg", file)
+            file_url = fss.url(file)
+            print("file_url", file_url)
+                
+            form_class.file=file
+            form_class.login_id = login_id
+            form_class.save()
+            return redirect("/payPremium")
+        except Exception as e:
+            payrecord=payPrem.objects.filter(login_id=login_id)
+            return render(request,'payPremium.html',{'payrecord':payrecord,'status': 'error', 'message':"Error No file selected"})
+    else:
+        payrecord=payPrem.objects.filter(login_id=login_id)
+        return render(request, 'payPremium.html',{'payrecord':payrecord,'login_id':login_id})
+
         
         
 
     # form=Form.objects.get(id=34)
     # print(form.file)
     
-    return render(request, 'payPremium.html',{'login_id':login_id})
-
+    
 
 def notification(request):
 
@@ -257,7 +265,7 @@ def Passed(request, id):
     global login_id
     import random
     from docxtpl import DocxTemplate
-    from django.templatetags.static import static
+    from docx2pdf import convert 
     current_date = datetime.date.today()
 
     data = Form.objects.get(pk=id)
@@ -276,6 +284,9 @@ def Passed(request, id):
     doc.render(context)
     filename = f'./static/slip/receipt{data.id}.docx'
     doc.save(f'./static/slip/receipt{data.id}.docx')
+    pdf_file=filename.replace('.docx',".pdf")
+    convert(filename,pdf_file)
+    os.remove(filename)
     data.passed = True
     email = data.email
     from_email = "sajidahsan67@gmail.com"
@@ -298,7 +309,7 @@ def Passed(request, id):
 
     # try:
     email = EmailMessage(subject, body, from_email, [email])
-    email.attach_file(filename)
+    email.attach_file(pdf_file)
     email.send()
     try:
         team = team_register.objects.get(team_id=data.agentID)
