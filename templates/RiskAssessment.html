@@ -1,4 +1,3 @@
-{% extends 'base.html' %}
 {%load static%}
 
 {% block content %}
@@ -6,87 +5,13 @@
 
 <head>
   <title>Risk Assessment</title>
-  <style>
-    .text-box {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 40vh;
-    }
-
-    .text-box textarea {
-      width: 60%;
-      height: 70%;
-      font-size: 20px;
-    }
-
-    label {
-      display: inline-block;
-      font-size: 20px;
-
-    }
-
-    input[type="radio"] {
-      display: inline-block;
-      margin-left: 10px;
-    }
-
-    label,
-    input[type="radio"] {
-      padding: 10px;
-      margin: 10px;
-    }
-
-    input[type="radio"]:hover {
-      background-color: back_click;
-      cursor: pointer;
-    }
-
-    label,
-    input[type="radio"] {
-      font-size: 20px;
-      font-weight: bold;
-    }
-
-    .text-box textarea {
-      border-radius: 20px;
-    }
-
-
-
-
-    .button-container {
-      width: 100%;
-      display: flex;
-      justify-content: center;
-    }
-
-    .expanding-button {
-      background-color: white;
-      color: black;
-      border: none;
-      padding: 15px 32px;
-      text-align: center;
-      text-decoration: none;
-      display: inline-block;
-      font-size: 25px;
-      margin: 4px 2px;
-      cursor: pointer;
-      width: 100%;
-      transition: background-color 0.3s ease;
-    }
-
-    .expanding-button:hover {
-      background-color: #909090;
-      color: white;
-      width: 110%;
-    }
-  </style>
-
+  
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous" />
 </head>
 
 <body>
-  <nav class="navbar bg-dark my-5" data-bs-theme="dark">
+  <nav class="navbar bg-dark" data-bs-theme="dark">
 
     <div class="row">
       <div class="col">
@@ -96,765 +21,359 @@
   </nav>
   <br>
   <h1 align="center">Client Foam </h1><br>
-  <div>
+  <div class="container">
+    <form>
+      <div class="row">
+        <div class="col-4">
+          <label for="name">AgentID:</label>
+          <input type="text" name="agentID" value="{{ clients.agentID }}" class="form-control" id="agentID" disabled>  
+        </div>
+        <div class="col-4">
+          <label for="name">Form:</label>
+          <input type="text" name="formId" value="{{ clients.id }}" class="form-control" id="formId" disabled>  
+        </div>
+        <div class="col-4">
+          <div class="form-group">
+            <label for="plan">Plan:</label>
+            <select name="plan" id="plan" class="form-control" disabled>
+              <option value="Jeevan Sathi Assurance" {% if clients.plan == 'Jeevan Sathi Assurance' %}selected{% endif %}>Jeevan Sathi Assurance</option>
+              <option value="Child Protection Assurance" {% if clients.plan == 'Child Protection Assurance' %}selected{% endif %}>Child Protection Assurance</option>
+              <option value="Wealth Builder Plan" {% if clients.plan == 'Wealth Builder Plan' %}selected{% endif %}>Wealth Builder Plan</option>
+              <option value="Supplementary Covers" {% if clients.plan == 'Supplementary Covers' %}selected{% endif %}>Supplementary Covers</option>
+            </select>
+          </div>
+        </div>
+        <div class="col-4">
+          <div class="form-group">
+            <label for="name">Name:</label>
+            <input type="text" name="name" value="{{ clients.name }}" class="form-control" id="name" disabled>
+          </div>
+        </div>
+        <div class="col-4">
+          <div class="form-group">
+            <label for="father_name">Father's Name:</label>
+            <input type="text" name="father_name" value="{{ clients.father_name }}" class="form-control"
+              id="father_name" disabled>
+          </div>
+        </div>
+        <div class="col-4">
+          <div class="form-group">
+            <label for="phone">Phone:</label>
+            <input type="text" name="phone" value="{{ clients.phone }}" class="form-control" id="phone" disabled>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-4">
+          <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="email" name="email" value="{{ clients.email }}" class="form-control" id="email" disabled>
+          </div>
+        </div>
+        <div class="col-4">
+          <div class="form-group">
+            <label for="address">Address:</label>
+            <input type="text" name="address" value="{{ clients.address }}" class="form-control" id="address" disabled>
+          </div>
+        </div>
+        <div class="col-4">
+          <div class="form-group">
+            <label for="dob">Date of Birth:</label>
+            <input type="date" name="dob" value="{{ clients.dob }}" class="form-control" id="dob" disabled>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-4">
+          <div class="form-group">
+            <label for="age">Age:</label>
+            <input type="text" name="age" value="{{ clients.age }}" class="form-control" id="age" disabled>
+          </div>
+        </div>
+        <div class="col-4">
+          <div class="form-group">
+            <label for="cities">Cities:</label>
+            <input type="text" name="cities" value="{{ clients.cities }}" class="form-control" id="cities" disabled>
+          </div>
+        </div>
+        <div class="col-4">
+          <div class="form-group">
+            <label for="nominee">Nominee:</label>
+            <input type="text" name="nominee" value="{{ clients.nominee }}" class="form-control" id="nomine" disabled>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-4">
+            <div class="form-group">
+              <label for="dob_nominee">Date of Birth of Nominee:</label>
+              <input type="date" name="dob_nominee" value="{{ clients.dob_nominee }}" class="form-control"
+                id="dob_nominee" disabled>
+            </div>
+          </div>
+          <div class="col-4">
+            <div class="form-group">
+              <label for="age_nominee">Age of Nominee:</label>
+              <input type="text" name="age_nominee" value="{{ clients.age_nominee }}" class="form-control"
+                id="age_nominee" disabled>
+            </div>
+          </div>
+          <div class="col-4">
+            <div class="form-group">
+              <label for="nominee_relation">Nominee Relationship:</label>
+              <input type="text" name="nominee_relation" value="{{ clients.nominee_relation }}" class="form-control"
+                id="nominee_relation" disabled>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-4">
+            <div class="form-group">
+              <label for="mincome">Minimum Income:</label>
+              <input type="text" name="mincome" value="{{ clients.mincome }}" class="form-control" id="mincome"
+                disabled>
+            </div>
+          </div>
+          <div class="col-4">
+            <div class="form-group">
+              <label for="suminsured">Sum Insured:</label>
+              <input type="text" name="suminsured" value="{{ clients.suminsured }}" class="form-control" id="suminsured"
+                disabled>
+            </div>
+          </div>
+          <div class="col-4">
+            <div class="form-group">
+              <label for="term">Term:</label>
+              <input type="text" name="term" value="{{ clients.term }}" class="form-control" id="term" disabled>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-4">
+            <div class="form-group">
+              <label for="premium">Premium:</label>
+              <input type="text" name="premium" value="{{ clients.premium }}" class="form-control" id="premium"
+                disabled>
+            </div>
+          </div>
+          <div class="col-4">
+            <div class="form-group">
+              <label for="mode">Mode:</label>
+              <select name="mode" id="mode" class="form-control" disabled>
+                <option value="YLY" {% if clients.mode ==  'yly' %}selected{% endif %}>YLY</option>
+                <option value="HLY" {% if clients.mode ==  'hly' %}selected{% endif %}>HLY</option>
+                <option value="QLY" {% if clients.mode ==  'qly' %}selected{% endif %}>QLY</option>
+                <option value="other" {% if clients.mode ==  'other' %}selected{% endif %}>Other</option>
+              </select>
+            </div>
+          </div>
+          <div class="col-4">
+            <label for="id_disease">Disease:</label>
+            <select name="disease" id="id_disease" class="form-control" disabled>
+              <option value="cancer" {% if clients.disease == 'cancer' %}selected{% endif %}>Cancer</option>
+              <option value="diabetes" {% if clients.disease == 'diabetes' %}selected{% endif %}>Diabetes</option>
+              <option value="heartDisease" {% if clients.disease == 'heartDisease' %}selected{% endif %}>Heart Disease
+              </option>
+              <option value="other" {% if clients.disease == 'other' %}selected{% endif %}>Other</option>
+            </select>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-4">
+            <div class="form-group">
+              <label for="operation">Operation:</label>
+              <select name="operation" id="operation" class="form-control" disabled>
+                <option value="Appendectomy" {% if clients.operation == 'Appendectomy' %}selected{% endif %}>Appendectomy
+                </option>
+                <option value="openHeartSurgery" {% if clients.operation == 'openHeartSurgery' %}selected{% endif %}>
+                  openHeartSurgery</option>
+                <option value="Hip replacement surgery" {% if clients.operation == 'Hip replacement surgery' %}selected{%endif %}>Hip replacement surgery</option>
+                <option value="other" {% if clients.operation == 'other' %}selected{% endif %}>Other</option>
+              </select>
+            </div>
+          </div>
+          <div class="col-4">
+            <div class="form-group">
+              <label for="yesno">Weak Eye sight:</label>
+              <select name="yesno" id="yesno" class="form-control" disabled>
+                <option value="yes" {% if clients.yesno == 'yes' %}selected{% endif %}>Yes</option>
+                <option value="no" {% if clients.yesno == 'no' %}selected{% endif %}>No</option>
+              </select>
+            </div>
+          </div>
+          <div class="col-4">
+            <div class="form-group">
+              <label for="habit">Habit:</label>
+              <select name="habit" id="habit" class="form-control" disabled>
+                <option value="tabacoo" {% if clients.habit == 'tabacoo' %}selected{% endif %}>Tabacoo</option>
+                <option value="alcohal" {% if clients.habit == 'alcohal' %}selected{% endif %}>Alcohal</option>
+                <option value="drugs" {% if clients.habit == 'drugs' %}selected{% endif %}>Drugs</option>
+                <option value="other" {% if clients.habit == 'other' %}selected{% endif %}>Other</option>
+              </select>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-4">
+            <div class="form-group">
+              <label for="Dfam">Dfam:</label>
+              <select name="Dfam" id="Dfam" class="form-control" disabled>
+                <option value="yes" {% if clients.Dfam == 'yes' %}selected{% endif %}>Yes</option>
+                <option value="no" {% if clients.Dfam == 'no' %}selected{% endif %}>No</option>
+              </select>
+            </div>
+          </div>
+          <div class="col-4">
+            <div class="form-group">
+              <label for="Medexam">Medexam:</label>
+              <select name="Medexam" id="Medexam" class="form-control" disabled>
+                <option value="yes" {% if clients.Medexam == 'yes' %}selected{% endif %}>Yes</option>
+                <option value="no" {% if clients.Medexam == 'no' %}selected{% endif %}>No</option>
+              </select>
+            </div>
+          </div>
+          <div class="col-4">
+            <div class="form-group">
+              <label for="height">Height:</label>
+              <input type="text" name="height" value="{{ clients.height }}" class="form-control" id="height" disabled>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-4">
+            <div class="form-group">
+              <label for="weight">Weight:</label>
+              <input type="text" name="weight" value="{{ clients.weight }}" class="form-control" id="weight" disabled>
+            </div>
+          </div>
+          <div class="col-4">
+            <div class="form-group">
+              <label for="chest">Chest:</label>
+              <input type="text" name="chest" value="{{ clients.chest }}" class="form-control" id="chest" disabled>
+            </div>
+          </div>
+          <div class="col-4">
+            <div class="form-group">
+              <label for="abdomen">Abdomen:</label>
+              <input type="text" name="abdomen" value="{{ clients.abdomen }}" class="form-control" id="abdomen"
+                disabled>
+            </div>
 
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-4">
+            <div class="form-group">
+              <label for="suicide">Suicide:</label>
+              <select name="suicide" id="suicide" class="form-control" disabled>
+                <option value="yes" {% if clients.suicide == 'yes' %}selected{% endif %}>Yes</option>
+                <option value="no" {% if clients.suicide == 'no' %}selected{% endif %}>No</option>
+              </select>
+            </div>
+          </div>
+          <div class="col-4">
+            <div class="form-group">
+              <label for="falive">Falive:</label>
+              <select name="falive" id="falive" class="form-control" disabled>
+                <option value="yes" {% if clients.falive == 'yes' %}selected{% endif %}>Yes</option>
+                <option value="no" {% if clients.falive == 'no' %}selected{% endif %}>No</option>
+              </select>
+            </div>
+          </div>
+          <div class="col-4">
+            <div class="form-group">
+              <label for="fhealth">Fhealth:</label>
+              <select name="fhealth" id="fhealth" class="form-control" disabled>
+                <option value="good" {% if clients.fhealth == 'good' %}selected{% endif %}>Good</option>
+                <option value="fair" {% if clients.fhealth == 'fair' %}selected{% endif %}>Fair</option>
+                <option value="poor" {% if clients.fhealth == 'poor' %}selected{% endif %}>Poor</option>
+              </select>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-4">
+            <div class="form-group">
+              <label for="malive">Malive:</label>
+              <select name="malive" id="malive" class="form-control" disabled>
+                <option value="yes" {% if clients.malive == 'yes' %}selected{% endif %}>Yes</option>
+                <option value="no" {% if clients.malive == 'no' %}selected{% endif %}>No</option>
+              </select>
+            </div>
+          </div>
+          <div class="col-4">
+            <div class="form-group">
+              <label for="causefdeath">Cause of Father's Death:</label>
+              <input type="text" name="causefdeath" value="{{ clients.causefdeath }}" class="form-control"
+                id="causefdeath" disabled>
+            </div>
 
-
-
-
-
-
-    <fieldset class="module aligned ">
-
-
-
-      <div class="form-row field-name">
-
-
-        <div>
-          {% for i in clients %}
-
-          <label for="id_name">Name:</label>
-
-          <input type="text" name="name" value="{{i.name}}" class="vTextField" maxlength="200" id="id_name" disabled>
-
-
-
+          </div>
+          <div class="col-4">
+            <div class="form-group">
+              <label for="mothername">Mother's Name:</label>
+              <input type="text" name="mothername" value="{{ clients.mothername }}" class="form-control" id="mothername"
+                disabled>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-4">
+            <div class="form-group">
+              <label for="mhealth">Mother's Health:</label>
+              <select name="mhealth" id="mhealth" class="form-control" disabled>
+                <option value="good" {% if clients.mhealth == 'good' %}selected{% endif %}>Good</option>
+                <option value="fair" {% if clients.mhealth == 'fair' %}selected{% endif %}>Fair</option>
+                <option value="poor" {% if clients.mhealth == 'poor' %}selected{% endif %}>Poor</option>
+              </select>
+            </div>
+          </div>
+          <div class="col-4">
+            <div class="form-group">
+              <label for="mcd">Mother's Cause of Death:</label>
+              <input type="text" name="mcd" value="{{ clients.mcd }}" class="form-control" id="mcd" disabled>
+            </div>
+          </div>
+          <div class="col-4">
+            <div class="form-group">
+              <label for="numb">Number of Brothers:</label>
+              <input type="text" name="numb" value="{{ clients.numb }}" class="form-control" id="numb" disabled>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-4">
+            <div class="form-group">
+              <label for="nums">Number of Sisters:</label>
+              <input type="text" name="nums" value="{{ clients.nums }}" class="form-control" id="nums" disabled>
+            </div>
+          </div>
+          <div class="col-4">
+            <div class="form-group">
+              <label for="Nos">Number of Sons:</label>
+              <input type="text" name="Nos" value="{{ clients.Nos }}" class="form-control" id="Nos" disabled>
+            </div>
+          </div>
+          <div class="col-4">
+            <div class="form-group">
+              <label for="Nod">Number of Daughters:</label>
+              <input type="text" name="Nod" value="{{ clients.Nod }}" class="form-control" id="Nod" disabled>
+            </div>
+          </div>
         </div>
 
-      </div>
 
-      <div class="form-row field-father_name">
 
 
-        <div>
 
 
-          <label for="id_father_name">Father name:</label>
 
-          <input type="text" name="father_name" value="{{i.father_name}}" class="vTextField" maxlength="200"
-            id="id_father_name" disabled>
 
 
 
-        </div>
-
-      </div>
-
-      <div class="form-row field-phone">
-
-
-        <div>
-
-
-          <label for="id_phone">Phone:</label>
-
-          <input type="text" name="phone" value="{{i.phone}}" class="vTextField" maxlength="20" id="id_phone" disabled>
-
-
-
-        </div>
-
-      </div>
-
-      <div class="form-row field-email">
-
-
-        <div>
-
-
-          <label for="id_email">Email:</label>
-
-          <input type="email" name="email" value="{{i.email}}" class="vTextField" maxlength="254"
-            id="id_email" disabled>
-
-
-
-        </div>
-
-      </div>
-
-      <div class="form-row field-address">
-
-
-        <div>
-
-
-          <label for="id_address">Address:</label>
-
-          <input type="text" name="address" value="{{i.address}}"
-            class="vTextField" maxlength="255" id="id_address" disabled>
-
-
-
-        </div>
-
-      </div>
-
-      <div class="form-row field-dob">
-
-
-        <div>
-
-
-          <label for="id_dob">Dob:</label>
-
-          <input type="text" name="dob" value="{{i.dob}}" class="vDateField" size="10" id="id_dob" disabled><span
-            class="datetimeshortcuts">&nbsp;<a href="#">Today</a>&nbsp;|&nbsp;<a href="#" id="calendarlink0"><span
-                class="date-icon" title="Choose a Date"></span></a></span>
-
-
-
-        </div>
-
-      </div>
-
-      <div class="form-row field-age">
-
-
-        <div>
-
-
-          <label for="id_age">Age:</label>
-
-          <input type="text" name="age" value="{{i.age}}" class="vTextField" maxlength="255" id="id_age" disabled>
-
-
-
-        </div>
-
-      </div>
-
-      <div class="form-row field-cities">
-
-
-        <div>
-
-
-          <label for="id_cities">Cities:</label>
-
-          <input type="text" name="cities" value="{{i.cities}}" class="vTextField" maxlength="255" id="id_cities" disabled>
-
-
-
-        </div>
-
-      </div>
-
-      <div class="form-row field-nominee">
-
-
-        <div>
-
-
-          <label for="id_nominee">Nominee:</label>
-
-          <input type="text" name="nominee" value="{{i.nominee}}}" class="vTextField" maxlength="255" id="id_nominee" disabled>
-
-
-
-        </div>
-
-      </div>
-
-      <div class="form-row field-dob_nominee">
-
-
-        <div>
-
-
-          <label for="id_dob_nominee">Dob nominee:</label>
-
-          <input type="text" name="dob_nominee" value="{{i.dob_nominee}}" class="vDateField" size="10"
-            id="id_dob_nominee"><span class="datetimeshortcuts">&nbsp;<a href="#">Today</a>&nbsp;|&nbsp;<a href="#"
-              id="calendarlink1"><span class="date-icon" title="Choose a Date"></span></a></span>
-
-
-
-        </div>
-
-      </div>
-
-      <div class="form-row field-age_nominee">
-
-
-        <div>
-
-
-          <label for="id_age_nominee">Age nominee:</label>
-
-          <input type="number" name="age_nominee" value="{{i.age_nominee}" class="vIntegerField" min="0" id="id_age_nominee" disabled>
-
-
-
-        </div>
-
-      </div>
-
-      <div class="form-row field-nominee_relation">
-
-
-        <div>
-
-
-          <label for="id_nominee_relation">Nominee relation:</label>
-
-          <input type="text" name="nominee_relation" class="vTextField" maxlength="255" id="id_nominee_relation">
-
-
-
-        </div>
-
-      </div>
-
-      <div class="form-row field-mincome">
-
-
-        <div>
-
-
-          <label for="id_mincome">Mincome:</label>
-
-          <input type="text" name="mincome" value="45000" class="vTextField" maxlength="20" id="id_mincome">
-
-
-
-        </div>
-
-      </div>
-
-      <div class="form-row field-suminsured">
-
-
-        <div>
-
-
-          <label for="id_suminsured">Suminsured:</label>
-
-          <input type="text" name="suminsured" value="500000" class="vTextField" maxlength="20" id="id_suminsured">
-
-
-
-        </div>
-
-      </div>
-
-      <div class="form-row field-term">
-
-
-        <div>
-
-
-          <label for="id_term">Term:</label>
-
-          <input type="text" name="term" value="10" class="vTextField" maxlength="20" id="id_term">
-
-
-
-        </div>
-
-      </div>
-
-      <div class="form-row field-premium">
-
-
-        <div>
-
-
-          <label for="id_premium">Premium:</label>
-
-          <input type="text" name="premium" class="vTextField" maxlength="20" id="id_premium">
-
-
-
-        </div>
-
-      </div>
-
-      <div class="form-row field-mode">
-
-
-        <div>
-
-
-          <label class="required" for="id_mode">Mode:</label>
-
-          <select name="mode" id="id_mode">
-            <option value="yly">YLY</option>
-
-            <option value="hly">HLY</option>
-
-            <option value="qly">QLY</option>
-
-          </select>
-
-
-
-        </div>
-
-      </div>
-
-      <div class="form-row field-disease">
-
-
-        <div>
-
-
-          <label class="required" for="id_disease">Disease:</label>
-
-          <select name="disease" id="id_disease">
-            <option value="cancer">Cancer</option>
-
-            <option value="diabetes">Diabetes</option>
-
-            <option value="heartDisease">Heart disease</option>
-
-          </select>
-
-
-
-        </div>
-
-      </div>
-
-      <div class="form-row field-operation">
-
-
-        <div>
-
-
-          <label class="required" for="id_operation">Operation:</label>
-
-          <select name="operation" id="id_operation">
-            <option value="Appendectomy">Appendectomy</option>
-
-            <option value="openHeartSurgery">openHeartSurgery</option>
-
-            <option value="Hip replacement surgery">Hip replacement surgery</option>
-
-          </select>
-
-
-
-        </div>
-
-      </div>
-
-      <div class="form-row field-yesno">
-
-
-        <div>
-
-
-          <label class="required" for="id_yesno">Yesno:</label>
-
-          <select name="yesno" id="id_yesno">
-            <option value="yes">Yes</option>
-
-            <option value="no">No</option>
-
-          </select>
-
-
-
-        </div>
-
-      </div>
-
-      <div class="form-row field-habit">
-
-
-        <div>
-
-
-          <label class="required" for="id_habit">Habit:</label>
-
-          <select name="habit" id="id_habit">
-            <option value="tabacoo">Tabacoo</option>
-
-            <option value="alcohal">Alcohal</option>
-
-            <option value="drugs">Drugs</option>
-
-          </select>
-
-
-
-        </div>
-
-      </div>
-
-      <div class="form-row field-Dfam">
-
-
-        <div>
-
-
-          <label class="required" for="id_Dfam">Dfam:</label>
-
-          <select name="Dfam" id="id_Dfam">
-            <option value="yes">Yes</option>
-
-            <option value="no">No</option>
-
-          </select>
-
-
-
-        </div>
-
-      </div>
-
-      <div class="form-row field-Medexam">
-
-
-        <div>
-
-
-          <label class="required" for="id_Medexam">Medexam:</label>
-
-          <select name="Medexam" id="id_Medexam">
-            <option value="yes">Yes</option>
-
-            <option value="no">No</option>
-
-          </select>
-
-
-
-        </div>
-
-      </div>
-
-      <div class="form-row field-height">
-
-
-        <div>
-
-
-          <label for="id_height">Height:</label>
-
-          <input type="text" name="height" class="vTextField" maxlength="20" id="id_height">
-
-
-
-        </div>
-
-      </div>
-
-      <div class="form-row field-weight">
-
-
-        <div>
-
-
-          <label for="id_weight">Weight:</label>
-
-          <input type="text" name="weight" class="vTextField" maxlength="20" id="id_weight">
-
-
-
-        </div>
-
-      </div>
-
-      <div class="form-row field-chest">
-
-
-        <div>
-
-
-          <label for="id_chest">Chest:</label>
-
-          <input type="text" name="chest" class="vTextField" maxlength="20" id="id_chest">
-
-
-
-        </div>
-
-      </div>
-
-      <div class="form-row field-abdomen">
-
-
-        <div>
-
-
-          <label for="id_abdomen">Abdomen:</label>
-
-          <input type="text" name="abdomen" class="vTextField" maxlength="20" id="id_abdomen">
-
-
-
-        </div>
-
-      </div>
-
-      <div class="form-row field-suicide">
-
-
-        <div>
-
-
-          <label class="required" for="id_suicide">Suicide:</label>
-
-          <select name="suicide" id="id_suicide">
-            <option value="yes">Yes</option>
-
-            <option value="no">No</option>
-
-          </select>
-
-
-
-        </div>
-
-      </div>
-
-      <div class="form-row field-falive">
-
-
-        <div>
-
-
-          <label class="required" for="id_falive">Falive:</label>
-
-          <select name="falive" id="id_falive">
-            <option value="yes">Yes</option>
-
-            <option value="no">No</option>
-
-          </select>
-
-
-
-        </div>
-
-      </div>
-
-      <div class="form-row field-fhealth">
-
-
-        <div>
-
-
-          <label class="required" for="id_fhealth">Fhealth:</label>
-
-          <select name="fhealth" id="id_fhealth">
-            <option value="good">Good</option>
-
-            <option value="fair">Fair</option>
-
-            <option value="poor">Poor</option>
-
-          </select>
-
-
-
-        </div>
-
-      </div>
-
-      <div class="form-row field-malive">
-
-
-        <div>
-
-
-          <label class="required" for="id_malive">Malive:</label>
-
-          <select name="malive" id="id_malive">
-            <option value="yes">Yes</option>
-
-            <option value="no">No</option>
-
-          </select>
-
-
-
-        </div>
-
-      </div>
-
-      <div class="form-row field-causefdeath">
-
-
-        <div>
-
-
-          <label for="id_causefdeath">Causefdeath:</label>
-
-          <input type="text" name="causefdeath" class="vTextField" maxlength="255" id="id_causefdeath">
-
-
-
-        </div>
-
-      </div>
-
-      <div class="form-row field-mothername">
-
-
-        <div>
-
-
-          <label for="id_mothername">Mothername:</label>
-
-          <input type="text" name="mothername" class="vTextField" maxlength="255" id="id_mothername">
-
-
-
-        </div>
-
-      </div>
-
-      <div class="form-row field-mhealth">
-
-
-        <div>
-
-
-          <label class="required" for="id_mhealth">Mhealth:</label>
-
-          <select name="mhealth" id="id_mhealth">
-            <option value="good">Good</option>
-
-            <option value="fair">Fair</option>
-
-            <option value="poor">Poor</option>
-
-          </select>
-
-
-
-        </div>
-
-      </div>
-
-      <div class="form-row field-mcd">
-
-
-        <div>
-
-
-          <label for="id_mcd">Mcd:</label>
-
-          <input type="text" name="mcd" class="vTextField" maxlength="255" id="id_mcd">
-
-
-
-        </div>
-
-      </div>
-
-      <div class="form-row field-numb">
-
-
-        <div>
-
-
-          <label for="id_numb">Numb:</label>
-
-          <input type="text" name="numb" class="vTextField" maxlength="20" id="id_numb">
-
-
-
-        </div>
-
-      </div>
-
-      <div class="form-row field-nums">
-
-
-        <div>
-
-
-          <label for="id_nums">Nums:</label>
-
-          <input type="text" name="nums" class="vTextField" maxlength="20" id="id_nums">
-
-
-
-        </div>
-
-      </div>
-
-      <div class="form-row field-Nos">
-
-
-        <div>
-
-
-          <label for="id_Nos">Nos:</label>
-
-          <input type="text" name="Nos" class="vTextField" maxlength="20" id="id_Nos">
-
-
-
-        </div>
-
-      </div>
-
-      <div class="form-row field-Nod">
-
-
-        <div>
-
-
-          <label for="id_Nod">Nod:</label>
-
-          <input type="text" name="Nod" class="vTextField" maxlength="20" id="id_Nod">
-
-
-
-        </div>
-
-      </div>
-
-    </fieldset>
-
-
-
-
-
-
-
-
-
-
-
-
-
-    <div class="submit-row">
-
-      <input type="submit" value="Save" class="default" name="_save">
-
-
-      <p class="deletelink-box"><a href="/admin/registration/form/15/delete/" class="deletelink">Delete</a></p>
-
-
-      <input type="submit" value="Save and add another" name="_addanother">
-      <input type="submit" value="Save and continue editing" name="_continue">
-
-
-    </div>
-
-
-
-    <script id="django-admin-form-add-constants" src="/static/admin/js/change_form.js" async="">
-    </script>
-
-
-
-
-    <script id="django-admin-prepopulated-fields-constants" src="/static/admin/js/prepopulate_init.js"
-      data-prepopulated-fields="[]">
-      </script>
-
-
+    </form>
   </div>
-  </div>
-  <foam>
+
+  <form class="container" method="POST">
     <br>
     <h1 align="center">Assessment </h1>
 
@@ -881,13 +400,29 @@
 
     <div class="text-box" style="display:none" id="reason-box-CNIC">
       <textarea placeholder="   Please provide reason"></textarea>
-    </div><br><br>
-    <div class="button-container">
-      <button class="expanding-button" font="bold">--- Submit ---</button>
     </div>
 
-    <br><br><br><br><br><br><br><br><br><br><br><br>
-  </foam>
+
+
+  </form>
+  
+  <div class="container">
+    <div class="row">
+      <div class="col-6">
+        <a href="{% url 'delete_form' id %}" onclick="return confirm('Are you sure you want to delete this form?')">
+          <button type="button" class="btn btn-outline-danger">Reject</button>
+        </a>
+      </div>
+      <div class="col-6">
+        <a href="{% url 'Passed' id %}" onclick="return confirm('Insurance is Allotted')">
+        <button type="button" class="btn btn-outline-success">Aprrove</button></a>
+  
+      </div>
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+    crossorigin="anonymous"></script>
 </body>
 
 </html>
@@ -895,7 +430,7 @@
 <script>
   function showReasonMT(element) {
     var reasonBoxMT = document.getElementById("reason-box-MT");
-    if (element.value === "not approved") {
+    if (element.value  === "not approved") {
       reasonBoxMT.style.display = "flex";
     } else {
       reasonBoxMT.style.display = "none";
@@ -904,7 +439,7 @@
 
   function showReasonBS(element) {
     var reasonBoxBS = document.getElementById("reason-box-BS");
-    if (element.value === "not approved") {
+    if (element.value  === "not approved") {
       reasonBoxBS.style.display = "flex";
     } else {
       reasonBoxBS.style.display = "none";
@@ -913,7 +448,7 @@
 
   function showReasonCNIC(element) {
     var reasonBoxCNIC = document.getElementById("reason-box-CNIC");
-    if (element.value === "not approved") {
+    if (element.value  === "not approved") {
       reasonBoxCNIC.style.display = "flex";
     } else {
       reasonBoxCNIC.style.display = "none";

@@ -92,11 +92,11 @@
                         </div>
                         <div class="input-text">
                             <div class="input-div">
-                                <input type="text"  name="cname"/ >
+                                <input type="text"  name="cname" required/ >
                                 <span>Name</span>
                             </div>
                             <div class="input-div">
-                                <input type="text"   name="cfname" />
+                                <input type="text"   name="cfname" required />
                                 <span>Father/Husband's Name</span>
                             </div>
                         </div>
@@ -1044,7 +1044,7 @@
         let suminsured=document.getElementsByName("Sum-insured")[0].value;
         let term=document.getElementsByName("Term")[0].value;
         let mode=document.getElementsByName("radioGroup")[0].value;
-        let premium=document.getElementsByName("premium")[0].value;
+        let premium=document.getElementById("premium-input").value;
         let disease=document.getElementsByName("disease")[0].value;
         let operation=document.getElementsByName("operation")[0].value;
         let yesno=document.getElementsByName("yesno")[0].value;
@@ -1067,6 +1067,9 @@
         let Nod=document.getElementsByName("Nod")[0].value;
         let Nos=document.getElementsByName("Nos")[0].value;
         let malive=document.getElementsByName("mother")[0].value
+        let agentID = document.getElementsByName("agent")[0].value;
+        console.log(agentID);
+        let plan=document.getElementsByName("plan")[0].value;
         // let fileInput = document.getElementsByName("file")[0];
         // let files = fileInput.files;
         // console.log(files);
@@ -1089,7 +1092,7 @@
             body: JSON.stringify({'otp': otp, "name":name,"fname":fname,"phone":phone,"email":email,"address":address,"dob":dob,'age':age,'cities':cities,'nominee':nominee,'dobnominee':dobnominee,'agenominee':agenominee,'nomineeRelation':nomineeRelation,
         'mincome':mincome,'Medexam':Medexam,'height':height,'weight':weight,'chest':chest,'abdomen':abdomen,'suicide':suicide,
         'habit':habit,"falive":falive,'mname':mname,'mhealth':mhealth,'nums':nums,'Nos':Nos,'Nod':Nod,'malive':malive,'fhealth':fhealth,'fcd':fcd,'mcd':mcd,'numb':numb,
-        'Dfam':Dfam,'yesno':yesno,'operation':operation,'suminsured':suminsured,'term':term,'premium':premium,'mode':mode,'disease':disease}),
+        'Dfam':Dfam,'yesno':yesno,'operation':operation,'suminsured':suminsured,'term':term,'premium':premium,'mode':mode,'disease':disease,"agentID":agentID,"plan":plan }),
             headers: {
                 'Content-Type': 'application/json',
             },

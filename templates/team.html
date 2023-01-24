@@ -38,28 +38,24 @@
 
         <header class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow">
             <a class="navbar-brand col-md-2 col-lg-2 me-0 px-3 fs-6" href="#">Dashboard</a>
-            <button class="navbar-toggler position-absolute d-md-none collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
+            <!-- <button class="navbar-toggler position-absolute d-md-none collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="col-md-8">
-                <input class="form-control form-control-dark w-100 rounded-0 border-0" id="demo" type="number"
-                 placeholder="Set Target Per Month" aria-label="Search">
+            </button> -->
 
 
-      </div>
 
 
-            <div class="col-md-1" >
+            <!-- <div class="col-md-1" >
                 <div class="navbar-nav">
                     <div class="nav-item text-nowrap">
                       
-                      <a class="nav-link px-3" style="border:0.2px solid rgb(136, 132, 132) ;" href="#" onclick="abc()">Save Target</a>
+                      <a class="nav-link px-3" style="border:0.2px solid rgb(136, 132, 132) ;" href="#" onclick="abc()" style="pointer-events: none"></a>>Save Target</a>
 
 
           </div>
         </div>
 
-      </div>
+      </div> -->
       <div class="col-md-1">
         <div class="navbar-nav">
           <div class="nav-item text-nowrap">
@@ -73,10 +69,9 @@
       </div>
 
     </header>
-
+    </div>
 
           
-    </div>  
     {% if messages %}
 
     {% for message in messages%}
@@ -211,13 +206,13 @@
 
                          
                           
-                          <td> 
+                          <!-- <td> 
                             <a href="{% url 'delete' task.team_id%}"> <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">
                               <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z"/>
                               <path fill-rule="evenodd" d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z"/>
                             </svg></a>
                           
-                          </td>
+                          </td> -->
                           
 
                         </tr>
@@ -229,9 +224,9 @@
                     </table>
                     <div class="container my-3" >
           
-                      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" >
+                      <!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" >
                         Add Member
-                                </button>
+                                </button> -->
                       
                     
                     <!-- Modal -->
