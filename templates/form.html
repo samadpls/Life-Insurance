@@ -2,87 +2,108 @@
 
 <!DOCTYPE html>
 <html>
-
-<head>
-    <link rel="stylesheet" href="{%static 'css/form.css' %}">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <head>
+    <link rel="stylesheet" href="{%static 'css/form.css' %}" />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+      rel="stylesheet"
+    />
     <style>
-        #otp-button {
-            background-image: linear-gradient(to left, #538bab, #222268);
-            border: none;
-            color: white;
-            padding: 15px 32px;
-            text-align: center;
-            text-decoration: none;
-            display: inline-block;
-            font-size: 16px;
-            margin: 4px 2px;
-            cursor: pointer;
-          }
-          
-          #otp-button:hover {
-            background-color: #3e8e41;
-          }#otp-button1 {
-            background-image: linear-gradient(to left, #538bab, #222268);
-            border: none;
-            color: white;
-            padding: 15px 32px;
-            text-align: center;
-            text-decoration: none;
-            display: inline-block;
-            font-size: 16px;
-            margin: 4px 2px;
-            cursor: pointer;
-          }
-          
-          #otp-button1:hover {
-            background-color: #3e8e41;
-          }
-    </style>
-</head>
+      #otp-button {
+        background-image: linear-gradient(to left, #538bab, #222268);
+        border: none;
+        color: white;
+        padding: 15px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        cursor: pointer;
+      }
 
-<body>
-    {% if message %}
-    {% for msg in messages%}
+      #otp-button:hover {
+        background-color: #3e8e41;
+      }
+      #otp-button1 {
+        background-image: linear-gradient(to left, #538bab, #222268);
+        border: none;
+        color: white;
+        padding: 15px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        cursor: pointer;
+      }
+
+      #otp-button1:hover {
+        background-color: #3e8e41;
+      }
+    </style>
+  </head>
+
+  <body>
+    {% if message %} {% for msg in messages%}
     <div class="alert alert-danger" id="error">{{msg}}</div>
     {% endfor %}
     <script>
-        setTimeout(function(){
-            document.getElementById("error").style.display="none";
-        },3000);
+      setTimeout(function () {
+        document.getElementById("error").style.display = "none";
+      }, 3000);
     </script>
     {% endif %}
-    <div class="container" style="padding-top: 110px;">
-
-        <div class="card" >
-
-            <form class="form"  action="" method="post">
-                {% csrf_token %}
-                <div class="left-side">
-                    <div class="left-heading">
-                        <h3>State Life</h3>
-                    </div>
-                    <div class="steps-content">
-                        <h3>Step <span class="step-number">1</span></h3>
-                        <p class="step-number-content active">Please enter your information to complete the
-                            policy form.</p>
-                        
-                    </div>
-                    <ul class="progress-bar">
-                        <li class="active">Personal Information</li>
-                        <li>Personal Information</li>
-                        <li>Personal Information</li>
-                        <li>Personal Information</li>
-                        <li>Physical Information</li>
-                        <li>Physical Information</li>
-                        <li>Family History</li>
-                        <li>Family History</li>
-                        <li>Family History</li>
-                        <li>Family History</li>
-                        <li>Family History</li>
-                        <li>Confirm OTP</li>
-                    </ul>
+    <div class="container" style="padding-top: 110px">
+      <div class="card">
+        <form
+          class="form"
+          action=""
+          method="post"
+          enctype="multipart/form-data"
+        >
+          {% csrf_token %}
+          <div class="left-side">
+            <div class="left-heading">
+              <h3>State Life</h3>
+            </div>
+            <div class="steps-content">
+              <h3>Step <span class="step-number">1</span></h3>
+              <p class="step-number-content active">
+                Please enter your information to complete the policy form.
+              </p>
+            </div>
+            <ul class="progress-bar">
+              <li class="active">Personal Information</li>
+              <li>Personal Information</li>
+              <li>Personal Information</li>
+              <li>Personal Information</li>
+              <li>Physical Information</li>
+              <li>Physical Information</li>
+              <li>Family History</li>
+              <li>Family History</li>
+              <li>Family History</li>
+              <li>Family History</li>
+              <li>Family History</li>
+              <li>Confirm OTP</li>
+            </ul>
+          </div>
+          <div class="right-side">
+            <div class="main active">
+              <small><i class="fa fa-smile-o"></i></small>
+              <div class="text">
+                <h2>Your Personal Information</h2>
+                <p>
+                  Please enter your personal information to complete the policy
+                  form.
+                </p>
+              </div>
+              <div class="input-text">
+                <div class="input-div">
+                  <input type="text" id="n1" name="cname"/ >
+                  <span>Name</span>
                 </div>
+<<<<<<< HEAD
                 <div class="right-side">
                     <div class="main active">
                         <small><i class="fa fa-smile-o"></i></small>
@@ -1014,18 +1035,1188 @@
                     </div>
                     
                     
+=======
+                <div class="input-div">
+                  <input type="text" id="n2" name="cfname" />
+                  <span>Father/Husband's Name</span>
+                </div>
+              </div>
+              <div class="input-text">
+                <div class="input-div">
+                  <input type="text" id="n3" name="phone" required />
+                  <span>Phone number</span>
+                </div>
+                <div class="input-div">
+                  <input type="email" required id="email" name="email" />
+                  <span>E-mail Address</span>
+                </div>
+              </div>
+              <div class="input-text">
+                <div class="input-div">
+                  <input type="text" required id="address" name="address" />
+                  <span>Address</span>
+                </div>
+              </div>
+              <div class="input-text">
+                <div class="input-div">
+                  <p>Date of Birth</p>
+                  <input
+                    type="date"
+                    required
+                    id="dob"
+                    name="dob"
+                    placeholder=""
+                  />
+                </div>
+                <div class="input-div">
+                  <p>Age</p>
+                  <input type="number" id="age" name="age" disabled />
+                </div>
+              </div>
+              <div class="input-text">
+                <div class="input-div">
+                  <label for="POB">Place Of Birth:</label>
+                  <select>
+                    <option selected>Pakistan</option>
+                  </select>
+                </div>
+                <div class="input-div">
+                  <label for="cities">Cities:</label>
+                  <select id="cities" name="cities">
+                    <option value="Karachi" selected>Karachi</option>
+                    <option value="Lahore">Lahore</option>
+                    <option value="Faisalabad">Faisalabad</option>
+                    <option value="Rawalpindi">Rawalpindi</option>
+                    <option value="Multan">Multan</option>
+                    <option value="Hyderabad">Hyderabad</option>
+                    <option value="Gujranwala">Gujranwala</option>
+                    <option value="Peshawar">Peshawar</option>
+                    <option value="Quetta">Quetta</option>
+                    <option value="Islamabad">Islamabad</option>
+                  </select>
+                </div>
+              </div>
+              <div class="buttons">
+                <button class="next_button">Next Step</button>
+              </div>
+            </div>
+
+            <div class="main">
+              <small><i class="fa fa-smile-o"></i></small>
+              <div class="text">
+                <h2>Your Personal Information</h2>
+                <p>
+                  Please enter your personal information to complete the policy
+                  form.
+                </p>
+              </div>
+              <div class="input-text">
+                <div class="input-div">
+                  <p><strong>Nominee</strong></p>
+                  <input type="text" id="nominee" name="nominee" />
+                </div>
+                <div class="input-div">
+                  <p>Date of Birth</p>
+                  <input
+                    type="date"
+                    required
+                    id="dobNominee"
+                    name="dobNominee"
+                    placeholder=""
+                  />
+                </div>
+                <div class="input-div">
+                  <p>Age</p>
+                  <input
+                    type="number"
+                    id="ageNominee"
+                    name="ageNominee"
+                    disabled
+                  />
+                </div>
+              </div>
+              <div class="input-text">
+                <p><strong>Relation</strong></p>
+                <div class="input-div">
+                  <select id="nomineeRelation" name="nomineeRelation">
+                    <option value="" selected>Nominee relation with you</option>
+                    <option value="father">Father</option>
+                    <option value="mother">Mother</option>
+                    <option value="spouse">Spouse</option>
+                    <option value="child">Child</option>
+                    <option value="sibling">Sibling</option>
+                    <option value="other">Other</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="input-text">
+                <p><strong>Agent</strong></p>
+                <div class="input-div">
+                  <select id="agent" name="agent" required>
+                    <option>Select your Agent</option>
+                    {% for agent in agents %}
+                    <option value="{{agent.team_id}}">
+                      {{ agent.team_name }}
+                    </option>
+                    {% endfor %}
+                  </select>
+                </div>
+              </div>
+              <div>
+                <h5>Upload your CNIC Bank Statement and Medical Report</h5>
+                <br />
+                <input type="file" class="form-control" id="file" name="file" />
+              </div>
+              <br /><br />
+
+              <div class="buttons button_space">
+                <button class="back_button">Back</button>
+                <button class="next_button">Next Step</button>
+              </div>
+            </div>
+
+            <div class="main">
+              <small><i class="fa fa-smile-o"></i></small>
+              <div class="text">
+                <h2>Your Personal Information</h2>
+                <p>
+                  Please enter your personal information to complete the policy
+                  form.
+                </p>
+              </div>
+              <div class="input-text">
+                <div class="input-div">
+                  <input
+                    type="number"
+                    id="monthly-income"
+                    name="monthly-income"
+                    min="40000"
+                    step="5000"
+                    required
+                  />
+                  <span>Monthly income</span>
+                </div>
+                <div class="input-div">
+                  <input
+                    type="number"
+                    id="Sum-insured"
+                    name="Sum-insured"
+                    min="500000"
+                    step="500000"
+                    required
+                  />
+                  <span>Sum insured</span>
+                </div>
+              </div>
+              <div class="input-text">
+                <div class="input-div">
+                  <input
+                    type="number"
+                    id="term"
+                    name="Term"
+                    min="10"
+                    max="20"
+                    step="5"
+                    required
+                  />
+                  <span>Term (Year)</span>
+                </div>
+                <div class="input-div">
+                  <select id="plan" name="plan" required>
+                    <option>Select Plan</option>
+                    <option value="Jeevan Sathi Assurance">
+                      Jeevan Sathi Assurance
+                    </option>
+                    <option value="Child Protection Assurance">
+                      Child Protection Assurance
+                    </option>
+                    <option value="Wealth Builder Plan">
+                      Wealth Builder Plan
+                    </option>
+                    <option value="Supplementary Covers">
+                      Supplementary Covers
+                    </option>
+                  </select>
+                </div>
+              </div>
+              <div class="input-text">
+                <p><strong>Mode:</strong></p>
+
+                <div class="form-group">
+                  <p>YLY</p>
+                  <input
+                    type="radio"
+                    name="radioGroup"
+                    value="yly"
+                    id="yly"
+                    title="Year-to-Date"
+                  />
+                </div>
+                <div class="form-group">
+                  <p>HLY</p>
+                  <input
+                    type="radio"
+                    name="radioGroup"
+                    value="hly"
+                    id="hly"
+                    title="Half-Year"
+                  />
+                </div>
+                <div class="form-group">
+                  <p>QLY</p>
+                  <input
+                    type="radio"
+                    name="radioGroup"
+                    value="qly"
+                    id="qly"
+                    title="Quarter-Year"
+                  />
+                </div>
+              </div>
+
+              <div class="input-text">
+                <div class="input-div">
+                  <div class="premium-section">
+                    <label for="premium-input">Premium:</label>
+                    <input
+                      type="text"
+                      name="premium"
+                      id="premium-input"
+                      disabled
+                    />
+                  </div>
+                </div>
+              </div>
+
+              <div class="buttons button_space">
+                <button class="back_button">Back</button>
+                <button class="next_button">Next Step</button>
+              </div>
+            </div>
+
+            <div class="main">
+              <small><i class="fa fa-smile-o"></i></small>
+              <div class="text">
+                <h2>Your Personal Information</h2>
+                <p>
+                  Please enter your personal information to complete the policy
+                  form.
+                </p>
+                <p style="color: brown"><strong>Optional*</strong></p>
+              </div>
+
+              <div class="input-text">
+                <div class="input-div">
+                  <input type="text" id="for-lady" />
+                  <span>For Lady</span>
+                </div>
+                <div class="input-div">
+                  <input type="number" id="employee" />
+                  <span>Employe #</span>
+                </div>
+              </div>
+
+              <div class="input-text">
+                <div class="input-div">
+                  <input type="text" id="education" />
+                  <span>Education</span>
+                </div>
+                <div class="input-div">
+                  <input type="number" id="gpe-no." />
+                  <span>GPE NO.</span>
+                </div>
+              </div>
+
+              <div class="input-text">
+                <div class="input-div">
+                  <p>Husbend income</p>
+                  <input
+                    type="number"
+                    id="husbend-income"
+                    min="40000"
+                    step="5000"
+                  />
+                </div>
+                <div class="input-div">
+                  <input
+                    type="text"
+                    id="monthly-deduction"
+                    name="monthly-deduction"
+                  />
+                  <span>Monthly Deduction</span>
+                </div>
+              </div>
+
+              <div class="input-text">
+                <div class="input-div">
+                  <p>Date of Lamp</p>
+                  <input type="date" id="dob" name="dol" />
+>>>>>>> d6c099477cec31c06a7daabdea5d6cca00cbed67
                 </div>
 
-            </form>
+                <div class="input-div">
+                  <input type="text" id="yearly-deduction" />
+                  <span>Yearly Deduction</span>
+                </div>
+              </div>
+              <div class="buttons button_space">
+                <button class="back_button">Back</button>
+                <button class="next_button">Next Step</button>
+              </div>
+            </div>
 
-        </div>
+            <div class="main">
+              <small><i class="fa fa-smile-o"></i></small>
 
+              <div class="text">
+                <h2>Your Physical Information</h2>
+                <p>
+                  Please enter your physical information to further proceed the
+                  form.
+                </p>
+              </div>
+              <div class="input-text">
+                <div class="input-div">
+                  <label for="diseaseSelect"
+                    ><strong>Any Disease:</strong></label
+                  >
+                  <div class="form-group">
+                    <input
+                      type="checkbox"
+                      name="disease"
+                      value="cancer"
+                      id="cancer"
+                    />
+                    <label for="cancer">Cancer</label>
+                  </div>
+                  <div class="form-group">
+                    <input
+                      type="checkbox"
+                      name="disease"
+                      value="diabetes"
+                      id="diabetes"
+                    />
+                    <label for="diabetes">Diabetes</label>
+                  </div>
+                  <div class="form-group">
+                    <input
+                      type="checkbox"
+                      name="disease"
+                      value="heartDisease"
+                      id="heartDisease"
+                    />
+                    <label for="heartDisease">Heart disease</label>
+                  </div>
+                </div>
+                <div class="input-div">
+                  <label for="operationSelect"
+                    ><strong>Any Operstion:</strong></label
+                  >
+                  <div id="operationSelect">
+                    <div class="form-group">
+                      <input
+                        type="checkbox"
+                        name="operation"
+                        value="Appendectomy"
+                        id="Appendectomy"
+                      />
+                      <label for="Appendectomy">Appendectomy</label>
+                    </div>
+                    <div class="form-group">
+                      <input
+                        type="checkbox"
+                        name="operation"
+                        value="openHeartSurgery"
+                        id="openHeartSurgery"
+                      />
+                      <label for="openHeartSurgery">Open heart surgery</label>
+                    </div>
+                    <div class="form-group">
+                      <input
+                        type="checkbox"
+                        name="operation"
+                        value="Hip replacement surgery"
+                        id="Hip replacement surgery"
+                      />
+                      <label for="Hip replacement surgery"
+                        >Hip replacement surgery</label
+                      >
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="input-text">
+                <div class="input-div">
+                  <p><strong>Weak Eye sight or Operated:</strong></p>
+                  <label>
+                    <input type="radio" name="yesno" value="yes" align="left" />
+                    Yes
+                  </label>
+                  <br />
+                  <label>
+                    <input
+                      type="radio"
+                      name="yesno"
+                      value="no"
+                      align="left"
+                      checked
+                    />
+                    No
+                  </label>
+                </div>
+                <div class="input-div">
+                  <p><strong>Any Habit:</strong></p>
+                  <label>
+                    <input type="checkbox" name="Tabacoo" value="tabacoo" />
+                    Tabacoo
+                  </label>
+                  <br />
+                  <label>
+                    <input type="checkbox" name="Tabacoo" value="alcohal" />
+                    Alcohal
+                  </label>
+                  <br />
+                  <label>
+                    <input type="checkbox" name="Tabacoo" value="drugs" />
+                    Drugs
+                  </label>
+                </div>
+                <div class="input-div">
+                  <p><strong>Diabetic in family</strong></p>
+                  <label>
+                    <input
+                      type="radio"
+                      name="yesno1"
+                      value="yes"
+                      align="left"
+                    />
+                    Yes
+                  </label>
+                  <br />
+                  <label>
+                    <input
+                      type="radio"
+                      name="yesno1"
+                      value="no"
+                      align="left"
+                      checked
+                    />
+                    No
+                  </label>
+                </div>
+              </div>
+
+              <p style="color: brown">
+                <strong>If Diabetic in family*</strong>
+              </p>
+              <div class="input-text">
+                <div class="input-div">
+                  <input type="text" id="diabetic-relation" />
+                  <span>Relation</span>
+                </div>
+                <div class="input-div">
+                  <input type="text" id="diabetic-age" />
+                  <span>Age</span>
+                </div>
+                <div class="input-div">
+                  <input type="text" id="diabetic-sinec" />
+                  <span>Since</span>
+                </div>
+              </div>
+
+              <div class="buttons button_space">
+                <button class="back_button">Back</button>
+                <button class="next_button">Next Step</button>
+              </div>
+            </div>
+
+            <div class="main">
+              <small><i class="fa fa-smile-o"></i></small>
+              <div class="text">
+                <h2>Your Physical Information</h2>
+                <p>
+                  Please enter your physical information to further proceed the
+                  form.
+                </p>
+              </div>
+              <div class="input-text">
+                <div class="input-div">
+                  <p><strong>Medically examined:</strong></p>
+                  <label>
+                    <input
+                      type="radio"
+                      name="med_examined"
+                      value="yes"
+                      align="left"
+                    />
+                    Yes
+                  </label>
+                  <br />
+                  <label>
+                    <input
+                      type="radio"
+                      name="med_examined"
+                      value="no"
+                      align="left"
+                      checked
+                    />
+                    No
+                  </label>
+                </div>
+              </div>
+              <div class="input-text">
+                <div class="input-div">
+                  <input
+                    type="number"
+                    required
+                    min="1"
+                    name="height"
+                    max="8"
+                    id="height"
+                  />
+                  <span>Height (feet)</span>
+                </div>
+                <div class="input-div">
+                  <input
+                    type="number"
+                    required
+                    min="3"
+                    name="weight"
+                    max="250"
+                    id="weight"
+                  />
+                  <span>Weight(Kg)</span>
+                </div>
+              </div>
+              <div class="input-text">
+                <div class="input-div">
+                  <input
+                    type="number"
+                    min="3"
+                    max="80"
+                    name="chest"
+                    required
+                    id="chest"
+                  />
+                  <span>Chest (inches)</span>
+                </div>
+                <div class="input-div">
+                  <input
+                    type="number"
+                    required
+                    min="5"
+                    name="abdomen"
+                    max="100"
+                    id="abdomen"
+                  />
+                  <span>Abdomen</span>
+                </div>
+              </div>
+
+              <div class="buttons button_space">
+                <button class="back_button">Back</button>
+                <button class="next_button">Next Step</button>
+              </div>
+            </div>
+
+            <div class="main">
+              <small><i class="fa fa-smile-o"></i></small>
+              <div class="text">
+                <h2>Family history</h2>
+                <p>Give your family history go to the step.</p>
+              </div>
+
+              <div>
+                <div class="input-div">
+                  <p><strong>Suicide in family:</strong></p>
+                  <label>
+                    <input
+                      type="radio"
+                      name="suicide"
+                      value="yes"
+                      align="left"
+                    />
+                    Yes
+                  </label>
+                  <br />
+                  <label>
+                    <input
+                      type="radio"
+                      name="suicide"
+                      value="no"
+                      align="left"
+                      checked
+                    />
+                    No
+                  </label>
+                </div>
+                <p><strong>Is your father alive?</strong></p>
+                <input
+                  type="radio"
+                  name="father"
+                  value="yes"
+                  onclick="showInput()"
+                />
+                Yes
+                <input
+                  type="radio"
+                  name="father"
+                  value="no"
+                  onclick="showInput()"
+                />
+                No
+                <br />
+                <div id="input-yes" style="display: none">
+                  <span>What is your father's name?</span><br />
+                  <input type="text" name="father-name" required /><br />
+                  <div class="input-div">
+                    <select id="father-health" name="father-health" required>
+                      <option>Health</option>
+                      <option value="good">Good</option>
+                      <option value="fair">Fair</option>
+                      <option value="poor">Poor</option>
+                    </select>
+                  </div>
+                  <span>What is your father's date of birth?</span><br />
+                  <input
+                    type="date"
+                    name="father-dob"
+                    onchange="calculateFatherAge()"
+                  />
+                  <span id="father-age"></span>
+                </div>
+                <div id="input-no" style="display: none">
+                  <label>Cause of Death</label><br />
+                  <input type="text" name="fcd" /><br />
+                  <label>When did your father pass away?</label> <br />
+                  <input type="date" name="father-passed" />
+                </div>
+
+                <p><strong>Is your mother alive?</strong></p>
+                <input
+                  type="radio"
+                  name="mother"
+                  value="yes"
+                  onclick="showMotherInput()"
+                />
+                Yes
+                <input
+                  type="radio"
+                  name="mother"
+                  value="no"
+                  onclick="showMotherInput()"
+                />
+                No
+                <br />
+                <div id="input-mother-yes" style="display: none">
+                  <label>What is your mother's name?</label><br />
+                  <input type="text" name="mother-name" /><br />
+                  <div class="input-div">
+                    <select id="mother-health" name="mother-health" required>
+                      <option>Health</option>
+                      <option value="good">Good</option>
+                      <option value="fair">Fair</option>
+                      <option value="poor">Poor</option>
+                    </select>
+                  </div>
+                  <label>What is your mother's date of birth?</label><br />
+                  <input
+                    type="date"
+                    name="mother-dob"
+                    onchange="calculateMomAge()"
+                  />
+                  <span id="mother-age">Age</span>
+                </div>
+                <div id="input-mother-no" style="display: none">
+                  <label>When did your mother pass away?</label> <br />
+                  <input type="date" name="mother-passed" />
+                  <label>Cause of Death</label><br />
+                  <input type="text" name="mcd" /><br />
+                </div>
+                <div class="input-div">
+                  <p><strong>Your Partner?</strong></p>
+                  <label>
+                    <input
+                      type="radio"
+                      name="partner"
+                      value="hub"
+                      align="left"
+                    />
+                    Husband
+                  </label>
+                  <br />
+                  <label>
+                    <input
+                      type="radio"
+                      name="partner"
+                      value="wife"
+                      align="left"
+                      checked
+                    />
+                    Wife
+                  </label>
+                  <div class="input-div">
+                    <select id="mother-health" name="mother-health" required>
+                      <option>Health</option>
+                      <option value="good">Good</option>
+                      <option value="fair">Fair</option>
+                      <option value="poor">Poor</option>
+                    </select>
+                  </div>
+                  <br /><br />
+                </div>
+              </div>
+
+              <script>
+                // get references to the radio buttons
+                const ylyRadio = document.getElementById("yly");
+                const hlyRadio = document.getElementById("hly");
+                const qlyRadio = document.getElementById("qly");
+
+                // get references to the input fields
+                const sumInsuredInput = document.getElementById("Sum-insured");
+                const termInput = document.getElementById("term");
+
+                // get reference to the premium input field
+                const premiumInput = document.getElementById("premium-input");
+
+                // function to calculate premium
+                function calculatePremium() {
+                  // get the selected radio button value
+                  let mode = "";
+                  if (ylyRadio.checked) {
+                    mode = "yly";
+                  } else if (hlyRadio.checked) {
+                    mode = "hly";
+                  } else if (qlyRadio.checked) {
+                    mode = "qly";
+                  }
+
+                  // get the values entered in the input fields
+                  const sumInsured = sumInsuredInput.value;
+                  const term = termInput.value;
+
+                  // perform calculation based on selected mode
+                  let premium = 0;
+                  if (mode === "yly") {
+                    premium = sumInsured / term;
+                  } else if (mode === "hly") {
+                    premium = sumInsured / (term / 2);
+                  } else if (mode === "qly") {
+                    premium = sumInsured / (term / 4);
+                  }
+
+                  // display the calculated premium in the input field
+                  premiumInput.value = Math.round(premium);
+                }
+
+                // listen for changes to the radio buttons
+                ylyRadio.addEventListener("change", calculatePremium);
+                hlyRadio.addEventListener("change", calculatePremium);
+                qlyRadio.addEventListener("change", calculatePremium);
+
+                // listen for changes to the input fields
+                sumInsuredInput.addEventListener("change", calculatePremium);
+                termInput.addEventListener("change", calculatePremium);
+
+                function showInput() {
+                  var yesInput = document.getElementById("input-yes");
+                  var noInput = document.getElementById("input-no");
+                  var radioValue = document.querySelector(
+                    'input[name="father"]:checked'
+                  ).value;
+
+                  if (radioValue === "yes") {
+                    yesInput.style.display = "block";
+                    noInput.style.display = "none";
+                    document.getElementById("input-mother-yes").style.display =
+                      "none";
+                    document.getElementById("input-mother-no").style.display =
+                      "none";
+                  } else if (radioValue === "no") {
+                    noInput.style.display = "block";
+                    yesInput.style.display = "none";
+                    document.getElementById("input-mother-yes").style.display =
+                      "none";
+                    document.getElementById("input-mother-no").style.display =
+                      "none";
+                  }
+                }
+
+                function showMotherInput() {
+                  var yesInput = document.getElementById("input-mother-yes");
+                  var noInput = document.getElementById("input-mother-no");
+                  var radioValue = document.querySelector(
+                    'input[name="mother"]:checked'
+                  ).value;
+
+                  if (radioValue === "yes") {
+                    yesInput.style.display = "block";
+                    noInput.style.display = "none";
+                    document.getElementById("input-yes").style.display = "none";
+                    document.getElementById("input-no").style.display = "none";
+                  } else if (radioValue === "no") {
+                    noInput.style.display = "block";
+                    yesInput.style.display = "none";
+                    document.getElementById("input-yes").style.display = "none";
+                    document.getElementById("input-no").style.display = "none";
+                  }
+                }
+
+                function calculateFatherAge() {
+                  var dob = new Date(
+                    document.querySelector('input[name="father-dob"]').value
+                  );
+                  var today = new Date();
+                  var age = today.getFullYear() - dob.getFullYear();
+                  var m = today.getMonth() - dob.getMonth();
+                  if (m < 0 || (m === 0 && today.getDate() < dob.getDate())) {
+                    age--;
+                  }
+                  document.getElementById("father-age").innerHTML =
+                    age + " years old";
+                }
+
+                function calculateMomAge() {
+                  var dob = new Date(
+                    document.querySelector('input[name="mother-dob"]').value
+                  );
+                  var today = new Date();
+                  var age = today.getFullYear() - dob.getFullYear();
+                  var m = today.getMonth() - dob.getMonth();
+                  if (m < 0 || (m === 0 && today.getDate() < dob.getDate())) {
+                    age--;
+                  }
+                  document.getElementById("mother-age").innerHTML =
+                    age + " years old";
+                }
+              </script>
+
+              <div class="buttons button_space">
+                <button class="back_button">Back</button>
+                <button class="next_button">Next Step</button>
+              </div>
+            </div>
+            <div class="main">
+              <small><i class="fa fa-smile-o"></i></small>
+              <div class="text">
+                <h2>Family history</h2>
+                <p>Give your family history go to the step.</p>
+              </div>
+              <div>
+                <label>Number of brothers:</label>
+                <input
+                  type="number"
+                  name="numb"
+                  min="0"
+                  max="20"
+                  id="num-brothers"
+                />
+                <br />
+                <div class="input-text" id="brothers-info"></div>
+              </div>
+              <script>
+                document
+                  .querySelector("#num-brothers")
+                  .addEventListener("change", function () {
+                    var numBrothers = this.value;
+                    var brothersInfo = document.querySelector("#brothers-info");
+                    brothersInfo.innerHTML = "";
+                    if (numBrothers > 0) {
+                      for (var i = 1; i <= numBrothers; i++) {
+                        var brother = document.createElement("div");
+                        brother.setAttribute("class", "input-div");
+                        var ageLabel = document.createElement("label");
+                        ageLabel.innerHTML = "Age of brother " + i + ":";
+                        var ageInput = document.createElement("input");
+                        ageInput.setAttribute("type", "number");
+                        ageInput.setAttribute("name", "age-brother-" + i);
+                        var healthLabel = document.createElement("label");
+                        healthLabel.innerHTML = "Health of brother " + i + ":";
+                        var healthSelect = document.createElement("select");
+                        healthSelect.setAttribute(
+                          "name",
+                          "health-brother-" + i
+                        );
+
+                        var option1 = document.createElement("option");
+                        option1.value = "good";
+                        option1.text = "Good";
+
+                        var option2 = document.createElement("option");
+                        option2.value = "fair";
+                        option2.text = "Fair";
+
+                        var option3 = document.createElement("option");
+                        option3.value = "poor";
+                        option3.text = "Poor";
+
+                        healthSelect.appendChild(option1);
+                        healthSelect.appendChild(option2);
+                        healthSelect.appendChild(option3);
+
+                        brother.appendChild(ageLabel);
+                        brother.appendChild(ageInput);
+                        brother.appendChild(healthLabel);
+                        brother.appendChild(healthSelect);
+                        brothersInfo.appendChild(brother);
+                      }
+                    }
+                  });
+              </script>
+              <div class="buttons button_space">
+                <button class="back_button">Back</button>
+                <button class="next_button">Next Step</button>
+              </div>
+            </div>
+            <div class="main">
+              <small><i class="fa fa-smile-o"></i></small>
+              <div class="text">
+                <h2>Family history</h2>
+                <p>Give your family history go to the step.</p>
+              </div>
+              <div>
+                <label>Number of sisters:</label>
+                <input
+                  type="number"
+                  min="0"
+                  name="nums"
+                  max="20"
+                  id="num-sisters"
+                />
+                <br />
+                <div class="input-text" id="sisters-info"></div>
+              </div>
+              <script>
+                document
+                  .querySelector("#num-sisters")
+                  .addEventListener("change", function () {
+                    var numSisters = this.value;
+                    var sistersInfo = document.querySelector("#sisters-info");
+                    sistersInfo.innerHTML = "";
+                    if (numSisters > 0) {
+                      for (var i = 1; i <= numSisters; i++) {
+                        var sister = document.createElement("div");
+                        sister.setAttribute("class", "input-div");
+                        var ageLabel = document.createElement("label");
+                        ageLabel.innerHTML = "Age of sister " + i + ":";
+                        var ageInput = document.createElement("input");
+                        ageInput.setAttribute("type", "number");
+                        ageInput.setAttribute("name", "age-sister-" + i);
+                        var healthLabel = document.createElement("label");
+                        healthLabel.innerHTML = "Health of sister " + i + ":";
+                        var healthSelect = document.createElement("select");
+                        healthSelect.setAttribute("name", "health-sister-" + i);
+
+                        var option1 = document.createElement("option");
+                        option1.value = "good";
+                        option1.text = "Good";
+
+                        var option2 = document.createElement("option");
+                        option2.value = "fair";
+                        option2.text = "Fair";
+
+                        var option3 = document.createElement("option");
+                        option3.value = "poor";
+                        option3.text = "Poor";
+
+                        healthSelect.appendChild(option1);
+                        healthSelect.appendChild(option2);
+                        healthSelect.appendChild(option3);
+
+                        sister.appendChild(ageLabel);
+                        sister.appendChild(ageInput);
+                        sister.appendChild(healthLabel);
+                        sister.appendChild(healthSelect);
+                        sistersInfo.appendChild(sister);
+                      }
+                    }
+                  });
+              </script>
+              <div class="buttons button_space">
+                <button class="back_button">Back</button>
+                <button class="next_button">Next Step</button>
+              </div>
+            </div>
+            <div class="main">
+              <small><i class="fa fa-smile-o"></i></small>
+              <div class="text">
+                <h2>Family history</h2>
+                <p>Give your family history go to the step.</p>
+              </div>
+              <div>
+                <label>Number of sons:</label>
+                <input
+                  type="number"
+                  name="Nos"
+                  min="0"
+                  max="20"
+                  id="num-sons"
+                />
+                <br />
+                <div class="input-text" id="sons-info"></div>
+              </div>
+              <script>
+                document
+                  .querySelector("#num-sons")
+                  .addEventListener("change", function () {
+                    var numsons = this.value;
+                    var sonsInfo = document.querySelector("#sons-info");
+                    sonsInfo.innerHTML = "";
+                    if (numsons > 0) {
+                      for (var i = 1; i <= numsons; i++) {
+                        var son = document.createElement("div");
+                        son.setAttribute("class", "input-div");
+                        var ageLabel = document.createElement("label");
+                        ageLabel.innerHTML = "Age of son " + i + ":";
+                        var ageInput = document.createElement("input");
+                        ageInput.setAttribute("type", "number");
+                        ageInput.setAttribute("name", "age-son-" + i);
+                        var healthLabel = document.createElement("label");
+                        healthLabel.innerHTML = "Health of son " + i + ":";
+                        var healthSelect = document.createElement("select");
+                        healthSelect.setAttribute("name", "health-son-" + i);
+
+                        var option1 = document.createElement("option");
+                        option1.value = "good";
+                        option1.text = "Good";
+
+                        var option2 = document.createElement("option");
+                        option2.value = "fair";
+                        option2.text = "Fair";
+
+                        var option3 = document.createElement("option");
+                        option3.value = "poor";
+                        option3.text = "Poor";
+
+                        healthSelect.appendChild(option1);
+                        healthSelect.appendChild(option2);
+                        healthSelect.appendChild(option3);
+
+                        son.appendChild(ageLabel);
+                        son.appendChild(ageInput);
+                        son.appendChild(healthLabel);
+                        son.appendChild(healthSelect);
+                        sonsInfo.appendChild(son);
+                      }
+                    }
+                  });
+              </script>
+              <div class="buttons button_space">
+                <button class="back_button">Back</button>
+                <button class="next_button">Next Step</button>
+              </div>
+            </div>
+            <div class="main">
+              <small><i class="fa fa-smile-o"></i></small>
+              <div class="text">
+                <h2>Family history</h2>
+                <p>Give your family history go to the step.</p>
+              </div>
+              <div>
+                <label>Number of daughter:</label>
+                <input
+                  type="number"
+                  min="0"
+                  name="Nod"
+                  max="20"
+                  id="num-daughter"
+                />
+                <br />
+                <div class="input-text" id="daughter-info"></div>
+              </div>
+              <script>
+                document
+                  .querySelector("#num-daughter")
+                  .addEventListener("change", function () {
+                    var numdaughter = this.value;
+                    var daughterInfo = document.querySelector("#daughter-info");
+                    daughterInfo.innerHTML = "";
+                    if (numdaughter > 0) {
+                      for (var i = 1; i <= numdaughter; i++) {
+                        var daughtr = document.createElement("div");
+                        daughtr.setAttribute("class", "input-div");
+                        var ageLabel = document.createElement("label");
+                        ageLabel.innerHTML = "Age of daughtr " + i + ":";
+                        var ageInput = document.createElement("input");
+                        ageInput.setAttribute("type", "number");
+                        ageInput.setAttribute("name", "age-daughtr-" + i);
+                        var healthLabel = document.createElement("label");
+                        healthLabel.innerHTML = "Health of daughtr " + i + ":";
+                        var healthSelect = document.createElement("select");
+                        healthSelect.setAttribute(
+                          "name",
+                          "health-daughtr-" + i
+                        );
+
+                        var option1 = document.createElement("option");
+                        option1.value = "good";
+                        option1.text = "Good";
+
+                        var option2 = document.createElement("option");
+                        option2.value = "fair";
+                        option2.text = "Fair";
+
+                        var option3 = document.createElement("option");
+                        option3.value = "poor";
+                        option3.text = "Poor";
+
+                        healthSelect.appendChild(option1);
+                        healthSelect.appendChild(option2);
+                        healthSelect.appendChild(option3);
+
+                        daughtr.appendChild(ageLabel);
+                        daughtr.appendChild(ageInput);
+                        daughtr.appendChild(healthLabel);
+                        daughtr.appendChild(healthSelect);
+                        daughterInfo.appendChild(daughtr);
+                      }
+                    }
+                  });
+              </script>
+              <div class="buttons button_space">
+                <button class="back_button">Back</button>
+                <button class="next_button">Next Step</button>
+              </div>
+            </div>
+            <div class="main">
+              <small><i class="fa fa-smile-o"></i></small>
+              <div class="text">
+                <h2>Confirm OTP</h2>
+                <p>Enter your OTP sended vis Email.</p>
+              </div>
+              <br /><br /><br />
+              <button
+                id="otp-button"
+                onclick="generateAndSendOTP()"
+                align="center"
+              >
+                Generate OTP
+              </button>
+              <div id="otp-section" style="display: none">
+                <div class="input-div">
+                  <br /><br /><br />
+                  <p><strong>Enter OTP</strong></p>
+                  <input type="text" align="center" id="OTP" name="OTP" />
+                  <br /><br /><br />
+                </div>
+                <div class="buttons button_space" style="margin-top: 12px">
+                  <button class="back_button">Back</button>
+                  <button id="otp-button1" onclick="verifyOTP()">Submit</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
     </div>
-</body>
-<script>
+  </body>
+  <script>
     function verifyOTP() {
-        console.log('here')
+      console.log("here");
 
+<<<<<<< HEAD
         // get the OTP value from the input field
         let otp = document.getElementById("OTP").value;
         let name=document.getElementsByName("cname")[0].value;
@@ -1073,10 +2264,61 @@
         // let fileInput = document.getElementsByName("file")[0];
         // let files = fileInput.files;
         // console.log(files);
+=======
+      const fd = new FormData();
+
+      // get the OTP value from the input field
+      fd.append("OTP",document.getElementById("OTP").value);
+      fd.append("cname",document.getElementsByName("cname")[0].value);
+      fd.append("cfname",document.getElementsByName("cfname")[0].value);
+      fd.append("phone",document.getElementsByName("phone")[0].value);
+      fd.append("email",document.getElementsByName("email")[0].value);
+      fd.append("address",document.getElementsByName("address")[0].value);
+      fd.append("dob",document.getElementsByName("dob")[0].value);
+      fd.append("age",document.getElementsByName("age")[0].value);
+      fd.append("cities",document.getElementsByName("cities")[0].value);
+      fd.append("nominee",document.getElementsByName("nominee")[0].value);
+      fd.append("dobNominee",document.getElementsByName("dobNominee")[0].value);
+      fd.append("ageNominee",document.getElementsByName("ageNominee")[0].value);
+      fd.append("nomineeRelation",document.getElementsByName("nomineeRelation")[0].value);
+      fd.append("monthly-income",document.getElementsByName("monthly-income")[0].value);
+      fd.append("Sum-insured",document.getElementsByName("Sum-insured")[0].value);
+      fd.append("Term",document.getElementsByName("Term")[0].value);
+      fd.append("radioGroup",document.getElementsByName("radioGroup")[0].value);
+      fd.append("premium",document.getElementsByName("premium")[0].value);
+      fd.append("disease",document.getElementsByName("disease")[0].value);
+      fd.append("operation",document.getElementsByName("operation")[0].value);
+      fd.append("yesno",document.getElementsByName("yesno")[0].value);
+      fd.append("Tabacoo",document.getElementsByName("Tabacoo")[0].value);
+      fd.append("yesno1",document.getElementsByName("yesno1")[0].value);
+      fd.append("med_examined",document.getElementsByName("med_examined")[0].value);
+      fd.append("height",document.getElementsByName("height")[0].value);
+      fd.append("weight",document.getElementsByName("weight")[0].value);
+      fd.append("chest",document.getElementsByName("chest")[0].value);
+      fd.append("abdomen",document.getElementsByName("abdomen")[0].value);
+      fd.append("suicide",document.getElementsByName("suicide")[0].value);
+      fd.append("father",document.getElementsByName("father")[0].value);
+      fd.append("father-health",document.getElementsByName("father-health")[0].value);
+      fd.append("fcd",document.getElementsByName("fcd")[0].value);
+      fd.append("mother-name",document.getElementsByName("mother-name")[0].value);
+      fd.append("mother-health",document.getElementsByName("mother-health")[0].value);
+      fd.append("mcd",document.getElementsByName("mcd")[0].value);
+      fd.append("numb",document.getElementsByName("numb")[0].value);
+      fd.append("nums",document.getElementsByName("nums")[0].value);
+      fd.append("Nod",document.getElementsByName("Nod")[0].value);
+      fd.append("Nos",document.getElementsByName("Nos")[0].value);
+      fd.append("mother",document.getElementsByName("mother")[0].value);
+      // let files = fileInput.files;
+      // console.log(files);,""
+>>>>>>> d6c099477cec31c06a7daabdea5d6cca00cbed67
 
 
+      let fileInput = document.getElementById("file").files[0]
 
+      
+      fd.append('file', fileInput)
 
+<<<<<<< HEAD
 
 
 
@@ -1110,81 +2352,101 @@
             else {
                 alert('An error occurred while verifying the OTP');
             }
+=======
+      // send a request to the server to verify the OTP
+      fetch("form", {
+        method: "POST",
+        body: fd
+      })
+        .then((response) => response.json())
+        .then((data) => {
+          console.log("here1");
+          if (data.status === "success") {
+            window.location.assign("/loggedin");
+            console.log("here3");
+            alert("OTP verified successfully");
+          } else {
+            alert("An error occurred while verifying the OTP");
+          }
+>>>>>>> d6c099477cec31c06a7daabdea5d6cca00cbed67
         });
     }
-    
+
     function generateAndSendOTP() {
-        // get the email address from the input field
-        let email = document.getElementById("email").value;
-    
-        // send a request to the server to send the OTP
-        fetch('send-otp', {
-            method: 'POST',
-            body: JSON.stringify({'email': email}),
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            credentials: 'same-origin',
-        })
-        .then(response => response.json())
-        .then(data => {
-            if (data.status === 'success') {
-                alert('OTP sent to your email');
-            } 
-            else {
-                alert('An error occurred while sending the OTP');
-            }
+      // get the email address from the input field
+      let email = document.getElementById("email").value;
+
+      // send a request to the server to send the OTP
+      fetch("send-otp", {
+        method: "POST",
+        body: JSON.stringify({ email: email }),
+        headers: {
+          "Content-Type": "application/json",
+        },
+        credentials: "same-origin",
+      })
+        .then((response) => response.json())
+        .then((data) => {
+          if (data.status === "success") {
+            alert("OTP sent to your email");
+          } else {
+            alert("An error occurred while sending the OTP");
+          }
         });
     }
-    
 
     const otpButton = document.getElementById("otp-button");
     const otpSection = document.getElementById("otp-section");
 
-    otpButton.addEventListener("click", function() {
+    otpButton.addEventListener("click", function () {
       otpSection.style.display = "block";
       otpButton.style.display = "none";
     });
 
-
     var currentDate = new Date();
     // Set the minimum date to 70 years in the past
     var minDate = new Date();
     minDate.setFullYear(minDate.getFullYear() - 70);
-    document.getElementById('dob').min = minDate.toISOString().split('T')[0];
+    document.getElementById("dob").min = minDate.toISOString().split("T")[0];
     // Set the maximum date to the current date
-    document.getElementById('dob').max = currentDate.toISOString().split('T')[0];
+    document.getElementById("dob").max = currentDate
+      .toISOString()
+      .split("T")[0];
 
     // Get the date of birth input element
-    var dobInput = document.getElementById('dob');
+    var dobInput = document.getElementById("dob");
     // Add an event listener for the "change" event
-    dobInput.addEventListener('change', function () {
-        // Calculate the age
-        var dob = dobInput.value;
-        var dobParts = dob.split('-');
-        var currentYear = new Date().getFullYear();
-        var age = currentYear - dobParts[0];
-        // Display the age
-        document.getElementById('age').value = age;
+    dobInput.addEventListener("change", function () {
+      // Calculate the age
+      var dob = dobInput.value;
+      var dobParts = dob.split("-");
+      var currentYear = new Date().getFullYear();
+      var age = currentYear - dobParts[0];
+      // Display the age
+      document.getElementById("age").value = age;
     });
     var currentDate = new Date();
     // Set the minimum date to 70 years in the past
     var minDate = new Date();
     minDate.setFullYear(minDate.getFullYear() - 70);
-    document.getElementById('dobNominee').min = minDate.toISOString().split('T')[0];
+    document.getElementById("dobNominee").min = minDate
+      .toISOString()
+      .split("T")[0];
     // Set the maximum date to the current date
-    document.getElementById('dobNominee').max = currentDate.toISOString().split('T')[0];
+    document.getElementById("dobNominee").max = currentDate
+      .toISOString()
+      .split("T")[0];
 
-    var dobNomineeInput = document.getElementById('dobNominee');
+    var dobNomineeInput = document.getElementById("dobNominee");
     // Add an event listener for the "change" event
-    dobNomineeInput.addEventListener('change', function () {
-        // Calculate the age
-        var dobNominee = dobNomineeInput.value;
-        var dobParts = dobNominee.split('-');
-        var currentYear = new Date().getFullYear();
-        var ageNominee = currentYear - dobParts[0];
-        // Display the age
-        document.getElementById('ageNominee').value = ageNominee;
+    dobNomineeInput.addEventListener("change", function () {
+      // Calculate the age
+      var dobNominee = dobNomineeInput.value;
+      var dobParts = dobNominee.split("-");
+      var currentYear = new Date().getFullYear();
+      var ageNominee = currentYear - dobParts[0];
+      // Display the age
+      document.getElementById("ageNominee").value = ageNominee;
     });
 
     var next_click = document.querySelectorAll(".next_button");
@@ -1194,101 +2456,90 @@
     let formnumber = 0;
 
     next_click.forEach(function (next_click_form) {
-        next_click_form.addEventListener('click', function () {
-            if (!validateform()) {
-                return false
-            }
-            formnumber++;
-            updateform();
-            progress_forward();
-            contentchange();
-        });
+      next_click_form.addEventListener("click", function () {
+        if (!validateform()) {
+          return false;
+        }
+        formnumber++;
+        updateform();
+        progress_forward();
+        contentchange();
+      });
     });
 
     var back_click = document.querySelectorAll(".back_button");
     back_click.forEach(function (back_click_form) {
-        back_click_form.addEventListener('click', function () {
-            formnumber--;
-            updateform();
-            progress_backward();
-            contentchange();
-        });
+      back_click_form.addEventListener("click", function () {
+        formnumber--;
+        updateform();
+        progress_backward();
+        contentchange();
+      });
     });
 
     var name = document.querySelector("name");
     var shownname = document.querySelector(".shown_name");
 
-
     var submit_click = document.querySelectorAll(".submit_button");
     submit_click.forEach(function (submit_click_form) {
-        submit_click_form.addEventListener('click', function () {
-            shownname.innerHTML = name.value;
-            formnumber++;
-            updateform();
-        });
+      submit_click_form.addEventListener("click", function () {
+        shownname.innerHTML = name.value;
+        formnumber++;
+        updateform();
+      });
     });
 
     var heart = document.querySelector(".fa-heart");
-    
-
 
     var share = document.querySelector(".fa-share-alt");
-    
-
-
 
     function updateform() {
-        main_form.forEach(function (mainform_number) {
-            mainform_number.classList.remove('active');
-        })
-        main_form[formnumber].classList.add('active');
+      main_form.forEach(function (mainform_number) {
+        mainform_number?.classList.remove("active");
+      });
+      main_form[formnumber]?.classList.add("active");
     }
 
     function progress_forward() {
-        // step_list.forEach(list => {
+      // step_list.forEach(list => {
 
-        //     list.classList.remove('active');
+      //     list.classList.remove('active');
 
-        // }); 
+      // });
 
-
-        num.innerHTML = formnumber + 1;
-        step_list[formnumber].classList.add('active');
+      num.innerHTML = formnumber + 1;
+      step_list[formnumber].classList.add("active");
     }
 
     function progress_backward() {
-        var form_num = formnumber + 1;
-        step_list[form_num].classList.remove('active');
-        num.innerHTML = form_num;
+      var form_num = formnumber + 1;
+      step_list[form_num].classList.remove("active");
+      num.innerHTML = form_num;
     }
 
     var step_num_content = document.querySelectorAll(".step-number-content");
 
     function contentchange() {
-        step_num_content.forEach(function (content) {
-            content.classList.remove('d-none');
-            content.classList.add('active');
-        });
-//        step_num_content[formnumber].classList.add('active');
-        
+      step_num_content.forEach(function (content) {
+        content.classList.remove("d-none");
+        content.classList.add("active");
+      });
+      //        step_num_content[formnumber].classList.add('active');
     }
-
 
     function validateform() {
-        validate = true;
-        var validate_inputs = document.querySelectorAll(".main.active input");
-        validate_inputs.forEach(function (vaildate_input) {
-            vaildate_input.classList.remove('warning');
-            if (vaildate_input.hasAttribute('require')) {
-                if (vaildate_input.value.length == 0) {
-                    validate = false;
-                    vaildate_input.classList.add('warning');
-                }
-            }
-        });
-        return validate;
-
+      validate = true;
+      var validate_inputs = document.querySelectorAll(".main.active input");
+      validate_inputs.forEach(function (vaildate_input) {
+        vaildate_input.classList.remove("warning");
+        if (vaildate_input.hasAttribute("require")) {
+          if (vaildate_input.value.length == 0) {
+            validate = false;
+            vaildate_input.classList.add("warning");
+          }
+        }
+      });
+      return validate;
     }
-</script>
-
+  </script>
 </html>

@@ -1,8 +1,6 @@
 from django.urls import path
 from .views import *
 
-from django.conf import settings
-from django.conf.urls.static import static
 
 
 urlpatterns = [
@@ -18,6 +16,8 @@ urlpatterns = [
     path('passed/<int:id>/',Passed,name="Passed"),
     path('send-otp', send_otp, name='send_otp'),
     path('payPremium', payPremium, name='payPremium'),
+    path('signout', signout, name='signout'),
+
     path('login', login, name='login'),
     path("jevansaathi", jevansaathi, name='jevansaathi'),
     path("WholeLifeAssurance", WholeLifeAssurance, name='WholeLifeAssurance'),
@@ -28,6 +28,4 @@ urlpatterns = [
 ]
 
 
-if settings.DEBUG:
-    urlpatterns+=static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)
-    
+

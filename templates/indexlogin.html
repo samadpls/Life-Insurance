@@ -30,20 +30,7 @@
                 <a class="navbar-brand mt-2 mt-lg-0" href="{% url 'loggedin' %}">
                 </a>
                 <!-- Left links -->
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">About</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Contact</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Services</a>
-                    </li>
-                </ul>
+               
                 <!-- Left links -->
             </div>
             <!-- Collapsible wrapper -->
@@ -62,7 +49,7 @@
                 </div>
 
                 <!-- Avatar -->
-                <div class="collapse navbar-collapse" id="navbarNavDarkDropdown">
+                <div class="collapse navbar-collapse mx-5" id="navbarNavDarkDropdown" >
                     <ul class="navbar-nav">
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
@@ -70,13 +57,26 @@
                                 <img src="{% static 'img/man.png' %}" class="rounded-circle" height="25"
                                     alt="Black and White Portrait of a Man" loading="lazy" />
                             </a>
-                            <ul class="dropdown-menu dropdown-menu-dark">
-                                <li><a class="dropdown-item" href="{% url 'payPremium' %}">Premium</a></li>
+                            <ul class="dropdown-menu dropdown-menu-dark" style="right: 43px">
+
+                                {% comment %} <li><a class="dropdown-item" href="{% url 'payPremium' %}" style="align-items:right">Premium</a></li> {% endcomment %}
+                                <li><a class="dropdown-item" href="{% url 'signout' %}"  style="align-items:right">Signout</a></li>
+                                <li><a class="dropdown-item" href="{% url 'payPremium' %}"  style="align-items:right">Pay Premium</a></li>
+
+                                
+                                  
+
+
                             </ul>
                         </li>
                     </ul>
+
                 </div>
+
+                
+
             </div>
+
         </div>
         <!-- Container wrapper -->
     </nav>

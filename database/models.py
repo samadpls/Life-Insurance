@@ -30,13 +30,12 @@ class Form(models.Model):
     email = models.EmailField(blank=True)
     address = models.CharField(max_length=255,blank=True )
     dob = models.DateField(blank=True  ,default='2001-01-22',null=True)
-    age = models.CharField(max_length=255,blank=True )
-    cities = models.CharField(max_length=255,blank=True )
+    age = models.CharField(max_length=255,blank=True ,null=True)
+    cities = models.CharField(max_length=255,blank=True ,null=True)
     nominee = models.CharField(max_length=255,default='2001-01-22', blank=True, null=True)
     dob_nominee = models.DateField(blank=True, null=True)
     age_nominee = models.PositiveIntegerField(blank=True, null=True)
     nominee_relation = models.CharField(max_length=255, blank=True, null=True)
-    mincome = models.CharField(max_length=20,blank=True )
     suminsured = models.CharField(max_length=20,default='500000',blank=True )
     term=models.CharField(max_length=20,blank=True)
     agentID=models.CharField(max_length=200,blank=True)
@@ -48,27 +47,30 @@ class Form(models.Model):
         ('Supplementary Covers', 'Supplementary Covers'),
     ]
     plan = models.CharField(max_length=200, choices=PLANS, default='other')
+    mincome = models.CharField(max_length=20,blank=True ,null=True)
+    file=models.FileField(upload_to='media/',default="",null=True)
     # files = models.FileField(upload_to='document/')
-    premium=models.CharField(max_length=20,blank=True)
+    premium=models.CharField(max_length=20,blank=True,null=True)
+    
     Mode = [
         ('yly', 'YLY'),
         ('hly', 'HLY'),
         ('qly', 'QLY')
     ]
-    mode = models.CharField(max_length=200, choices=Mode, default='other')
+    mode = models.CharField(max_length=200, choices=Mode, default='other',null=True)
     Disease = [
         ('cancer', 'Cancer'),
         ('diabetes', 'Diabetes'),
         ('heartDisease', 'Heart disease')
     ]
-    disease = models.CharField(max_length=200, choices=Disease, default='other')
+    disease = models.CharField(max_length=200, choices=Disease, default='other',null=True)
     
     Operation = [
         ('Appendectomy', 'Appendectomy'),
         ('openHeartSurgery', 'openHeartSurgery'),
         ('Hip replacement surgery', 'Hip replacement surgery')
     ]
-    operation = models.CharField(max_length=200, choices=Operation, default='other')
+    operation = models.CharField(max_length=200, choices=Operation, default='other',null=True)
     
     yesno = [
         ('yes', 'Yes'),
@@ -82,41 +84,41 @@ class Form(models.Model):
         ('alcohal', 'Alcohal'),
         ('drugs', 'Drugs')
     ]
-    habit = models.CharField(max_length=200, choices=habit, default='other')
+    habit = models.CharField(max_length=200, choices=habit, default='other',null=True)
 
 
-    Dfam = [
-         ('yes', 'Yes'),
-        ('no', 'No')
-    ]
-    Dfam = models.CharField(max_length=200, choices=Dfam, default='other')
+    # Dfam = [
+    #      ('yes', 'Yes'),
+    #     ('no', 'No')
+    # ]
+    # Dfam = models.CharField(max_length=200, choices=Dfam, default='other')
     
     
     Medexam = [
         ('yes', 'Yes'),
         ('no', 'No')
     ]
-    Medexam = models.CharField(max_length=200, choices=Medexam, default='other')
-    height=models.CharField(max_length=20,blank=True)
+    Medexam = models.CharField(max_length=200, choices=Medexam, default='other',null=True)
+    height=models.CharField(max_length=20,blank=True,null=True)
 
-    weight=models.CharField(max_length=20,blank=True)
+    weight=models.CharField(max_length=20,blank=True,null=True)
 
-    chest=models.CharField(max_length=20,blank=True)
+    chest=models.CharField(max_length=20,blank=True,null=True)
 
-    abdomen=models.CharField(max_length=20,blank=True)
+    abdomen=models.CharField(max_length=20,blank=True,null=True)
     
     suicide = [
         ('yes', 'Yes'),
         ('no', 'No')
     ]
-    suicide = models.CharField(max_length=200, choices=suicide, default='other')
+    suicide = models.CharField(max_length=200, choices=suicide, default='other',null=True)
     
     
     falive = [
         ('yes', 'Yes'),
         ('no', 'No')
     ]
-    falive = models.CharField(max_length=200, choices=falive, default='other')
+    falive = models.CharField(max_length=200, choices=falive, default='other',null=True)
     
     
     fhealth = [
@@ -124,31 +126,31 @@ class Form(models.Model):
         ('fair', 'Fair'),
         ('poor',"Poor")
     ]
-    fhealth = models.CharField(max_length=200, choices=fhealth, default='other')
+    fhealth = models.CharField(max_length=200, choices=fhealth, default='other',null=True)
     malive = [
         ('yes', 'Yes'),
         ('no', 'No')
     ]
-    malive = models.CharField(max_length=200, choices=malive, default='other')
+    malive = models.CharField(max_length=200, choices=malive, default='other',null=True)
 
 
-    causefdeath = models.CharField(max_length=255,blank=True )
+    causefdeath = models.CharField(max_length=255,blank=True ,null=True)
 
-    mothername= models.CharField(max_length=255,blank=True )
+    mothername= models.CharField(max_length=255,blank=True ,null=True)
     
-    mhealth = [
-        ('good', 'Good'),
-        ('fair', 'Fair'),
-        ('poor',"Poor")
-    ]
-    mhealth = models.CharField(max_length=200, choices=mhealth, default='other')
+    # mhealth = [
+    #     ('good', 'Good'),
+    #     ('fair', 'Fair'),
+    #     ('poor',"Poor")
+    # ]
+    # mhealth = models.CharField(max_length=200, choices=mhealth, default='other')
     
-    mcd = models.CharField(max_length=255,blank=True )
+    mcd = models.CharField(max_length=255,blank=True ,null=True)
     
-    numb=models.CharField(max_length=20,blank=True)
-    nums=models.CharField(max_length=20,blank=True)
-    Nos=models.CharField(max_length=20,blank=True)
-    Nod=models.CharField(max_length=20,blank=True)
+    numb=models.CharField(max_length=20,blank=True,null=True)
+    nums=models.CharField(max_length=20,blank=True,null=True)
+    Nos=models.CharField(max_length=20,blank=True,null=True)
+    Nod=models.CharField(max_length=20,blank=True,null=True)
 
 
 
@@ -192,25 +194,4 @@ class Form(models.Model):
     # SUICIDE_CHOICES = [
     #     ('yes', 'Yes'),
     #     ('no', 'No'),
-    # ]
-    # HEALTH_CHOICES = [
-    #     ('good', 'Good'),
-    #     ('fair', 'Fair'),
-    #     ('poor', 'Poor'),
-    # ]
-
-    # suicide = models.CharField(choices=SUICIDE_CHOICES, max_length=3)
-    # father_alive = models.BooleanField(default=True)
-    # father_name = models.CharField(max_length=100, blank=True)
-    # father_health = models.CharField(choices=HEALTH_CHOICES, max_length=5, blank=True)
-    # father_dob = models.DateField(blank=True)
-    # father_cause_of_death = models.CharField(max_length=100, blank=True)
-    # father_passed_away = models.DateField(blank=True)
-    # mother_alive = models.BooleanField(default=True)
-    # mother_name = models.CharField(max_length=100, blank=True)
-    # mother_health = models.CharField(choices=HEALTH_CHOICES, max_length=5, blank=True)
-    # mother_dob = models.DateField(blank=True)
-    # mother_cause_of_death = models.CharField(max_length=100, blank=True)
-    # mother_passed_away = models.DateField(blank=True)
-    
-# Create your models here.
+ 
