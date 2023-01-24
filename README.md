@@ -1,2 +1,0 @@
-# Life-Insurance
-ISE Project
