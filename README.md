@@ -1,3 +1,5 @@
+<img src="https://github.com/samadpls/Life-Insurance/blob/main/FINAL%20VERSION/Images/SmartSelect_20230128-234939_Instagram.jpg" height=220px width=100%/>
+
 # Life Insurance - 💼 Simplifying Policy Management for State Life 🏢
 
 Welcome to the GitHub repository for the Life Insurance web application, an innovative solution for State Life Insurance 💼. This project is the result of my introduction to software engineering course where our aim was to develop a transaction-based software. This project was developed by a team of four members and I was the lead developer of the team.🧑‍💻
