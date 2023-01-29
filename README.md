@@ -1,4 +1,4 @@
-<img src="https://github.com/samadpls/Life-Insurance/blob/main/FINAL%20VERSION/Images/SmartSelect_20230128-234939_Instagram.jpg" height=220px width=100%/>
+<img src="https://github.com/samadpls/Life-Insurance/blob/main/FINAL%20VERSION/Image/banner.jpg" height=220px width=100%/>
 
 # Life Insurance - 💼 Simplifying Policy Management for State Life 🏢
 
