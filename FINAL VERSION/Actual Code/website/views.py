@@ -83,8 +83,6 @@ def home(request):
 
 
 otp = ""
-
-
 @csrf_exempt
 def send_otp(request):
     global otp
@@ -263,6 +261,7 @@ def delete_form(request, id):
 @csrf_exempt
 def Passed(request, id):
     global login_id
+    print(login_id)
     import random
     from docxtpl import DocxTemplate
     from docx2pdf import convert 

@@ -1,4 +1,5 @@
-<img src="https://github.com/Muhammad-Shaheer-khan/Life-Insurance/blob/main/FINAL%20VERSION/Images/insurance-producer_16.jpg" height=220px width=100%/>
+<img src="https://github.com/samadpls/Life-Insurance/blob/main/FINAL%20VERSION/Images/insurance-producer_16.jpg" height=220px width=100%/>
+
 
 # Life Insurance - 💼 Simplifying Policy Management for State Life 🏢
 
@@ -30,3 +31,6 @@ Welcome to the GitHub repository for the Life Insurance web application, an inno
 
 ## Conclusion
 This project was my introduction to software engineering course where I learned how to build a transaction-based software using Django. I am proud of the final product and I believe it will be beneficial for the State Life Insurance organization. The added feature of premium payment and transaction history for clients will make it more convenient for the clients to manage their policies.
+
+https://user-images.githubusercontent.com/94792103/215860106-f98c4740-8a21-47d9-b173-d09ccc7998dd.mp4
+
